@@ -1,7 +1,7 @@
 <?php
-
 use Illuminate\Support\Facades\Route;
 include "departementRoutes.php";
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
