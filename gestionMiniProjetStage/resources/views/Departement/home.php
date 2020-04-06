@@ -418,6 +418,7 @@
 <script src="../js/core/jquery.3.2.1.min.js" type="text/javascript"></script>
 <script src="../js/core/popper.min.js" type="text/javascript"></script>
 <script src="../js/core/bootstrap.min.js" type="text/javascript"></script>
+
 <!--  Plugin for Switches, full documentation here: http://www.jque.re/plugins/version3/bootstrap.switch/ -->
 <script src="../js/plugins/bootstrap-switch.js"></script>
 <!--  Google Maps Plugin    -->
@@ -431,6 +432,7 @@
 <!-- Light Bootstrap Dashboard DEMO methods, don't include it in your project! -->
 
 <script src="../js/demo.js"></script>
+
 <script type="text/javascript">
     $(document).ready(function() {
         // Javascript method's body can be found in assets/js/demos.js
