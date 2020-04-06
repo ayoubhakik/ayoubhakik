@@ -1,6 +1,6 @@
 <?php
-
 use Illuminate\Support\Facades\Route;
+include "departementRoutes.php";
 
 /*
 |--------------------------------------------------------------------------
@@ -12,10 +12,3 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/',function(){
-    return view('welcome');
-});
-Route::get('/about',function(){
-    return view('about');
-});
