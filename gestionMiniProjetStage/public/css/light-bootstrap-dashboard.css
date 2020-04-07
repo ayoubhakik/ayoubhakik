@@ -615,6 +615,8 @@ body>.navbar-collapse[data-color="black"]:after {
     background-size: 150% 150%;
 }
 
+
+
 .sidebar[data-color="blue"]:after,
 body>.navbar-collapse[data-color="blue"]:after {
     background: #1F77D0;
