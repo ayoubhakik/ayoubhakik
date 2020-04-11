@@ -1,9 +1,10 @@
 
-<div class="sidebar" data-color="black" data-image="http://127.0.0.1:8000/img/sidebar-5.jpg">
+
+<div class="sidebar" data-color="black" data-image="http://127.0.0.1:8000/img/sidebar-1.jpg">
 
         <div class="sidebar-wrapper">
             <div class="logo">
-                <a href="http://127.0.0.1:8000/encadrant/accueil" class="simple-text">
+                <a href="http://127.0.0.1:8000/encadrant/accueil" class="simple-text" >
                     ENSA SAFI
                 </a>
             </div>
@@ -28,7 +29,7 @@
                 </li>
                 <li class="">
                     <a class="nav-link" href="http://127.0.0.1:8000/encadrant/listerGroupes">
-                        <i class="nc-icon nc-paper-2"></i>
+                        <i class="nc-icon nc-bullet-list-67"></i>
                         <p>Liste de vos groupes</p>
                     </a>
                 </li>

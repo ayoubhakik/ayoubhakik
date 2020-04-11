@@ -18,6 +18,7 @@
     <link href="http://127.0.0.1:8000/css/light-bootstrap-dashboard.css?v=2.0.0 " rel="stylesheet" />
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="http://127.0.0.1:8000/css/demo.css" rel="stylesheet" />
+    
 
 </head>
 
@@ -57,9 +58,18 @@
     $(document).ready(function() {
         // Javascript method's body can be found in assets/js/demos.js
         demo.initDashboardPageCharts();
-
-
     });
+    
+</script>
+
+<script type="text/javascript">
+    /*$(document).ready(function() {
+        if($("#notifications li").length){
+            var count = $("#notifications li").length;
+            $(".notification").append("<p>"+ count +"</p>");
+        }
+    })*/
+    $(".notification").append("<p>hello</p>"); 
 </script>
 
 </html>
