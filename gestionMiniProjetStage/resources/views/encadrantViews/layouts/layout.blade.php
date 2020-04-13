@@ -36,6 +36,17 @@
         .modal-body{
             font-family: "Times New Roman", Times, serif;
         }
+        #bulb {
+  fill-opacity: 100;
+}
+
+#lights path {
+  fill-opacity: 100;
+  stroke: #ffd15c;
+  stroke-width: 4;
+  stroke-dasharray: 150;
+  stroke-dashoffset: 150;
+}
     </style>
 
 </head>
@@ -71,6 +82,8 @@
 <!-- Light Bootstrap Dashboard DEMO methods, don't include it in your project! -->
 
 <script src="http://127.0.0.1:8000/js/demo.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
 
 <script type="text/javascript">
     $(document).ready(function() {

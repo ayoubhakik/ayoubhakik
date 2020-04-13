@@ -24,6 +24,7 @@
                         <th scope="col">Subject</th>
                         <th scope="col">Sector</th>
                         <th scope="col">Due date</th>
+                        <th scope="col">More</th>
                     </tr>
                 </thead>
 
@@ -35,13 +36,18 @@
                         <td>Ayoub HAKIK</td>
                         <td>
                             <!-- Button trigger modal -->
-                            <a type="button" style="color:dodgerblue" data-toggle="modal" data-target="#exampleModalCenter">
+                            <a type="button" style="color:dodgerblue" data-toggle="modal" data-target="#list">
                                 Show Members
                             </a>
                         </td>
                         <td>Something</td>
                         <td>GI</td>
                         <td>14/10/2016</td>
+                        <td>
+                            <a type="button" style="color:dodgerblue" data-toggle="modal" data-target="#more">
+                                Clik
+                            </a>
+                        </td>
                     </tr>
 
                 </tbody>
@@ -51,8 +57,8 @@
 </div>
 
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<!-- Modal list-->
+<div class="modal fade" id="list" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog " role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -68,6 +74,50 @@
               <li>Mouad SIFANE</li>
               <li>Rachid RL ADNANI</li>
             </ul>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal More-->
+<div class="modal fade" id="more" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog " role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">More Options</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+            <form>
+                <div class="form-group row">
+                    <label for="grade" class="col-sm-2 col-form-label">Grade</label>
+                    <div class="col-sm-10">
+                    <input type="text" class="form-control" id="grade" placeholder=".." style="width: 14%">
+                    <label style="position: absolute;left: 73px;top: 0px;font-size: larger;">/20</label>
+                    </div>
+
+                </div>
+                <div class="form-group row">
+                    <label for="note" class="col-sm-2 col-form-label">Note</label>
+                    <div class="col-sm-10">
+                    <input type="text" class="form-control" id="note" placeholder="leave a note">
+                    </div>
+                </div>
+                <hr>
+                <div class="form-group row" style="text-align: center">
+                    <label class="col"><a href="#" style="color : #23374d;">Download repport</a></label>
+                </div>
+                <hr>
+                <div class="form-group row">
+                    <div class="col-sm-10">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+        </form>
       </div>
 
     </div>
