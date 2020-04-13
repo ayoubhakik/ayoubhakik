@@ -28,8 +28,8 @@
         @include('encadrantViews.layouts.sidebar')
         <div class="main-panel">
 
-            @include('encadrantViews.layouts.navbar')
             @yield('content')
+            
             @include('encadrantViews.layouts.footer')
         
         </div>

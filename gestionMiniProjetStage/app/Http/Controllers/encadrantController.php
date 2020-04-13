@@ -21,6 +21,8 @@ class encadrantController extends Controller
         return view('encadrantViews/listerEtudiants');
     }
 
+    
+
     //lister ses Groupes
     public function listerGroupes(){
         return view('encadrantViews/listerGroupes');
@@ -29,6 +31,11 @@ class encadrantController extends Controller
     //Afficher un groupe
     public function afficherGrp(){
         return view('encadrantViews/afficherGrp');
+    }
+
+    //Modifier profile encadrant
+    public function modifierProfile(Request $request){
+        
     }
     
 }

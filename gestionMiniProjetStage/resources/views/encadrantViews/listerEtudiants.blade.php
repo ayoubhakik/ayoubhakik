@@ -9,10 +9,18 @@
             <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th scope="col">id</th>
+                        <th scope="col">ID</th>
                         <th scope="col">Nom</th>
                         <th scope="col">Prenom</th>
-                        <th scope="col">filiere</th>
+                        <th scope="col">Filiere</th>
+                        <th scope="col">CIN</th>
+                        <th scope="col">CNE</th>
+                        <th scope="col">Promotion</th>
+                        <th scope="col">Telephone</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">ID du groupe</th>
+                        
+
                     </tr>
                 </thead>
                 
@@ -24,6 +32,14 @@
                         <td>Mark</td>
                         <td>Otto</td>
                         <td>@mdo</td>   
+                        <td>@mdo</td>   
+                        <td>@mdo</td>   
+                        <td>@mdo</td>   
+                        <td>@mdo</td>   
+                        <td>@mdo</td>   
+                        <td>@mdo</td>   
+                        <td>@mdo</td>   
+
                     </tr>
                
                 </tbody>
