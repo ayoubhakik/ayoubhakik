@@ -30,5 +30,5 @@ class encadrantController extends Controller
     public function afficherGrp(){
         return view('encadrantViews/afficherGrp');
     }
-    
+
 }

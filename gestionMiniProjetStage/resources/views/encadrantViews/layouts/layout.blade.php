@@ -18,7 +18,25 @@
     <link href="http://127.0.0.1:8000/css/light-bootstrap-dashboard.css?v=2.0.0 " rel="stylesheet" />
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="http://127.0.0.1:8000/css/demo.css" rel="stylesheet" />
-    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+
+        body, html{
+            font-family: Helvetica, sans-serif;
+            background: #e5e5e5;
+            color : #23374d;
+        }
+        a{
+            color : #23374d;
+        }
+
+        .sansserif {
+            font-family: Georgia, sans-serif;
+        }
+        .modal-body{
+            font-family: "Times New Roman", Times, serif;
+        }
+    </style>
 
 </head>
 
@@ -28,12 +46,12 @@
         @include('encadrantViews.layouts.sidebar')
         <div class="main-panel">
 
-            @include('encadrantViews.layouts.navbar')
+
             @yield('content')
             @include('encadrantViews.layouts.footer')
-        
+
         </div>
-    </div> 
+    </div>
 </body>
 <!--   Core JS Files   -->
 <script src="http://127.0.0.1:8000/js/core/jquery.3.2.1.min.js" type="text/javascript"></script>
@@ -59,7 +77,7 @@
         // Javascript method's body can be found in assets/js/demos.js
         demo.initDashboardPageCharts();
     });
-    
+
 </script>
 
 <script type="text/javascript">
@@ -69,7 +87,7 @@
             $(".notification").append("<p>"+ count +"</p>");
         }
     })*/
-    $(".notification").append("<p>hello</p>"); 
+    $(".notification").append("<p>hello</p>");
 </script>
 
 </html>
