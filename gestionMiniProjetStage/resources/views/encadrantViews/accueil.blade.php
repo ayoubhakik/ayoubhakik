@@ -1,8 +1,6 @@
 @extends('encadrantViews/layouts/layout')
 @section('content')
-<br>
-<br>
-<br>
+
 
 
 <style>
@@ -17,19 +15,16 @@
     }
 </style>
 
-<div class="content">
+<div class="content" >
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-sx-12" style="text-align: center">
-                        <h1>Welcome {Nom encadrant}</h1>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-sx-12 page-hero" style="text-align: center">
+                        <h1 class="display-2">Welcome {Nom encadrant}</h1>
                     </div>
                 </div>
             </div>
             <br>
-            <br>
-            <br>
-            <br>
-            <div class="container-fluid">
+            <div class="container-fluid container" id="content">
                 <div class="row">
                     <div class="col-md-8">
                         <br>
@@ -42,7 +37,7 @@
                         <br>
                         <p class="talk"> As you can see the groups you have, grade them,  <br> show their students and the repports that's been submitted.</p>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-4 ">
                          @include('encadrantViews.layouts.light_blub')
                     </div>
                 </div>

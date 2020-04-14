@@ -30,6 +30,113 @@
             color : #23374d;
         }
 
+
+
+#showcase {
+  height: 300px;
+}
+
+#showcase h1 {
+  font-size: 50px;
+  line-height: 1.3;
+  position: relative;
+  animation: heading;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes heading {
+  0% { top: -50px; }
+  100% { top: 200px; }
+}
+
+#content {
+  position: relative;
+  animation-name: content;
+  animation-duration: 3s;
+  animation-fifll-mode: forwards;
+}
+
+.myButt {
+	display: block;
+	cursor: pointer;
+	background-color: transparent;
+	position: relative;
+	transition: all 0.5s ease;
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	-ms-transition: all 0.5s ease;
+}
+.four {
+	overflow: hidden;
+}
+
+.four span {
+	display: inline-block;
+	transition: all 0.3s ease;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	-ms-transition: all 0.3s ease;
+}
+
+.four .icon {
+	position: absolute;
+	right: -60px;
+	top: 0;
+	padding: 10px;
+	transition: all 0.3s ease;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	-ms-transition: all 0.3s ease;
+}
+
+.four:hover .icon {
+	right: 0px;
+}
+
+.four:hover span {
+	color: #F44336;
+	margin-left: 50px;
+}
+
+@keyframes btn {
+  0% { opacity: 0; }
+    25% { opacity: 0.25; }
+    50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+        .page-hero {
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.page-hero h1 {
+    animation:
+        slideUp 0.75s .5s cubic-bezier(0.17,.88,.32,1.27) both,
+        fadeIn .25s .5s ease-in both;
+    padding: 0 20px;
+    position: absolute;
+    text-align: center;
+    text-shadow: 3px 3px 7px rgba(0,0,0,.61);
+    top: 50%;
+    width: 100%;
+}
+
+@keyframes slideUp {
+    from {transform: translateY(200%);}
+    to {transform:translateY(-50%);}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
         .sansserif {
             font-family: Georgia, sans-serif;
         }
@@ -46,14 +153,69 @@
   stroke-width: 4;
   stroke-dasharray: 150;
   stroke-dashoffset: 150;
+}html, body {
+	height: 100%;
+}
+
+body {
+	background: radial-gradient(ellipse at center, #fffeea 0%, #fffeea 35%, #B7E8EB 100%);
+	overflow: hidden;
+}
+
+.ocean {
+	height: 5%;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	background: #015871;
+}
+
+.wave {
+	background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg) repeat-x;
+	position: absolute;
+	top: -198px;
+	width: 6400px;
+	height: 198px;
+	animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+	transform: translate3d(0, 0, 0);
+}
+
+.wave:nth-of-type(2) {
+	top: -175px;
+	animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) -0.125s infinite, swell 7s ease -1.25s infinite;
+	opacity: 1;
+}
+
+@keyframes wave {
+	0% {
+		margin-left: 0;
+	}
+
+	100% {
+		margin-left: -1600px;
+	}
+}
+
+@keyframes swell {
+	0%, 100% {
+		transform: translate3d(0, -25px, 0);
+	}
+
+	50% {
+		transform: translate3d(0, 5px, 0);
+	}
 }
     </style>
 
 </head>
 
-<body>
+<body >
     <div class="wrapper">
-
+    <div class="ocean">
+  <div class="wave"></div>
+  <div class="wave"></div>
+</div>
         @include('encadrantViews.layouts.sidebar')
         <div class="main-panel">
 

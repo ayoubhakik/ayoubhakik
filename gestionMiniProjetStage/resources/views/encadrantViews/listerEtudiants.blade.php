@@ -3,16 +3,18 @@
 <div class="content">
     <div class="container-fluid">
         <div class="row justify-content-center mb-5">
-            <h1 class="display-4" style="font-family:Bookman old style">Liste des Etudiants</h1>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-sx-12 page-hero" style="text-align: center">
+                <h1 class="display-2">Students list</h1>
+            </div>
         </div>
         <div class="row">
             <table class="table table-hover">
                 <thead >
                     <tr>
-                        <th  scope="col">id</th>
-                        <th scope="col">Nom</th>
-                        <th scope="col">Prenom</th>
-                        <th scope="col">filiere</th>
+                        <th style="color: #23374d;" scope="col">id</th>
+                        <th style="color: #23374d;" scope="col">Nom</th>
+                        <th style="color: #23374d;" scope="col">Prenom</th>
+                        <th style="color: #23374d;" scope="col">filiere</th>
                     </tr>
                 </thead>
 

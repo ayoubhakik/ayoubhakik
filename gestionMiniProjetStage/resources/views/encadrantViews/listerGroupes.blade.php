@@ -4,8 +4,8 @@
 
 <div class="content">
     <div class="container-fluid">
-        <div class="row justify-content-center mb-5">
-            <h1 class="display-4 sansserif" >Liste des Groupes</h1>
+        <div class="row justify-content-center mb-5 page-hero">
+            <h1 class="display-2 sansserif" >Liste des Groupes</h1>
         </div>
         <div class="row">
         <div class="alert alert-success alert-dismissible fade show" role="alert" style="width: 100%; text-align: center">

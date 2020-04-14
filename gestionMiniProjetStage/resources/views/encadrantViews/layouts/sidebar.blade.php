@@ -26,27 +26,27 @@
             <hr>
             <ul class="nav">
                 <li class="" >
-                    <a class="nav-link" href="http://127.0.0.1:8000/encadrant/profile" id="fst">
-                        <i class="nc-icon nc-circle-09"></i>
+                    <a class="nav-link myButt four" href="http://127.0.0.1:8000/encadrant/profile" id="fst">
+                        <i class="nc-icon nc-circle-09 icon"></i>
                         <p >Votre Profil</p>
                     </a>
                 </li>
                 <li class="" >
-                    <a class="nav-link" href="http://127.0.0.1:8000/encadrant/listerEtudiants" id="scd">
-                        <i class="nc-icon nc-notes"></i>
+                    <a class="nav-link myButt four" href="http://127.0.0.1:8000/encadrant/listerEtudiants" id="scd">
+                        <i class="nc-icon nc-notes icon"></i>
                         <p >Liste de vos Etudiants</p>
                     </a>
                 </li>
                 <li class="" >
-                    <a class="nav-link" href="http://127.0.0.1:8000/encadrant/listerGroupes" id="trd">
-                        <i class="nc-icon nc-bullet-list-67"></i>
+                    <a class="nav-link myButt four" href="http://127.0.0.1:8000/encadrant/listerGroupes" id="trd">
+                        <i class="nc-icon nc-bullet-list-67 icon"></i>
                         <p >Liste de vos groupes</p>
                     </a>
                 </li>
                 <hr>
                 <li class="" >
-                    <a href="#" class="nav-link" id="lst">
-                        <i class="nc-icon nc-circle"></i>
+                    <a href="#" class="nav-link myButt four" id="lst">
+                        <i class="nc-icon nc-circle icon"></i>
                         <p>Log out</p>
                     </a>
                 </li>
