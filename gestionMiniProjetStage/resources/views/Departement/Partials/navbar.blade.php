@@ -27,12 +27,12 @@
                              Etudiants
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="{{ asset('departement/table') }}">                                        
+                            <a class="dropdown-item" href="{{ asset('departement/etudiant/list') }}">                                        
                                 <i class="nc-icon nc-single-02"></i>
                                 Lister les Etudiants
                             </a>
-                            <a class="dropdown-item" href="#">
-                                <i class="nc-icon nc-cloud-upload-94"></i>
+                            <a class="dropdown-item" href="{{ asset('departement/etudiant/import') }}">
+                                <i class="nc-icon nc-cloud-upload-94" ></i>
                                 Importer les Etudiants
                             </a>
                         </div>
@@ -43,11 +43,11 @@
                              Enseignants
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="{{ asset('departement/table') }}">                                        
+                            <a class="dropdown-item" href="{{ asset('departement/enseignant/list') }}">                                        
                                 <i class="nc-icon nc-single-02"></i>
                                 Lister les Professeurs
                             </a>
-                            <a class="dropdown-item" href="{{ asset('departement/table') }}">
+                            <a class="dropdown-item" href="{{ asset('departement/enseignant/import') }}">
                                 <i class="nc-icon nc-cloud-upload-94"></i>
                                 Importer les Professeurs
                             </a>
@@ -59,11 +59,11 @@
                              Encadrents MiniProjet
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="{{ asset('departement/table') }}">                                        
+                            <a class="dropdown-item" href="{{ asset('departement/encadrentsMiniProjet/list') }}">                                        
                                 <i class="nc-icon nc-single-02"></i>
                                 Lister les Encadrents
                             </a>
-                            <a class="dropdown-item" href="#">
+                            <a class="dropdown-item" href="{{ asset('departement/encadrentsMiniProjet/statistique') }}">
                                 <i class="nc-icon nc-chart-bar-32"></i>
                                 Statistiques
                             </a>
@@ -80,7 +80,7 @@
                                 <i class="nc-icon nc-single-02"></i>
                                 Lister les Groupes
                             </a>
-                            <a class="dropdown-item" href="{{ asset('departement/table') }}">
+                            <a class="dropdown-item" href="{{ asset('departement/groupes/listChef') }}">
                                 <i class="nc-icon nc-circle-09"></i>
                                 lister les chef des projets
                             </a>
@@ -92,22 +92,17 @@
                              Encadrents de Stage
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="{{ asset('departement/table') }}">                                        
+                            <a class="dropdown-item" href="{{ asset('departement/encadrentsStage/list') }}">                                        
                                 <i class="nc-icon nc-single-02"></i>
                                 Lister les Encadrents
                             </a>
-                            <a class="dropdown-item" href="#">
+                            <a class="dropdown-item" href="{{ asset('departement/encadrentsStage/statistique') }}">
                                 <i class="nc-icon nc-chart-bar-32"></i>
                                 Statistiques
                             </a>
                         </div>
                     </li>
-                    <li class="{{ Request::path() === 'departement/notifications' ? 'current_page_item' : '' }}">
-                        <a class="nav-link" href="{{ asset('departement/notifications') }}">
-                            <i class="nc-icon nc-email-85"></i>
-                            <p>Messages</p>
-                        </a>
-                    </li>
+                    
                     <li class="{{ Request::path() === 'departement/notifications' ? 'current_page_item' : '' }}">
                         <a class="nav-link" href="{{ asset('departement/notifications') }}">
                             <i class="nc-icon nc-bell-55"></i>
@@ -115,29 +110,29 @@
                         </a>
                     </li>
                     <li class="{{ Request::path() === 'departement/table' ? 'current_page_item' : '' }}">
-                        <a class="nav-link" href="{{ asset('departement/table') }}">
+                        <a class="nav-link" href="{{ asset('departement/documentation') }}">
                             <i class="nc-icon nc-notes"></i>
                             <p>La Documentation</p>
                         </a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" >
                             <i class="nc-icon nc-attach-87"></i>
                               Rapports
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">                                        
+                            <a class="dropdown-item" href="{{ asset('departement/rapports/rapportsMiniProjet') }}">                                        
                                 <i class="nc-icon nc-layers-3"></i>
                                 Rapport de Mini-Projet
                             </a>
-                            <a class="dropdown-item" href="#">
+                            <a class="dropdown-item" href="{{ asset('departement/rapports/rapportsStage') }}">
                                 <i class="nc-icon nc-layers-3"></i>
                                 Rapport de Stage
                             </a>
                         </div>
                     </li>
                     <li class="{{ Request::path() === 'departement/user' ? 'current_page_item' : '' }}">
-                        <a class="nav-link" href="{{ asset('departement/user') }}">
+                        <a class="nav-link" href="{{ asset('departement/Setting') }}">
                             <i class="nc-icon nc-settings-gear-64"></i>
                             <p>Setting</p>
                         </a>

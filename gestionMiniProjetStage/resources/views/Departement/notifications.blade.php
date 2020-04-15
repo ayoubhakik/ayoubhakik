@@ -4,6 +4,12 @@
 
 <div class="content">
                 <div class="container-fluid">
+                    <div class="row" style="margin-bottom:40px;">
+
+                        <input style="margin-left:40px;width:280px;" type="text" class="form-control search-menu" placeholder="Filtrer...">
+                        
+                                    
+                    </div>
                     <div class="row">
                         <div class="col-md-4">
                             <div class="card ">
@@ -11,70 +17,48 @@
                                     <h4 class="card-title">Messages</h4>
                                     <p class="card-category">Boite des Messages</p>
                                 </div>
-                                <div class="card-body " style="height:420px;overflow-y: scroll;">
+                                <div class="card-body " style="height:600px;overflow-y: scroll;">
                                     
-                                    <div class="alert alert-danger" style="background:gray;">
-                                        
-                                        <span>HAKIK a envoyer un message.</span>
-                                    </div>
-                                    <div class="alert alert-danger" style="background:gray;">
+                                    <div class="alert alert-danger" style="">
                                         
                                         <span>Sifane a envoyer un message..</span>
                                     </div>
-                                    <div class="alert alert-danger" style="background:gray;">
-                                       
-                                        <span>ECH-CHADI a envoyer un message.</span>
-                                    </div>
-                                    <div class="alert alert-danger" style="background:gray;">
-                                        
-                                        <span>HAKIK a envoyer un message.</span>
-                                    </div>
-                                    <div class="alert alert-danger" style="background:gray;">
+                                    <div class="alert alert-danger" style="">
                                         
                                         <span>Sifane a envoyer un message..</span>
                                     </div>
-                                    <div class="alert alert-danger" style="background:gray;">
-                                       
-                                        <span>ECH-CHADI a envoyer un message.</span>
-                                    </div>
-                                    <div class="alert alert-danger" style="background:gray;">
-                                        
-                                        <span>HAKIK a envoyer un message.</span>
-                                    </div>
-                                    <div class="alert alert-danger" style="background:gray;">
-                                       
-                                        <span>ECH-CHADI a envoyer un message.</span>
-                                    </div>
-                                    <div class="alert alert-danger" style="background:gray;">
-                                        
-                                        <span>HAKIK a envoyer un message.</span>
-                                    </div>
-                                    <div class="alert alert-danger" style="background:gray;">
+                                    <div class="alert alert-danger" style="">
                                         
                                         <span>Sifane a envoyer un message..</span>
                                     </div>
-                                    <div class="alert alert-danger" style="background:gray;">
-                                       
-                                        <span>ECH-CHADI a envoyer un message.</span>
-                                    </div>
-                                    <div class="alert alert-danger" style="background:gray;">
+                                    <div class="alert alert-danger" style="">
                                         
-                                        <span>HAKIK a envoyer un message.</span>
+                                        <span>Sifane a envoyer un message..</span>
+                                    </div>
+                                    <div class="alert alert-danger" style="">
+                                        
+                                        <span>Sifane a envoyer un message..</span>
+                                    </div>
+                                    <div class="alert alert-danger" style="">
+                                        
+                                        <span>Sifane a envoyer un message..</span>
+                                    </div>
+                                    
+                                    <div class="alert alert-danger" style="">
+                                        
+                                        <span>Sifane a envoyer un message..</span>
                                     </div>
                                     
                                 </div>
                             </div>
                         </div>
-                        
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-8">
                             <div class="card ">
                                     <div class="card-header " >
                                         <h4 class="card-title">Notifications</h4>
                                         <p class="card-category">Les Changements et Modifications dans la platforme</p>
                                     </div>
-                                    <div class="card-body " style="height:420px;overflow-y: scroll;">
+                                    <div class="card-body " style="height:600px;overflow-y: scroll;">
                                         <div class="alert alert-primary">
                                             <button type="button" aria-hidden="true" class="close" data-dismiss="alert">
                                                 <i class="nc-icon nc-simple-remove"></i>
@@ -149,8 +133,8 @@
                             </div>
                         </div>
                         
-                        
                     </div>
+                    
                 </div>
 </div>
 

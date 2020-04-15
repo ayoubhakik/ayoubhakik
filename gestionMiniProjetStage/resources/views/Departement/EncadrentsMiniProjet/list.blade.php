@@ -1,6 +1,5 @@
 @extends ('departement/layout')
 
 @section('content')
-list encadrent stage
-
+encadrent mp list
 @endsection

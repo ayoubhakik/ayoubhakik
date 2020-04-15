@@ -1,6 +1,6 @@
 @extends ('departement/layout')
 
 @section('content')
-list encadrent stage
 
+rapport mini projet
 @endsection
