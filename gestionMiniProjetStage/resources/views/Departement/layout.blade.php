@@ -24,7 +24,7 @@
     <div class="wrapper">
 
     @include ('departement.partials.navbar')
-    <div class="main-panel">
+    <div class="main-panel" style="padding-left:30px;">
             <!-- Navbar -->
             @include ('departement.partials.header')
             <!-- End Navbar -->

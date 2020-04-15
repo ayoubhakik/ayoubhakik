@@ -8,37 +8,30 @@
                         <div class="col-md-4">
                             <div class="card ">
                                 <div class="card-header ">
-                                    <h4 class="card-title">Email Statistics</h4>
-                                    <p class="card-category">Last Campaign Performance</p>
+                                    <h4 class="card-title">Des informations sur les filieres</h4>
+                                    <p class="card-category">...</p>
                                 </div>
                                 <div class="card-body ">
-                                    <div id="chartPreferences" class="ct-chart ct-perfect-fourth"></div>
-                                    <div class="legend">
-                                        <i class="fa fa-circle text-info"></i> Open
-                                        <i class="fa fa-circle text-danger"></i> Bounce
-                                        <i class="fa fa-circle text-warning"></i> Unsubscribe
-                                    </div>
-                                    <hr>
-                                    <div class="stats">
-                                        <i class="fa fa-clock-o"></i> Campaign sent 2 days ago
-                                    </div>
+                                    <div>Nombre des etudiant dans GI:  45</div>
+                                    <div>Nombre des etudiant dans GTR:  52</div>
+                                    <div>Nombre Total des profs:  15</div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-8">
                             <div class="card ">
                                 <div class="card-header ">
-                                    <h4 class="card-title">Users Behavior</h4>
-                                    <p class="card-category">24 Hours performance</p>
+                                    <h4 class="card-title">L'interaction des Utilisateurs</h4>
+                                    <p class="card-category">Etudiants, Chef des groupes et Encadrents</p>
                                 </div>
                                 <div class="card-body ">
                                     <div id="chartHours" class="ct-chart"></div>
                                 </div>
                                 <div class="card-footer ">
                                     <div class="legend">
-                                        <i class="fa fa-circle text-info"></i> Open
-                                        <i class="fa fa-circle text-danger"></i> Click
-                                        <i class="fa fa-circle text-warning"></i> Click Second Time
+                                        <i class="fa fa-circle text-info"></i> Etudiants
+                                        <i class="fa fa-circle text-danger"></i> Chef des Projets
+                                        <i class="fa fa-circle text-warning"></i> Encadrents
                                     </div>
                                     <hr>
                                     <div class="stats">
@@ -49,32 +42,11 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-6">
-                            <div class="card ">
-                                <div class="card-header ">
-                                    <h4 class="card-title">2017 Sales</h4>
-                                    <p class="card-category">All products including Taxes</p>
-                                </div>
-                                <div class="card-body ">
-                                    <div id="chartActivity" class="ct-chart"></div>
-                                </div>
-                                <div class="card-footer ">
-                                    <div class="legend">
-                                        <i class="fa fa-circle text-info"></i> Tesla Model S
-                                        <i class="fa fa-circle text-danger"></i> BMW 5 Series
-                                    </div>
-                                    <hr>
-                                    <div class="stats">
-                                        <i class="fa fa-check"></i> Data information certified
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
+                        <div class="col-md-12">
                             <div class="card  card-tasks">
                                 <div class="card-header ">
-                                    <h4 class="card-title">Tasks</h4>
-                                    <p class="card-category">Backend development</p>
+                                    <h4 class="card-title">les Taches</h4>
+                                    <p class="card-category">Un log pour garder les taches effectuées jusqu'a maintenant</p>
                                 </div>
                                 <div class="card-body ">
                                     <div class="table-full-width">

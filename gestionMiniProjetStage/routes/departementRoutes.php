@@ -23,3 +23,11 @@ Route::get('/departement/user',function(){
 Route::get('/departement/',function(){
     return view('Departement/home');
 });
+
+Route::get('/departement/groupes/listGroupes',function(){
+    return view('Departement/Groupes/listGroupes');
+});
+
+Route::get('/departement/EncadrentsStage/list',function(){
+    return view('Departement/EncadrentsStage/list');
+});
