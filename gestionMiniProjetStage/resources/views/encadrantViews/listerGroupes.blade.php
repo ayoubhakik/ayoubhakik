@@ -62,7 +62,7 @@
   <div class="modal-dialog " role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalCenterTitle">Group members</h5>
+        <h5 class="modal-title" id="exampleModalCenterTitle" style="color: #192965">Group members</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -72,7 +72,7 @@
               <li>Asmae BRIOUYA</li>
               <li>Hasnae BRIOUYA</li>
               <li>Mouad SIFANE</li>
-              <li>Rachid RL ADNANI</li>
+              <li>Rachid EL ADNANI</li>
             </ul>
       </div>
 
@@ -109,7 +109,7 @@
                 </div>
                 <hr>
                 <div class="form-group row" style="text-align: center">
-                    <label class="col"><a href="#" style="color : #23374d;">Download repport</a></label>
+                    <label class="col"><a href="#" style="color : #0097d7;">Download repport</a></label>
                 </div>
                 <hr>
                 <div class="form-group row">
