@@ -1,3 +1,3 @@
 <footer style="text-align: center ; color: whitesmoke">
-    <p> Realisé par Group Hakik</p>
+    <p>Made to excel</p>
 </footer>

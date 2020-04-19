@@ -8,39 +8,18 @@
             </div>
         </div>
         <div class="row">
-            <table class="table table-hover">
-                <thead >
-                    <tr>
-                        <th style="color: #23374d;" scope="col">id</th>
-                        <th style="color: #23374d;" scope="col">Nom</th>
-                        <th style="color: #23374d;" scope="col">Prenom</th>
-                        <th style="color: #23374d;" scope="col">filiere</th>
-                    </tr>
-                </thead>
-
-
-                <!-- dummy data fot the view -->
-                <tbody style="color : #192965;">
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>BRIOUYA</td>
-                        <td>Asmae</td>
-                        <td>GI</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>BRIOUYA</td>
-                        <td>Hasnae</td>
-                        <td>GI</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>SIFANE</td>
-                        <td>Mouad</td>
-                        <td>GI</td>
-                    </tr>
-                </tbody>
-            </table>
+        @for ($i = 0; $i < 5; $i++)
+            <div class="col-md-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="..\img\new_logo.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Student's name {{$i}} </h5>
+                        <p class="card-text">Year and sector. (ex. 4th year GI)</p>
+                        <a href="#" class="btn btn-primary">Show profile</a>
+                    </div>
+                </div>
+            </div>
+        @endfor
         </div>
     </div>
 </div>
