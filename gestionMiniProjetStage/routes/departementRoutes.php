@@ -2,9 +2,7 @@
 
 Route::get('/departement/home','DepartementsController@home');
 
-Route::get('/departement/user',function(){
-    return view('Departement/user');
-});
+Route::get('/departement/user','DepartementsController@user');
 
 Route::get('/departement/etudiant/list',function(){
     return view('Departement/Etudiants/list');
@@ -62,3 +60,10 @@ Route::get('/departement/',function(){
     return view('Departement/home');
 });
 
+/////RESTFUL METHODS 
+
+//user edit
+Route::put('/departement/user/{id}/editInfos','DepartementsController@editUser');
+Route::put('/departement/user/{id}/editSocial','DepartementsController@editSocial');
+Route::put('/departement/user/{id}/editPassword','DepartementsController@editPassword');
+Route::put('/departement/user/{id}/storeImage','DepartementsController@storeImage');

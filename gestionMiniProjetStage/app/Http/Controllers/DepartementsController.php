@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Departement;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 class DepartementsController extends Controller
 {
@@ -14,10 +16,68 @@ class DepartementsController extends Controller
     return view('Departement/home');
     }
 
+    public function user(){
+        $departement=Departement::find(1);
+        return view('Departement.user',['departement'=>$departement]);
+    }  
 
 
 
+    public function editUser($id){
+        $departement=Departement::find($id);
+        $departement->nom=request('nom');
+        $departement->prenom=request('prenom');
+        $departement->telephone=request('telephone');
+        $departement->email=request('email');
+        $departement->status=request('status');
+        $departement->description=request('description');
+        $departement->save();
+        return redirect('/departement/user');
+    }
+    public function editSocial($id){
+        $departement=Departement::find($id);
+        $departement->facebook=request('facebook');
+        $departement->twitter=request('twitter');
+        $departement->google=request('google');
+        $departement->linkedin=request('linkedin');
+       
+        $departement->save();
+        return redirect('/departement/user');
+    }
+    public function editPassword($id){
+        $departement=Departement::find($id);
+        $departement->username=request('username');
+        $departement->password=request('password');
+        $departement->save();
+        return redirect('/departement/user');
+    }
+    public function storeImage($id,Request $request){
+        $image = $request->imageDep;
+        if($image !=null){
+            $extension = $image->getClientOriginalExtension();
 
+            if($extension === 'jpeg' || $extension === 'JPEG' || $extension === 'jpg' || $extension === 'svg' || $extension === 'png' || $extension === 'SVG' || $extension === 'PNG' ){
+                Storage::disk('public')->put($image->getFilename().'.'.$extension,  File::get($image));
+                $user=Departement::find($id);
+                $user->image_link = $image->getFilename().'.'.$extension;
+                $user->save();
+                return redirect('/departement/user');
+
+            }
+            else{
+                return redirect('/departement/user')->withErrors(['Invalide Format']);;
+
+            }
+        }else{
+                return redirect('/departement/user')->withErrors(['Choose a File']);;
+
+        }
+        
+
+        
+
+
+    }
 
 
     //////donot touch this functions
