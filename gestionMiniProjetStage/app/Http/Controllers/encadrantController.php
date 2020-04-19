@@ -3,12 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Encadrant;
 
 class encadrantController extends Controller
-{
+{        
+    public $encadrant = Encadrant::first();
+
     //Index
     public function accueil(){
+
+        $request->session()->put('user', $encadrant->id);
         return view('encadrantViews/accueil');
+
     }
 
     //Profile
@@ -18,7 +24,7 @@ class encadrantController extends Controller
 
     //Lister Etudiants
     public function listerEtudiants(){
-        return view('encadrantViews/listerEtudiants');
+        return view('encadrantViews/listerEtudiants')->with(['encadrant' => $encadrant]);
     }
 
     

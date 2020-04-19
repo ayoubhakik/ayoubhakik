@@ -6,8 +6,10 @@
   <div class="row justify-content-center mb-5">
     <h1 class="display-4" style="font-family:Bookman old style">Page de Profile</h1>
   </div>
+  
   <div class="row justify-content-center align-items-center ">
-    {!! Form::open(['action'=>'encadrantController@modifierProfile']) !!}
+  <img src="/uploads/avatars/{{ $user->avatar }}" style="width:150px; height:150px; float:center; border-radius:50%">
+    {!! Form::open(['action'=>'encadrantController@modifierProfile', 'files' => true, 'class'=> 'p-5', 'style'=> 'box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19)']) !!}
       <div class="form-row">
         <div class="form-group col-6">
           {!! Form::label('nom', 'Nom:') !!}
@@ -31,8 +33,8 @@
           {!! Form::select('departement', ['info' => 'Informatique et reseau', 'indus' => 'Industriel'], null, ['placeholder' => '', 'class' => 'form-control']) !!}
         </div>
       <div class="form-row mt-5 justify-content-around">  
-        <button type="submit" class="btn btn-secondary form-control col-4">Enregistrer</button>
-        <button type="reset" class = 'btn btn-secondary form-control col-4'>Annuler</button>
+        <button type="submit" class="btn btn-info form-control col-4">Enregistrer</button>
+        <button type="reset" class = 'btn btn-info form-control col-4'>Annuler</button>
       </div>
     {!! Form::close() !!}
   </div>
