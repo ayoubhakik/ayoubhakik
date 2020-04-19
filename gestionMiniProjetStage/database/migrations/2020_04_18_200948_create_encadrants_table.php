@@ -14,14 +14,13 @@ class CreateEncadrantsTable extends Migration
     public function up()
     {
         Schema::create('encadrants', function (Blueprint $table) {
-            $table->increments('id-encadrant');
+            $table->increments('id_encadrant');
             $table->text('nom');
             $table->text('prenom');
             $table->string('email',100);
             $table->bigInteger('phone');
             $table->integer('nbr_groupe')->unsigned();
-            $table->string('lien_image',100);
-            
+            $table->string('lien_image')->default('default.jpg');
             $table->integer('id_departement')->unsigned();
             $table->foreign('id_departement')->references('id_departement')->on('departements');
             
