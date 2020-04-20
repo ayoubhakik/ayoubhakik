@@ -110,8 +110,8 @@
                                             
 
                                         </li>
-                                        @if($errors->any())
-                                            <label style="color:red;">{{$errors->first()}}</label>
+                                            @if($errors->any())
+                                                <label style="color:red;">{{$errors->first()}}</label>
                                             @endif
                                     </form>
                                         <a href="#">
