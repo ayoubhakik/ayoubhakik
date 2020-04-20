@@ -67,3 +67,6 @@ Route::put('/departement/user/{id}/editInfos','DepartementsController@editUser')
 Route::put('/departement/user/{id}/editSocial','DepartementsController@editSocial');
 Route::put('/departement/user/{id}/editPassword','DepartementsController@editPassword');
 Route::put('/departement/user/{id}/storeImage','DepartementsController@storeImage');
+
+///import students from excel
+Route::post('/departement/etudiant/importEtudiants', 'DepartementsController@importExcel');

@@ -6,9 +6,22 @@ use App\Departement;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
+use App\Item;
+use DB;
+use Excel;
+use App\imports\ImportItem;
 
 class DepartementsController extends Controller
 {
+
+    ////excel import
+    public function importExcel()
+	{
+		Excel::import(new ImportItem, request()->file('file-5'));
+        $item=DB::table('items')->where('title', 'title')->delete();
+
+		return back();
+	}
 
     ///you can write your functions here
     public function home(){
