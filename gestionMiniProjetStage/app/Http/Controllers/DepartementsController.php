@@ -81,10 +81,10 @@ class DepartementsController extends Controller
                 return redirect('/departement/user')->withErrors(['Invalide Format']);;
 
             }
-        }else{
-                return redirect('/departement/user')->withErrors(['Choose a File']);;
+            }else{
+                    return redirect('/departement/user')->withErrors(['Choose a File']);;
 
-        }
+            }
         
 
         

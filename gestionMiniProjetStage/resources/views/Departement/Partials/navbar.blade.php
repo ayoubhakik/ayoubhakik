@@ -22,36 +22,18 @@
                     </li>
                     
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">
+                        <a class="nav-link" href="{{ asset('departement/etudiant/import') }}">
                             <i class="nc-icon nc-single-copy-04"></i>
                              Etudiants
                         </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="{{ asset('departement/etudiant/list') }}">                                        
-                                <i class="nc-icon nc-single-02"></i>
-                                Lister les Etudiants
-                            </a>
-                            <a class="dropdown-item" href="{{ asset('departement/etudiant/import') }}">
-                                <i class="nc-icon nc-cloud-upload-94" ></i>
-                                Importer les Etudiants
-                            </a>
-                        </div>
+                        
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">
+                        <a class="nav-link" href="{{ asset('departement/enseignant/import') }}">
                             <i class="nc-icon nc-align-left-2"></i>
                              Enseignants
                         </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="{{ asset('departement/enseignant/list') }}">                                        
-                                <i class="nc-icon nc-single-02"></i>
-                                Lister les Professeurs
-                            </a>
-                            <a class="dropdown-item" href="{{ asset('departement/enseignant/import') }}">
-                                <i class="nc-icon nc-cloud-upload-94"></i>
-                                Importer les Professeurs
-                            </a>
-                        </div>
+                        
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">

@@ -29,7 +29,7 @@
                                         </div>
                                     @endif
  
-					<input  type="file" name="file-5" id="file-5" class="inputfile inputfile-4" data-multiple-caption="{count} files selected" multiple />
+					<input  hidden="hidden" type="file" name="file-5" id="file-5" class="inputfile inputfile-4" data-multiple-caption="{count} files selected" multiple />
 					<label for="file-5">
                     <figure>
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17">
@@ -37,8 +37,11 @@
                     </svg>
                     </figure> 
                     <span style="color:gray">Importer des Etudiants&hellip;</span>
-                    </label>                <button class="btn btn-primary">Import File</button>
-
+                    </label> 
+                    <br/> 
+                    <button class="btn btn-primary" style="color:black;border:gray 1px solid;">Import File</button>
+              
+                    
 				</div>
                 </form>
                 </center>

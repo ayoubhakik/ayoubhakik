@@ -5,20 +5,7 @@
 <div class="content">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-md-4">
-                            <div class="card ">
-                                <div class="card-header ">
-                                    <h4 class="card-title">Des informations sur les filieres</h4>
-                                    <p class="card-category">...</p>
-                                </div>
-                                <div class="card-body ">
-                                    <div>Nombre des etudiant dans GI:  45</div>
-                                    <div>Nombre des etudiant dans GTR:  52</div>
-                                    <div>Nombre Total des profs:  15</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-8">
+                    <div class="col-md-8">
                             <div class="card ">
                                 <div class="card-header ">
                                     <h4 class="card-title">L'interaction des Utilisateurs</h4>
@@ -40,6 +27,20 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="col-md-4">
+                            <div class="card ">
+                                <div class="card-header ">
+                                    <h4 class="card-title">Des informations sur les filieres</h4>
+                                    <p class="card-category">...</p>
+                                </div>
+                                <div class="card-body ">
+                                    <div>Nombre des etudiant dans GI:  45</div>
+                                    <div>Nombre des etudiant dans GTR:  52</div>
+                                    <div>Nombre Total des profs:  15</div>
+                                </div>
+                            </div>
+                        </div>
+                        
                     </div>
                     <div class="row">
                         <div class="col-md-12">
