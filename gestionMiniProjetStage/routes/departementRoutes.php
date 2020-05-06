@@ -69,4 +69,4 @@ Route::put('/departement/user/{id}/editPassword','DepartementsController@editPas
 Route::put('/departement/user/{id}/storeImage','DepartementsController@storeImage');
 
 ///import students from excel
-Route::post('/departement/etudiant/importEtudiants', 'DepartementsController@importExcel');
+Route::post('/departement/etudiant/importEtudiants', 'DepartementsController@importEtudiantExcel');

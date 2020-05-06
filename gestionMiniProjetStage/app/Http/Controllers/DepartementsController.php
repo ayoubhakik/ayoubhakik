@@ -9,16 +9,37 @@ use Illuminate\Support\Facades\File;
 use App\Item;
 use DB;
 use Excel;
-use App\imports\ImportItem;
+use App\imports\ImportEtudiantsGtr4;
+use App\imports\ImportEtudiantsGi4;
+use App\imports\ImportEtudiantsGi3;
+
 
 class DepartementsController extends Controller
 {
 
     ////excel import
-    public function importExcel()
+    public function importEtudiantExcel()
 	{
-		Excel::import(new ImportItem, request()->file('file-5'));
-        $item=DB::table('items')->where('title', 'title')->delete();
+        if(request('choice')==='gi3'){
+            Excel::import(new ImportEtudiantsGi3, request()->file('file-5'));
+            $item=DB::table('etudiants')->where('nom', 'nom')->delete();
+        }
+        if(request('choice')==='gi4'){
+            Excel::import(new ImportEtudiantsGi4, request()->file('file-5'));
+            $item=DB::table('etudiants')->where('nom', 'nom')->delete();
+        }
+        if(request('choice')==='gtr4'){
+            Excel::import(new ImportEtudiantsGtr4, request()->file('file-5'));
+            $item=DB::table('etudiants')->where('nom', 'nom')->delete();
+        }
+		
+		return back();
+    }
+    
+    public function importEnseignantExcel()
+	{
+		Excel::import(new ImportEnseignants, request()->file('file-5'));
+        $item=DB::table('enseignants')->where('nom', 'nom')->delete();
 
 		return back();
 	}

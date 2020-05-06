@@ -40,6 +40,12 @@
                     </label> 
                     <br/> 
                     <button class="btn btn-primary" style="color:black;border:gray 1px solid;">Import File</button>
+                    <select name="choice" style="height:36px;"> 
+                        <option value="gi4">4eme GI</option>
+                        <option value="gtr4">4eme GTR</option>
+                        <option value="gi3">3eme GI</option>
+                    </select>
+                    
               
                     
 				</div>
