@@ -17,31 +17,36 @@ use App\imports\ImportEtudiantsGi3;
 class DepartementsController extends Controller
 {
 
+    public function importIndex(){
+        $data=DB::table('etudiants')->get();
+        return view('Departement/Etudiants/import',compact('data'));
+    }
+    
     ////excel import
-    public function importEtudiantExcel()
+    public function importEtudiantExcel(Request $request)
 	{
-        if(request('choice')==='gi3'){
-            Excel::import(new ImportEtudiantsGi3, request()->file('file-5'));
-            $item=DB::table('etudiants')->where('nom', 'nom')->delete();
-        }
-        if(request('choice')==='gi4'){
-            Excel::import(new ImportEtudiantsGi4, request()->file('file-5'));
-            $item=DB::table('etudiants')->where('nom', 'nom')->delete();
-        }
-        if(request('choice')==='gtr4'){
-            Excel::import(new ImportEtudiantsGtr4, request()->file('file-5'));
-            $item=DB::table('etudiants')->where('nom', 'nom')->delete();
-        }
-		
-		return back();
+        $this->validate($request,
+            [
+                'file-5'=>'required|mimes:xls,xlsx'
+            ]
+            );
+        $choix=request('choice');
+
+        if($choix==='gi3'){
+            //$path1 = $request->file('file-5')->store('temp'); 
+            //$path=storage_path('app').'/'.$path1;  
+            //$data=Excel::import(new ImportEtudiantsGi3,$path)->get();
+            $etudiants=Excel::toCollection(new ImportEtudiantsGi3(), $request->file('file-5'));
+            dd($etudiants);
+            
+            }
+        return back()->with('success','Excel data imported successfully.');		
     }
     
     public function importEnseignantExcel()
 	{
-		Excel::import(new ImportEnseignants, request()->file('file-5'));
-        $item=DB::table('enseignants')->where('nom', 'nom')->delete();
+		        return back()->with('success','Excel data imported successfully.');		
 
-		return back();
 	}
 
     ///you can write your functions here
