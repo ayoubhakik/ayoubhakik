@@ -23,25 +23,81 @@ class DepartementsController extends Controller
     }
     
     ////excel import
+
     public function importEtudiantExcel(Request $request)
 	{
-        $this->validate($request,
-            [
-                'file-5'=>'required|mimes:xls,xlsx'
-            ]
-            );
-        $choix=request('choice');
-
-        if($choix==='gi3'){
-            //$path1 = $request->file('file-5')->store('temp'); 
-            //$path=storage_path('app').'/'.$path1;  
-            //$data=Excel::import(new ImportEtudiantsGi3,$path)->get();
-            $etudiants=Excel::toCollection(new ImportEtudiantsGi3(), $request->file('file-5'));
-            dd($etudiants);
-            
+        //$this->validate($request,['file-5','required|mimes:xls,xlsx']);
+        if(request('choice')==='gi3'){
+            $data=Excel::toCollection(new ImportEtudiantsGi3(), $request->file('file-5'));
+            if(count($data) > 0){
+                foreach($data->toArray() as $key=>$value){
+                    foreach($value as $row){
+                        if($row[0]!='nom'){
+                        $insert_data[]=array(
+                            'nom'=>$row[0],
+                            'prenom'=>$row[1],
+                            'cin'=>$row[2],
+                            'cne'=>$row[3],
+                            'phone'=>'',
+                            'niveau'=>'3eme',
+                            'id_filiere'=>1,
+                            'email'=>'',
+                        );
+                    }}
+                }
             }
+
+        }  
+        if(request('choice')==='gi4'){
+            $data=Excel::toCollection(new ImportEtudiantsGi3(), $request->file('file-5'));
+            if(count($data) > 0){
+                foreach($data->toArray() as $key=>$value){
+                    foreach($value as $row){
+                        if($row[0]!='nom'){
+                        $insert_data[]=array(
+                            'nom'=>$row[0],
+                            'prenom'=>$row[1],
+                            'cin'=>$row[2],
+                            'cne'=>$row[3],
+                            'phone'=>'',
+                            'niveau'=>'4eme',
+                            'id_filiere'=>1,
+                            'email'=>'',
+                        );
+                    }}
+                }
+            }
+
+        } 
+        if(request('choice')==='gtr4'){
+            $data=Excel::toCollection(new ImportEtudiantsGi3(), $request->file('file-5'));
+            if(count($data) > 0){
+                foreach($data->toArray() as $key=>$value){
+                    foreach($value as $row){
+                        if($row[0]!='nom'){
+                        $insert_data[]=array(
+                            'nom'=>$row[0],
+                            'prenom'=>$row[1],
+                            'cin'=>$row[2],
+                            'cne'=>$row[3],
+                            'phone'=>'',
+                            'niveau'=>'4eme',
+                            'id_filiere'=>2,
+                            'email'=>'',
+                        );
+                    }}
+                }
+            }
+
+        } 
+            if(!empty($insert_data)){
+                DB::table('etudiants')->insert($insert_data);
+            }
+        
         return back()->with('success','Excel data imported successfully.');		
     }
+    
+   
     
     public function importEnseignantExcel()
 	{

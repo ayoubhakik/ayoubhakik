@@ -24,8 +24,8 @@ class CreateEtudiantsTable extends Migration
             $table->string('niveau')->nullable();
              $table->string('etat')->nullable();
              $table->boolean('activated')->nullable();
-             $table->string('phone');
-             $table->string('email')->unique();
+             $table->string('phone')->nullable();
+             $table->string('email')->nullable();
              $table->boolean('disponible')->nullable();
               $table->bigInteger('id_filiere')->unsigned()->nullable();
               $table->foreign('id_filiere')->references('id_filiere')->on('filieres');

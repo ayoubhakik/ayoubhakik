@@ -20,9 +20,9 @@ class ImportEtudiantsGi3 implements ToModel
             'prenom'     => $row[1],
             'cin'     => $row[2],
             'cne'     => $row[3],
-            'promotion'     => $row[4],
-            'phone'     => $row[5],
-            'email'     => $row[6],
+            'promotion'     => '',
+            'phone'     => '',
+            'email'     => '',
             'niveau'    => '3eme',
             'id_filiere' =>1,
 

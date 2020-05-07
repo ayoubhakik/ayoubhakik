@@ -8,9 +8,7 @@ Route::get('/departement/etudiant/list',function(){
     return view('Departement/Etudiants/list');
 });
 
-Route::get('/departement/etudiant/import',function(){
-    return view('Departement/Etudiants/import');
-});
+Route::get('/departement/etudiant/import','DepartementsController@importIndex');
 
 Route::get('/departement/enseignant/list',function(){
     return view('Departement/Enseignants/list');
