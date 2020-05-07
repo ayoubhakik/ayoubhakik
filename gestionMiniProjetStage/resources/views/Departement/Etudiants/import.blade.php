@@ -15,7 +15,12 @@
                     </ul>
                 </div>
                 @endif
-
+                @if($message=Session::get('failed'))
+                    <div class="alert alert-danger alert-block">
+                        <button type="button" class="close" data-dismiss="alert">x</button>
+                        <strong>{{ $message }}</strong>
+                    </div>
+                @endif
                 @if($message=Session::get('success'))
                     <div class="alert alert-success alert-block">
                         <button type="button" class="close" data-dismiss="alert">x</button>
@@ -82,8 +87,8 @@
                         <div class="col-md-12">
                             <div class="card strpied-tabled-with-hover">
                                 <div class="card-header ">
-                                    <h4 class="card-title">Les Groupes Validés</h4>
-                                    <p class="card-category">Les groupes qui respectent la structure de creation des groupes</p>
+                                    <h4 class="card-title">Les Etudiants</h4>
+                                    <p class="card-category">Les blablabla</p>
                                 </div>
                                 <div class="card-body table-full-width table-responsive" style="max-height:600px;overflow-y:scroll;">
                                     <table class="table table-hover table-striped">

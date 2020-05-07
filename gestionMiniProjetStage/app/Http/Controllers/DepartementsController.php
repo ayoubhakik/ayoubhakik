@@ -27,6 +27,11 @@ class DepartementsController extends Controller
     public function importEtudiantExcel(Request $request)
 	{
         //$this->validate($request,['file-5','required|mimes:xls,xlsx']);
+        if($request->file('file-5')==null){
+            return back()->with('failed','choose a file.');	
+
+        }
+        else{
         if(request('choice')==='gi3'){
             $data=Excel::toCollection(new ImportEtudiantsGi3(), $request->file('file-5'));
             if(count($data) > 0){
@@ -94,7 +99,9 @@ class DepartementsController extends Controller
                 DB::table('etudiants')->insert($insert_data);
             }
         
-        return back()->with('success','Excel data imported successfully.');		
+        return back()->with('success','Excel data imported successfully.');	
+    }
+
     }
     
    

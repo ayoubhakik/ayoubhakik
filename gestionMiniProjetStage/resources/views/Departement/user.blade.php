@@ -18,7 +18,7 @@
                                 </div>
                                 <div class="card-body">
                                     
-                                    <form action="/departement/user/{{ $departement->id}}/editInfos" method="POST">
+                                    <form action="/departement/user/{{ $departement->id_departement}}/editInfos" method="POST">
                                     @csrf
                                     {{ method_field('PUT') }}
                                         <div class="row">
