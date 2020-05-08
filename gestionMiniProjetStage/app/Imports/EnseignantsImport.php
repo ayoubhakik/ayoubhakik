@@ -2,10 +2,10 @@
 
 namespace App\Imports;
 
-use App\Enseignant;
+use App\Encadrants;
 use Maatwebsite\Excel\Concerns\ToModel;
 
-class ImportEnseignants implements ToModel
+class EnseignantsImport implements ToModel
 {
     /**
     * @param array $row
@@ -14,10 +14,8 @@ class ImportEnseignants implements ToModel
     */
     public function model(array $row)
     {
-        return new Enseignant([
+        return new Encadrants([
             //
-            'nom'     => $row[0],
-            'prenom'     => $row[1],
         ]);
     }
 }

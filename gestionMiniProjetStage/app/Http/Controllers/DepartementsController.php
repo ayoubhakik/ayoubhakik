@@ -12,16 +12,50 @@ use Excel;
 use App\imports\ImportEtudiantsGtr4;
 use App\imports\ImportEtudiantsGi4;
 use App\imports\ImportEtudiantsGi3;
+use App\imports\ImportEnseignants;
+
 
 
 class DepartementsController extends Controller
 {
 
-    public function importIndex(){
+    public function importEtudiants(){
         $data=DB::table('etudiants')->get();
         return view('Departement/Etudiants/import',compact('data'));
     }
+    public function importEnseignants(){
+        $data=DB::table('encadrants')->get();
+        return view('Departement/Enseignants/import',compact('data'));
+    }
     
+    public function importEnseignantExcel(Request $request){
+        if($request->file('file-5')==null){
+            return back()->with('failed','choose a file.');	
+
+        }
+        else{
+            $data=Excel::toCollection(new ImportEnseignants(), $request->file('file-5'));
+            if(count($data) > 0){
+                foreach($data->toArray() as $key=>$value){
+                    foreach($value as $row){
+                        if($row[0]!='nom'){
+                        $insert_data[]=array(
+                            'nom'=>$row[0],
+                            'prenom'=>$row[1],
+                            
+                        );
+                        }
+                    }
+                }
+            }
+
+        }
+        if(!empty($insert_data)){
+                DB::table('encadrants')->insert($insert_data);
+            }
+        
+        return back()->with('success','Excel data imported successfully.');	
+    }
     ////excel import
 
     public function importEtudiantExcel(Request $request)
@@ -106,11 +140,7 @@ class DepartementsController extends Controller
     
    
     
-    public function importEnseignantExcel()
-	{
-		        return back()->with('success','Excel data imported successfully.');		
-
-	}
+    
 
     ///you can write your functions here
     public function home(){

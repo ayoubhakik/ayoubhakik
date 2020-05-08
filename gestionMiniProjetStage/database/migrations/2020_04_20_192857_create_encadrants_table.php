@@ -17,11 +17,11 @@ class CreateEncadrantsTable extends Migration
             $table->bigIncrements('id_encadrant');
             $table->text('nom');
             $table->text('prenom');
-            $table->string('email',100);
-            $table->bigInteger('phone');
-            $table->integer('nbr_groupe')->unsigned();
+            $table->string('email',100)->nullable();
+            $table->string('phone')->nullable();
+            $table->integer('nbr_groupe')->unsigned()->nullable();
             $table->string('lien_image')->default('default.jpg');
-            $table->bigInteger('id_departement')->unsigned();
+            $table->bigInteger('id_departement')->unsigned()->nullable();
             $table->foreign('id_departement')->references('id')->on('departements');
             
             $table->timestamps();

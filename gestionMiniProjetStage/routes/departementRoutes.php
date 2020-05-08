@@ -4,19 +4,11 @@ Route::get('/departement/home','DepartementsController@home');
 
 Route::get('/departement/user','DepartementsController@user');
 
-Route::get('/departement/etudiant/list',function(){
-    return view('Departement/Etudiants/list');
-});
 
-Route::get('/departement/etudiant/import','DepartementsController@importIndex');
 
-Route::get('/departement/enseignant/list',function(){
-    return view('Departement/Enseignants/list');
-});
+Route::get('/departement/etudiant/import','DepartementsController@importEtudiants');
 
-Route::get('/departement/enseignant/import',function(){
-    return view('Departement/Enseignants/import');
-});
+Route::get('/departement/enseignant/import','DepartementsController@importEnseignants');
 
 Route::get('/departement/encadrentsMiniProjet/list',function(){
     return view('Departement/EncadrentsMiniProjet/statistique');
@@ -68,3 +60,5 @@ Route::put('/departement/user/{id}/storeImage','DepartementsController@storeImag
 
 ///import students from excel
 Route::post('/departement/etudiant/importEtudiants', 'DepartementsController@importEtudiantExcel');
+
+Route::post('/departement/enseignant/importEnseignants', 'DepartementsController@importEnseignantExcel');
