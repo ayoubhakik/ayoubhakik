@@ -17,14 +17,24 @@
     <link href="{{ asset('css/light-bootstrap-dashboard.css?v=2.0.0') }} " rel="stylesheet" />
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="{{ asset('css/demo.css') }}" rel="stylesheet" />
+        <meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		
+		<link rel="stylesheet" type="text/css" href="{{ asset('css/normalize.css') }} " />
+		<link rel="stylesheet" type="text/css" href="{{ asset('css/demo.css') }} " />
+		<link rel="stylesheet" type="text/css" href="{{ asset('css/component.css') }} " />
+		
 
+		<!-- remove this if you use Modernizr -->
+		<script>(function(e,t,n){var r=e.querySelectorAll("html")[0];r.className=r.className.replace(/(^|\s)no-js(\s|$)/,"$1js$2")})(document,window,0);</script>
+	
 </head>
 
 <body>
     <div class="wrapper">
 
     @include ('departement.partials.navbar')
-    <div class="main-panel">
+    <div class="main-panel" style="padding-left:30px;">
             <!-- Navbar -->
             @include ('departement.partials.header')
             <!-- End Navbar -->
@@ -46,7 +56,6 @@
 <!--  Plugin for Switches, full documentation here: http://www.jque.re/plugins/version3/bootstrap.switch/ -->
 <script src="{{ asset('js/plugins/bootstrap-switch.js') }}"></script>
 <!--  Google Maps Plugin    -->
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
 <!--  Chartist Plugin  -->
 <script src="{{ asset('js/plugins/chartist.min.js') }}"></script>
 <!--  Notifications Plugin    -->
@@ -65,5 +74,12 @@
 
     });
 </script>
+        <script src="{{ asset('js/custom-file-input.js') }}"></script>
 
+		<!-- // If you'd like to use jQuery, check out js/jquery.custom-file-input.js
+		<script src="js/jquery-v1.min.js"></script>
+		<script src="js/jquery.custom-file-input.js"></script>
+		-->
+		<script src="{{ asset('js/jquery-v1.min.js') }}"></script>
+		<script src="{{ asset('js/jquery.custom-file-input.js') }}"></script>
 </html>

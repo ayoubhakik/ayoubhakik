@@ -1,19 +1,3 @@
-/*=========================================================
- Light Bootstrap Dashboard - v2.0.1
-=========================================================
-
- Product Page: https://www.creative-tim.com/product/light-bootstrap-dashboard
- Copyright 2019 Creative Tim (https://www.creative-tim.com)
- Licensed under MIT (https://github.com/creativetimofficial/light-bootstrap-dashboard/blob/master/LICENSE)
-
- Coded by Creative Tim
-
-=========================================================
-
- The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.*/
- 
-/*      light colors         */
-
 @keyframes spin {
     from {
         transform: rotate(0deg);
@@ -186,7 +170,7 @@ h1 .subtitle {
 
 .text-info,
 .text-info:hover {
-    color: #1DC7EA !important;
+    color:gray !important;
 }
 
 .text-success,
@@ -196,12 +180,12 @@ h1 .subtitle {
 
 .text-warning,
 .text-warning:hover {
-    color: #FF9500 !important;
+    color: lightgray !important;
 }
 
 .text-danger,
 .text-danger:hover {
-    color: #FF4A55 !important;
+    color: black !important;
 }
 
 /*     General overwrite     */
@@ -442,6 +426,7 @@ body>.navbar-collapse .nav li .nav-link:hover {
     opacity: 1;
 }
 
+
 .sidebar .nav li .nav-link p,
 body>.navbar-collapse .nav li .nav-link p {
     margin: 0;
@@ -605,13 +590,9 @@ body>.navbar-collapse.has-image:after {
 
 .sidebar[data-color="black"]:after,
 body>.navbar-collapse[data-color="black"]:after {
-    background: #777777;
-    background: -moz-linear-gradient(top, #777777 0%, #777777 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #777777), color-stop(100%, #777777));
-    background: -webkit-linear-gradient(top, #777777 0%, #777777 100%);
-    background: -o-linear-gradient(top, #777777 0%, #777777 100%);
-    background: -ms-linear-gradient(top, #777777 0%, #777777 100%);
-    background: linear-gradient(to bottom, #777777 0%, #777777 100%);
+    background:black;
+    background: black;
+    background-color: black;
     background-size: 150% 150%;
 }
 
@@ -1959,6 +1940,8 @@ fieldset[disabled] .form-control {
     background-color: transparent;
 }
 
+
+
 .navbar {
     border: 0;
     font-size: 16px;
@@ -2243,6 +2226,8 @@ fieldset[disabled] .form-control {
 .navbar-default .navbar-nav .navbar-toggle:focus {
     background-color: transparent;
 }
+
+
 
 .navbar-default:not(.navbar-transparent) .btn-default:hover {
     color: #1DC7EA;
@@ -3240,31 +3225,31 @@ Copyright (c) 2015 Daniel Eden
 
 .ct-series-a .ct-slice-pie,
 .ct-series-a .ct-area {
-    fill: #1DC7EA;
+    fill: rgb(5, 5, 5);
 }
 
 .ct-series-b .ct-point,
 .ct-series-b .ct-line,
 .ct-series-b .ct-bar,
 .ct-series-b .ct-slice-donut {
-    stroke: #FB404B;
+    stroke: lightgray;
 }
 
 .ct-series-b .ct-slice-pie,
 .ct-series-b .ct-area {
-    fill: #FB404B;
+    fill: lightgray;
 }
 
 .ct-series-c .ct-point,
 .ct-series-c .ct-line,
 .ct-series-c .ct-bar,
 .ct-series-c .ct-slice-donut {
-    stroke: #FFA534;
+    stroke: gray;
 }
 
 .ct-series-c .ct-slice-pie,
 .ct-series-c .ct-area {
-    fill: #FFA534;
+    fill: gray;
 }
 
 .ct-series-d .ct-point,
@@ -3319,12 +3304,12 @@ Copyright (c) 2015 Daniel Eden
 .ct-series-h .ct-line,
 .ct-series-h .ct-bar,
 .ct-series-h .ct-slice-donut {
-    stroke: #dd4b39;
+    stroke: black;
 }
 
 .ct-series-h .ct-slice-pie,
 .ct-series-h .ct-area {
-    fill: #dd4b39;
+    fill: black;
 }
 
 .ct-series-i .ct-point,
@@ -5313,3 +5298,10 @@ License - nucleoapp.com/license/
 }
 
 /* all icon font classes list here */
+.sidebar .nav li .nav-link p, body>.navbar-collapse .nav li .nav-link p
+,
+.sidebar .nav .nav-link, body>.navbar-collapse .nav .nav-link
+{
+    font-size: 12px;
+}
+
