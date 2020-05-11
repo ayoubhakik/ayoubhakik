@@ -35,7 +35,7 @@
                         <br>
                         <br>
                         <br>
-                        <p class="talk"> As you can see the groups you have, grade them,  <br> show their students and the repports that's been submitted.</p>
+                        <p class="talk"> “Waste no more time arguing about what a good person should be. Be one.”</p>
                     </div>
                     <div class="col-md-4 ">
                          @include('encadrantViews.layouts.light_blub')

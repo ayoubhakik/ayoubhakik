@@ -7,19 +7,20 @@ use App\Encadrant;
 
 class encadrantController extends Controller
 {        
-    public $encadrant = Encadrant::first();
 
     //Index
-    public function accueil(){
+    public function accueil(Request $request){
 
-        $request->session()->put('user', $encadrant->id);
+        //$request->session()->put('user', $encadrant->id);
         return view('encadrantViews/accueil');
 
     }
 
     //Profile
     public function profile(){
-        return view('encadrantViews/profile');
+         $encadrant = Encadrant::first();
+
+        return view('encadrantViews/profile', ['encadrant' => $encadrant]);
     }
 
     //Lister Etudiants

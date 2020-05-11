@@ -3,14 +3,18 @@
         
 <!--A voir LaravelCollection -->
 <div class="content">
-  <div class="row justify-content-center mb-5">
-    <h1 class="display-4" style="font-family:Bookman old style">Page de Profile</h1>
+  <div class="row justify-content-center mb-5 page-hero">
+    <h1 class="display-4 sansserif" >Page de Profile</h1>
   </div>
   
   <div class="row justify-content-center align-items-center ">
-  <img src="/uploads/avatars/{{ $user->avatar }}" style="width:150px; height:150px; float:center; border-radius:50%">
-    {!! Form::open(['action'=>'encadrantController@modifierProfile', 'files' => true, 'class'=> 'p-5', 'style'=> 'box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19)']) !!}
-      <div class="form-row">
+    {!! Form::model($encadrant, ['action'=>'encadrantController@modifierProfile', 'files' => true, 'class'=> 'pb-5 pr-5 pl-5 pt-3', 'style'=> 'box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19)']) !!}
+      <div class="form-row justify-content-center mb-3">
+        <img src="/img/{{ $encadrant->lien_image }}" style="width:200px; height:200px; border-radius:50%" >
+        {!! Form::file('avatar') !!}
+      </div>
+  
+    <div class="form-row">
         <div class="form-group col-6">
           {!! Form::label('nom', 'Nom:') !!}
           {!! Form::text('nom', null, ['class'=>'form-control']) !!}
@@ -25,8 +29,8 @@
           {!! Form::email('email', null, ['class'=>'form-control']) !!}
         </div>
         <div class="form-group ">
-          {!! Form::label('telephone', 'Telephone:') !!}
-          {!! Form::text('telephone', null, ['class'=>'form-control']) !!}
+          {!! Form::label('phone', 'Telephone:') !!}
+          {!! Form::text('phone', null, ['class'=>'form-control']) !!}
         </div>
         <div class="form-group">
           {!! Form::label('departement', 'Departement:') !!}

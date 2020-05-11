@@ -110,7 +110,7 @@
 }
 
         .page-hero {
-    height: 300px;
+    height: 100px;
     overflow: hidden;
     position: relative;
     width: 100%;

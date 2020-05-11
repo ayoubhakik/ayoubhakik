@@ -1,3 +1,3 @@
 <footer style="text-align: center ; color: whitesmoke">
-    <p> Realisé par Group Hakik</p>
+    <p> "Don't worry, be happy"</p>
 </footer>
