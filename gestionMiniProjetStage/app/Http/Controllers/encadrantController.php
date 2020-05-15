@@ -7,6 +7,7 @@ use App\Encadrant;
 use App\Groupe;
 use App\Departement;
 use App\Etudiant;
+use App\Soutenance;
 
 class encadrantController extends Controller
 {        
@@ -43,7 +44,9 @@ class encadrantController extends Controller
 
         $groupe = Groupe::where('id_groupe', $request['id_groupe'])->first();
         $membres = Etudiant::where('id_groupe', $groupe->id_groupe)->select('nom', 'prenom', 'img_link')->get();
-        return view('encadrantViews/afficherGrp', ['groupe' => $groupe, 'membres' => $membres]);
+        $soutenance = Soutenance::where('id_soutenance', $groupe->id_soutenance)->first();
+        $jury = Encadrant::wherein('id_encadrant',[$soutenance->id_jurie1, $soutenance->id_jurie2, $soutenance->id_jurie3])->select('nom', 'prenom')->get();
+        return view('encadrantViews/afficherGrp', ['groupe' => $groupe, 'membres' => $membres, 'jury' => $jury, 'soutenance' => $soutenance]);
     }
 
     //Modifier profile encadrant
@@ -61,6 +64,15 @@ class encadrantController extends Controller
         $encadrant->save();
         
         return redirect()->action('encadrantController@profile');
+    }
+    //l'encadrant évalue le groupe
+    public function evaluer(Request $request){
+        $groupe = Groupe::where('id_groupe', $request['id_groupe'])->first();
+        $groupe->note = $request['note'];
+        $groupe->appreciation = $request['appreciation'];
+        $groupe->save();
+    
+        return redirect()->action('encadrantController@afficherGrp', ['id_groupe' => $request['id_groupe']]);
     }
     
 }

@@ -5,4 +5,4 @@
      Route::get('/encadrant/listerGroupes', 'encadrantController@listerGroupes');
      Route::get('/encadrant/listerEtudiants', 'encadrantController@listerEtudiants');
      Route::post('/encadrant/modifierProfile', 'encadrantController@modifierProfile');
-    
+     Route::post('/encadrant/evaluer', 'encadrantController@evaluer');
