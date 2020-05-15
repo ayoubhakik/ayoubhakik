@@ -1,8 +1,6 @@
 <?php
 use Illuminate\Support\Facades\Route;
-include "departementRoutes.php";
 include "encadrantRoutes.php";
-include "etudiantRoutes.php";
 /*
 |--------------------------------------------------------------------------
 | Web Routes
