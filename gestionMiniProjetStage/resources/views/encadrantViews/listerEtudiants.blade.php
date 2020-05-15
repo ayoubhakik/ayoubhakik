@@ -8,18 +8,18 @@
             </div>
         </div>
         <div class="row">
-        @for ($i = 0; $i < 5; $i++)
+        @foreach ($students as $student)
             <div class="col-md-4">
                 <div class="card" style="width: 18rem;">
                     <img src="..\img\new_logo.png" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Student's name {{$i}} </h5>
+                        <h5 class="card-title">{{$student->nom}} {{$student->prenom}} </h5>
                         <p class="card-text">Year and sector. (ex. 4th year GI)</p>
                         <a href="#" class="btn btn-primary">Show profile</a>
                     </div>
                 </div>
             </div>
-        @endfor
+        @endforeach
         </div>
     </div>
 </div>
