@@ -13,7 +13,7 @@
   .title{ font-size:16px; font-weight:500;}
    .bot-border{ border-bottom:1px #f8f8f8 solid;  margin:5px 0  5px 0}
    #profile{
-    margin-left: 35%;
+    margin-left: 20%;
     margin-top: 80px;
    }
    .panel{
@@ -23,7 +23,7 @@ width:700px;
     margin-left: 270px;
   }
   .info{
-    margin-left: 70px;
+
   }
    button{
     background-color:#f8f8f8;

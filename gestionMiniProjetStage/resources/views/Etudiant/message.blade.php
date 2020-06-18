@@ -1,13 +1,13 @@
-<?php include("layoutEtudiant.php"); ?>
 <html>
 <head>
 <link href="../css/Etudiant.css" rel="stylesheet" />
 <style>
-body{
-    top:0px !important;
-}
+
 </style>
 </head>
+<body>
+    @extends('etudiant/layoutEtudiant')
+@section('content')
     <div class="container">
         <div class="left">
             <div class="top">
@@ -186,6 +186,8 @@ you blind bitch</span>
         </div>
     </div>
 </div>
+@endsection
+</body>
 <script>
 document.querySelector('.chat[data-chat=person2]').classList.add('active-chat');
 document.querySelector('.person[data-chat=person2]').classList.add('active');

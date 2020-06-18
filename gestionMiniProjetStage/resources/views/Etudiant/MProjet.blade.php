@@ -1,3 +1,3 @@
-<?php
-include("listEtudiant.php");
-?>
+
+@include('etudiant.listEtudiant')
+

@@ -11,10 +11,11 @@
 <link rel="stylesheet" type="text/css" href="../css/profile.css">
 </head>
 <body>
+  @extends('etudiant/layoutEtudiant')
+    @section('content')
 <div class="container_fluid" id="profile">
   <div class="row">
-     <h2>Votre Profile</h2>
-        
+    
         
        <div class="col-md-7 ">
 
@@ -153,6 +154,7 @@
             <!-- /.box-->
   </div>
 </div>
+@endsection
     <script>
               $(function() {
     $('#profile-image1').on('click', function() {

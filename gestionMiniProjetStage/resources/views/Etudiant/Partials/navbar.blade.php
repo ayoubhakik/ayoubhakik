@@ -12,13 +12,13 @@
                 </div>
                 <ul class="nav">
                     <li class="nav-item active">
-                        <a class="nav-link" href="./departement/home">
+                        <a class="nav-link" href="./home">
                             <i class="fa fa-home"></i>
                             <p>Accueil</p>
                         </a>
                     </li>
                     <li>
-                        <a class="nav-link" href="./user.html">
+                        <a class="nav-link" href="./profile">
                             <i class="nc-icon nc-circle-09"></i>
                             <p>Profile</p>
                         </a>
@@ -36,25 +36,25 @@
                         </a>
                     </li>
                     <li>
-                        <a class="nav-link" href="./icons.html">
+                        <a class="nav-link" href="./inv">
                             <i class="nc-icon nc-single-02"></i>
                             <p>Invitations</p>
                         </a>
                     </li>
                     <li>
-                        <a class="nav-link" href="./icons.html">
+                        <a class="nav-link" href="./message">
                             <i class="nc-icon nc-email-85"></i>
                             <p>Messages</p>
                         </a>
                 </li>
                     <li>
-                        <a class="nav-link" href="./notifications.html">
+                        <a class="nav-link" href="./notifications">
                             <i class="nc-icon nc-bell-55"></i>
                             <p>Notifications</p>
                         </a>
                     </li>
                     <li>
-                        <a class="nav-link" href="./notifications.html">
+                        <a class="nav-link" href="./deconnecter">
                             <i class="nc-icon nc-button-power"></i>
                             <p>Se deconnecter</p>
                         </a>

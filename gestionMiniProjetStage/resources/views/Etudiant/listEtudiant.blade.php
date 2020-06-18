@@ -12,7 +12,8 @@
 </head>
 <!--<body ng-app="myApp" ng-controller="myAppController" ng-cloak>-->
 <body>
-<?php include "layoutEtudiant.php"; ?>
+@extends('etudiant/layoutEtudiant')
+@section('content')
 <div layout="column" layout-fill>
     <md-content layout-padding layout="row" layout-align="center">
         <div flex-gt-md="30" flex-md="30" flex-xs="30">
@@ -55,7 +56,7 @@
             <div grid-data id='test' grid-options="gridOptions" grid-actions="gridActions">
                 <div layout-gt-sm="row" layout-sm="column" layout-align="center">
                     <div flex-gt-sm="25" flex-sm="100" layout="row" layout-align="start center">
-                        <span><!--{{filtered.length}}-->1 items total</span>
+                     
                     </div>
                     <div flex-gt-sm="75" flex-xs="100">
                         <div layout-xs="column" layout="row" layout-align-xs="end end" layout-align="end center">
@@ -157,6 +158,7 @@
         </div>
     </md-content>
 </div>
+@endsection
 </body>
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
