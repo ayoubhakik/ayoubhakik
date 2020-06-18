@@ -45,3 +45,4 @@ class CreateEtudiantsTable extends Migration
         Schema::dropIfExists('etudiants');
     }
 }
+?>
