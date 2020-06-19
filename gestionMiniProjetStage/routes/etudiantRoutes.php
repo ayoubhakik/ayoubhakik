@@ -24,3 +24,4 @@ Route::get('/etudiant/mp',function(){
 Route::get('/etudiant/message',function(){
     return view('Etudiant/message');
 });
+Route::get('/etudiant/listEtudiant',"etudiantController@getEtudiant");

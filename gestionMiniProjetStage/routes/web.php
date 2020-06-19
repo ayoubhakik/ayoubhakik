@@ -12,3 +12,4 @@ include "etudiantRoutes.php";
 | contains the "web" middleware group. Now create something great!
 |
 */
+//retrive data
