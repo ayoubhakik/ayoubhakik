@@ -10,11 +10,12 @@
     <link href="../css/list.css" rel="stylesheet" />
 
 </head>
-<!--<body ng-app="myApp" ng-controller="myAppController" ng-cloak>-->
 <body>
+
+
 @extends('etudiant/layoutEtudiant')
 @section('content')
-<div layout="column" layout-fill>
+<div layout="column" layout-fill style="margin-left:40px;">
     <md-content layout-padding layout="row" layout-align="center">
         <div flex-gt-md="30" flex-md="30" flex-xs="30">
 
@@ -56,7 +57,7 @@
             <div grid-data id='test' grid-options="gridOptions" grid-actions="gridActions">
                 <div layout-gt-sm="row" layout-sm="column" layout-align="center">
                     <div flex-gt-sm="25" flex-sm="100" layout="row" layout-align="start center">
-                     
+                        <span>{{count($etudiants)}} element(s)</span>
                     </div>
                     <div flex-gt-sm="75" flex-xs="100">
                         <div layout-xs="column" layout="row" layout-align-xs="end end" layout-align="end center">
@@ -83,57 +84,35 @@
                     <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
                         <thead>
                         <tr>
-                            <th sortable="code" class="sortable mdl-data-table__cell--non-numeric">
+                            <th  class="sortable mdl-data-table__cell--non-numeric">
                                 <span>Nom et prénom</span>
                             </th>
-
-                            <th sortable="placed" class="sortable">
-                                <span>Date de naissance</span>
+                            <th   class="sortable mdl-data-table__cell--non-numeric">
+                                <span>Email</span>
                             </th>
+							<th colspan="2"  class="sortable mdl-data-table__cell--non-numeric">
 
-                            <th>
-                               Email
-                            </th>
-							<th colspan="2">
-								Actions
 							</th>
                         </tr>
                         </thead>
-
+                      @foreach($etudiants as $user)
                         <tbody>
                         <tr grid-item>
-                            <td class="mdl-data-table__cell--non-numeric">
-                               <!--<span ng-bind="item.code"></span>-->hello
+                            <td class="sortable mdl-data-table__cell--non-numeric">
+                               {{$user->nom}}  {{$user->prenom}}
                             </td>
-							<!--<td ng-bind="item.placed | date:'MM/dd/yyyy'"></td>-->
-                            <td>06/11/1998</td>
-                            <!--<td ng-bind="item.statusDisplay"></td>-->
-
-                            <!--<td ng-bind="item.total.value"></td>-->
-                            <td>briouya.asmae@gmail.com</td>
-							<td>
+                            <td  class="sortable mdl-data-table__cell--non-numeric">{{$user->Email}}</td>
+							<td  class="sortable mdl-data-table__cell--non-numeric">
+                            @if($user->disponible==0)
 							<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
 								  Invite
-								 </button>
-							</td>
-                        </tr>
-                        <tr grid-item>
-                            <td class="mdl-data-table__cell--non-numeric">
-                               <!--<span ng-bind="item.code"></span>-->asmae
-                            </td>
-							<!--<td ng-bind="item.placed | date:'MM/dd/yyyy'"></td>-->
-                            <td>06/12/1998</td>
-                            <!--<td ng-bind="item.statusDisplay"></td>-->
+						    </button>
 
-                            <!--<td ng-bind="item.total.value"></td>-->
-                            <td>briouya.asmae@gmail.com</td>
-							<td>
-							<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-								  Invite
-								 </button>
+                            @endif
 							</td>
                         </tr>
                         </tbody>
+                        @endforeach
                     </table>
                 </div>
                 <div layout-xs="column" layout="row" layout-align-xs="end end" layout-align="end center">
@@ -160,6 +139,7 @@
 </div>
 @endsection
 </body>
+@endsection
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>

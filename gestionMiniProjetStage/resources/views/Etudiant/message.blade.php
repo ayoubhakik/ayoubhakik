@@ -44,7 +44,7 @@
                     <span class="name">Michael Jordan</span>
                     <span class="time">2:09 PM</span>
                     <span class="preview">Wasup for the third time like is
-you blind bitch</span>
+you blind</span>
                 </li>
                 <li class="person" data-chat="person6">
                     <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/382994/drake.jpg" alt="" />

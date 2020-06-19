@@ -26,3 +26,4 @@ Route::get('/etudiant/deconnecter',function(){
 Route::get('/etudiant/message',function(){
     return view('Etudiant/message');
 });
+Route::get('/etudiant/listEtudiant',"etudiantController@getEtudiant");
