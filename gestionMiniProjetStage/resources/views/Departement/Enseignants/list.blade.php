@@ -14,11 +14,11 @@
 <table class="table">
     <thead class="thead-dark">
       <tr table class="table-success">
-        <th scope="col">ID</th>
-        <th scope="col">NOM</th>
-        <th scope="col">PRENOM</th>
-        <th scope="col">TELE</th>
-        <th scope="col">EMAILS</th>
+        <th scope="col">Id</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Prénom</th>
+        <th scope="col">Télé</th>
+        <th scope="col">Email</th>
         
         
         
