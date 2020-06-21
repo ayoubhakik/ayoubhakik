@@ -14,17 +14,20 @@ class encadrantController extends Controller
 
     //Index
     public function accueil(Request $request){
-
-        //$request->session()->put('user', $encadrant->id);
-        return view('encadrantViews/accueil');
+        $request->session()->put('userID', 2);
+        $idEncadrant = $request->session()->get('userID');
+        $encadrant = Encadrant::where('id_encadrant', $idEncadrant)->first();
+        return view('encadrantViews/accueil', ['encadrant' => $encadrant]);
 
     }
 
     //Profile
-    public function profile(){
-        $encadrant = Encadrant::where('id_encadrant', 2)->first();
+    public function profile(Request $request){
+        $idEncadrant = $request->session()->get('userID');
+        $encadrant = Encadrant::where('id_encadrant', $idEncadrant)->first();
         $departements = Departement::all()->pluck('nom_departement','id_departement');
-        return view('encadrantViews/profile', ['encadrant' => $encadrant, 'departements' => $departements]);
+        $path = explode("/",$encadrant->lien_image);
+        return view('encadrantViews/profile', ['encadrant' => $encadrant, 'departements' => $departements, 'path' => $path[2]]);
     }
 
     //Lister Etudiants
@@ -52,11 +55,11 @@ class encadrantController extends Controller
     //Modifier profile encadrant
     public function modifierProfile(Request $request){
         $encadrant = Encadrant::where('id_encadrant', $request['id_encadrant'])->first();
-        
         $encadrant->nom = $request['nom'];
         $encadrant->prenom = $request['prenom'];
         if($request['lien_image'] != null){
-            $encadrant->lien_image = $request['lien_image'];
+            $path = $request->file('lien_image')->store('public/avatars');
+            $encadrant->lien_image = $path;
         }
         $encadrant->email = $request['email'];
         $encadrant->phone = $request['phone'];

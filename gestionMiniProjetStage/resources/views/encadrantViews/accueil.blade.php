@@ -19,7 +19,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-sx-12 page-hero" style="text-align: center">
-                        <h1 class="display-2">Welcome {Nom encadrant}</h1>
+                        <h1 class="display-2">Welcome {{$encadrant->nom}}</h1>
                     </div>
                 </div>
             </div>

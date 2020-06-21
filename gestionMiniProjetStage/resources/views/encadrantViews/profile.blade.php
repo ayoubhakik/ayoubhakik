@@ -8,10 +8,11 @@
   </div>
   
   <div class="row justify-content-center align-items-center ">
+
     {!! Form::model($encadrant, ['action'=> 'encadrantController@modifierProfile', 'files' => true, 'class'=> 'pb-5 pr-5 pl-5 pt-3', 'style'=> 'box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19)']) !!}
       <div class="form-row justify-content-center mb-3">
-        <img src="/img/{{ $encadrant->lien_image }}" style="width:200px; height:200px; border-radius:50%" >
-        {!! Form::file('avatar') !!}
+        <img src="/storage/avatars/{{$path}} " style="width:200px; height:200px; border-radius:50%" >
+        {!! Form::file('lien_image') !!}
         {!! Form::hidden('id_encadrant', null, ['class'=>'form-control']) !!}
       </div>
   
