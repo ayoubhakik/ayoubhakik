@@ -4,6 +4,8 @@ include "departementRoutes.php";
 
 include "etudiantRoutes.php";
 
+include "encadrantRoutes.php";
+/*
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------

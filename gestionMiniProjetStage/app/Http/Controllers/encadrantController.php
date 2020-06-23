@@ -33,20 +33,24 @@ class encadrantController extends Controller
     }
 
     //Lister Etudiants
-    public function listerEtudiants(){
-        $students = DB::table('etudiants')->get();
+    public function listerEtudiants(Request $request){
+        $idEncadrant = $request->session()->get('userID');
+        //get students of the user
+        $students = Etudiant::where('id_encadrant', $idEncadrant);
         return view('encadrantViews/listerEtudiants')->with('students', $students);
     }
 
 
 
-    //lister ses Groupes
-    public function listerGroupes($id){
-        $stdsGrp = DB::table('etudiants')
-            ->where('id_groupe','=',$id)
-            ->get();
-        return view('encadrantViews/listerGroupes', ['id'=> $id, 'stdsGrp' => $stdsGrp]);
+    //lister groupes
+    //Lister Etudiants
+    public function listergroupes(Request $request){
+        $idEncadrant = $request->session()->get('userID');
+        $groupes = Groupe::where('id_encadrant', $idEncadrant);
+        return view('encadrantViews/listerGroupes')->with('groupes', $groupes);
     }
+
+
 
     //Afficher un groupe
     public function afficherGrp(Request $request){
@@ -67,6 +71,7 @@ class encadrantController extends Controller
 
     //Modifier profile encadrant
     public function modifierProfile(Request $request){
+        $idEncadrant = $request->session()->get('userID');
         $encadrant = Encadrant::where('id_encadrant', $request['id_encadrant'])->first();
         $encadrant->nom = $request['nom'];
         $encadrant->prenom = $request['prenom'];

@@ -36,7 +36,6 @@ Route::get('/departement/encadrentsStage/statistique',function(){
     return view('Departement/EncadrentsStage/statistique');
 });
 
-});
 
 Route::get('/departement/etudiant/list', 'DepartementsController@listEtud');
 Route::post('/list/fetch', 'DepartementsController@fetch')->name('list.fetch');
@@ -65,7 +64,6 @@ Route::get('/departement/encadrentsStage/statistique',function(){
     return view('Departement/EncadrentsStage/statistique');
 });
 
->>>>>>> Damsiri2-dev
 Route::get('/departement/notifications',function(){
     return view('Departement/notifications');
 });
@@ -85,7 +83,7 @@ Route::get('/departement/',function(){
     return view('Departement/home');
 });
 
-/////RESTFUL METHODS 
+/////RESTFUL METHODS
 
 //user edit
 Route::put('/departement/user/{id}/editInfos','DepartementsController@editUser');
