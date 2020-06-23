@@ -20,9 +20,9 @@ class CreateGroupesTable extends Migration
             $table->double('note');
             $table->text('appreciation');
             $table->string('rapport_final');
-             $table->bigInteger('id_encadrant')->unsigned();
+            $table->bigInteger('id_encadrant')->unsigned();
             $table->foreign('id_encadrant')->references('id_encadrant')->on('encadrants');
-             $table->bigInteger('id_soutenance')->unsigned();
+            $table->bigInteger('id_soutenance')->unsigned();
             $table->foreign('id_soutenance')->references('id_soutenance')->on('soutenances');
             $table->timestamps();
         });
