@@ -3,96 +3,33 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use App\Encadrant;
+use App\Groupe;
 use DB;
+use App\Departement;
 use App\Etudiant;
-use App\Groupes;
+use App\Soutenance;
 
 class encadrantController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+    //Index
+    public function accueil(Request $request){
+        $request->session()->put('userID', 2);
+        $idEncadrant = $request->session()->get('userID');
+        $encadrant = Encadrant::where('id_encadrant', $idEncadrant)->first();
+        return view('encadrantViews/accueil', ['encadrant' => $encadrant]);
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
-
-     //Index
-     public function accueil(){
-        return view('encadrantViews/accueil');
     }
 
     //Profile
-    public function profile(){
-        return view('encadrantViews/profile');
+    public function profile(Request $request){
+        $idEncadrant = $request->session()->get('userID');
+        $encadrant = Encadrant::where('id_encadrant', $idEncadrant)->first();
+        $departements = Departement::all()->pluck('nom_departement','id_departement');
+        $path = explode("/",$encadrant->lien_image);
+        return view('encadrantViews/profile', ['encadrant' => $encadrant, 'departements' => $departements, 'path' => $path[2]]);
     }
 
     //Lister Etudiants
@@ -100,6 +37,8 @@ class encadrantController extends Controller
         $students = DB::table('etudiants')->get();
         return view('encadrantViews/listerEtudiants')->with('students', $students);
     }
+
+
 
     //lister ses Groupes
     public function listerGroupes($id){
@@ -110,8 +49,56 @@ class encadrantController extends Controller
     }
 
     //Afficher un groupe
-    public function afficherGrp(){
-        $groupes = DB::table('groupes')->get();
-        return view('encadrantViews/afficherGrp', ['groupes' => $groupes]);
+    public function afficherGrp(Request $request){
+
+        $groupe = Groupe::where('id_groupe', 1)->first();
+        $membres = Etudiant::where('id_groupe', $groupe->id_groupe)->select('nom', 'prenom', 'img_link')->get();
+        $soutenance = Soutenance::where('id_soutenance', $groupe->id_soutenance)->first();
+        $jury = Encadrant::wherein('id_encadrant',[$soutenance->id_jurie1, $soutenance->id_jurie2, $soutenance->id_jurie3])->select('nom', 'prenom')->get();
+        $path = array();
+        //filling path with only the Names of the profile pictures
+        // foreach($membres as $membre){
+        //     $var = explode("/",$membre->img_link);
+        //     print_r( $var);
+        //     array_push($path, $var[2]);
+        // }
+        return view('encadrantViews/afficherGrp', ['groupe' => $groupe, 'membres' => $membres->toArray(), 'jury' => $jury, 'soutenance' => $soutenance, 'path' => $path]);
     }
+
+    //Modifier profile encadrant
+    public function modifierProfile(Request $request){
+        $encadrant = Encadrant::where('id_encadrant', $request['id_encadrant'])->first();
+        $encadrant->nom = $request['nom'];
+        $encadrant->prenom = $request['prenom'];
+        if($request['lien_image'] != null){
+            $path = $request->file('lien_image')->store('public/avatars');
+            $encadrant->lien_image = $path;
+        }
+        $encadrant->email = $request['email'];
+        $encadrant->phone = $request['phone'];
+        $encadrant->id_departement = $request['id_departement'];
+        $encadrant->save();
+
+        return redirect()->action('encadrantController@profile');
+    }
+    //l'encadrant évalue le groupe
+    public function evaluer(Request $request){
+        $groupe = Groupe::where('id_groupe', $request['id_groupe'])->first();
+        $groupe->note = $request['note'];
+        $groupe->appreciation = $request['appreciation'];
+        $groupe->save();
+
+        return redirect()->action('encadrantController@afficherGrp', ['id_groupe' => $request['id_groupe']]);
+    }
+
+    //envoyer mail
+    public function sendMail(Request $request){
+        $etudiant = Etudiant::where('id_groupe', $request['id_groupe'])->first();
+        $email = $etudiant->Email;
+        Mail::raw($request['message'], function($message) use($email, $request){
+            $message->to($email)->subject('Hello there');
+        });
+        return redirect('/encadrant/afficherGrp');
+    }
+
 }

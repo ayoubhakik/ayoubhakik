@@ -4,31 +4,31 @@
                         <ul class="footer-menu">
                             <li>
                                 <a href="#">
-                                    Home
+                                    UCA
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    Company
+                                    LinkedIn
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    Portfolio
+                                    E-mail
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    Blog
+                                    Facebook
                                 </a>
                             </li>
                         </ul>
                         <p class="copyright text-center">
                             ©
                             <script>
-                                document.write(new Date().getFullYear())
+                                document.write(new Date().getFullYear());
                             </script>
-                            <a href="http://www.creative-tim.com">Creative Tim</a>, made with love for a better web
+                            <a href="https://fcensas.com/">ENSA Safi</a> pour plus d'information
                         </p>
                     </nav>
                 </div>

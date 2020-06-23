@@ -110,7 +110,7 @@
 }
 
         .page-hero {
-    height: 300px;
+    height: 100px;
     overflow: hidden;
     position: relative;
     width: 100%;
@@ -220,8 +220,8 @@ body {
         @include('encadrantViews.layouts.sidebar')
         <div class="main-panel">
 
-
             @yield('content')
+            
             @include('encadrantViews.layouts.footer')
 
         </div>

@@ -19,7 +19,7 @@
         <div class="sidebar-wrapper" id="sidebar">
             <br>
             <div style="text-align: center">
-                <a href="http://127.0.0.1:8000/encadrant/accueil" class="simple-text" style="color : #e5e5e5">
+                <a href="http://127.0.0.1:8000/encadrant" class="simple-text" style="color : #e5e5e5">
                     ENSA SAFI
                 </a>
             </div>

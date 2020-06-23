@@ -19,7 +19,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-sx-12 page-hero" style="text-align: center">
-                        <h1 class="display-2">Welcome</h1>
+                        <h1 class="display-2">Welcome {{$encadrant->nom}}</h1>
                     </div>
                 </div>
             </div>
@@ -35,7 +35,7 @@
                         <br>
                         <br>
                         <br>
-                        <p class="talk"> As you can see the groups you have, grade them,  <br> show their students and the repports that's been submitted.</p>
+                        <p class="talk"> “Waste no more time arguing about what a good person should be. Be one.”</p>
                     </div>
                     <div class="col-md-4 ">
                          @include('encadrantViews.layouts.light_blub')

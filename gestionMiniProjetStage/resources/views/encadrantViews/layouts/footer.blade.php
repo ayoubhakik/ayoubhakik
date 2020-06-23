@@ -1,3 +1,3 @@
 <footer style="text-align: center ; color: whitesmoke">
-    <p>Made to excel</p>
+    <p> "Don't worry, be happy"</p>
 </footer>

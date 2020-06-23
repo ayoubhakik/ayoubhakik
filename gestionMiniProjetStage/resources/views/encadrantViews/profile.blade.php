@@ -5,14 +5,20 @@
 
 <!--A voir LaravelCollection -->
 <div class="content">
-  <div class="row justify-content-center mb-5">
-    <h1 class="display-4" style="font-family:Bookman old style">Page de Profile</h1>
+  <div class="row justify-content-center mb-5 page-hero">
+    <h1 class="display-4 sansserif" >Page de Profile</h1>
   </div>
 
   <div class="row justify-content-center align-items-center ">
-  <img src="" style="width:150px; height:150px; float:center; border-radius:50%">
-    {!! Form::open(['action'=>'encadrantController@modifierProfile', 'files' => true, 'class'=> 'p-5', 'style'=> 'box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19)']) !!}
-      <div class="form-row">
+
+    {!! Form::model($encadrant, ['action'=> 'encadrantController@modifierProfile', 'files' => true, 'class'=> 'pb-5 pr-5 pl-5 pt-3', 'style'=> 'box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19)']) !!}
+      <div class="form-row justify-content-center mb-3">
+        <img src="/storage/avatars/{{$path}} " style="width:200px; height:200px; border-radius:50%" >
+        {!! Form::file('lien_image') !!}
+        {!! Form::hidden('id_encadrant', null, ['class'=>'form-control']) !!}
+      </div>
+
+    <div class="form-row">
         <div class="form-group col-6">
           {!! Form::label('nom', 'Nom:') !!}
           {!! Form::text('nom', null, ['class'=>'form-control']) !!}
@@ -27,6 +33,7 @@
           {!! Form::email('email', null, ['class'=>'form-control']) !!}
         </div>
         <div class="form-group ">
+<<<<<<< HEAD
           {!! Form::label('telephone', 'Telephone:') !!}
           {!! Form::text('telephone', null, ['class'=>'form-control']) !!}
         </div>
@@ -35,6 +42,16 @@
           {!! Form::select('departement', ['info' => 'Informatique et reseau', 'indus' => 'Industriel'], null, ['placeholder' => '', 'class' => 'form-control']) !!}
         </div>
       <div class="form-row mt-5 justify-content-around">
+=======
+          {!! Form::label('phone', 'Telephone:') !!}
+          {!! Form::text('phone', null, ['class'=>'form-control']) !!}
+        </div>
+        <div class="form-group">
+          {!! Form::label('id_departement', 'Departement:') !!}
+          {!! Form::select('id_departement', $departements, $encadrant->id_departement, ['placeholder' => '', 'class' => 'form-control']) !!}
+        </div>
+      <div class="form-row mt-5 justify-content-around">
+>>>>>>> 48d29362b17ea335ac8cd1190b9522fd66e2d621
         <button type="submit" class="btn btn-info form-control col-4">Enregistrer</button>
         <button type="reset" class = 'btn btn-info form-control col-4'>Annuler</button>
       </div>
