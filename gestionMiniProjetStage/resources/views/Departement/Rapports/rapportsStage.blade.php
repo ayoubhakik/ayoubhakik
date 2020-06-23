@@ -1,12 +1,7 @@
 @extends ('departement/layout')
 
 @section('content')
-<div>HAKIK</div>
 
-<div>DAMSIRI</div>
+rapport de stage
 
-<div>BABA</div>
-
-
-setting
 @endsection

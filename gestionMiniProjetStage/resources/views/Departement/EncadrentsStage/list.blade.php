@@ -1,12 +1,6 @@
 @extends ('departement/layout')
 
 @section('content')
-<div>HAKIK</div>
+list encadrent stage
 
-<div>DAMSIRI</div>
-
-<div>BABA</div>
-
-
-setting
 @endsection

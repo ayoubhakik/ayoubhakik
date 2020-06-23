@@ -9,6 +9,11 @@ Route::get('/departement/user','DepartementsController@user');
 Route::get('/departement/etudiant/import','DepartementsController@importEtudiants');
 
 Route::get('/departement/enseignant/import','DepartementsController@importEnseignants');
+Route::get('/departement/etudiant/list','DepartementsController@listEtud');
+Route::get('/departement/enseignant/list','DepartementsController@listEns');
+Route::get('/departement/enseignant/list','DepartementsController@listEns');
+
+Route::get('/departement/encadrantmp/statistique','DepartementsController@EncadMpStat');
 
 Route::get('/departement/encadrentsMiniProjet/list',function(){
     return view('Departement/EncadrentsMiniProjet/statistique');
@@ -31,6 +36,36 @@ Route::get('/departement/encadrentsStage/statistique',function(){
     return view('Departement/EncadrentsStage/statistique');
 });
 
+});
+
+Route::get('/departement/etudiant/list', 'DepartementsController@listEtud');
+Route::post('/list/fetch', 'DepartementsController@fetch')->name('list.fetch');
+
+
+
+
+
+
+
+
+
+
+
+
+Route::get('/departement/groupes/listChef',function(){
+    return view('Departement/Groupes/listChef');
+});
+Route::get('/departement/groupes/listGroupes',function(){
+    return view('Departement/Groupes/listGroupes');
+});
+Route::get('/departement/encadrentsStage/list',function(){
+    return view('Departement/EncadrentsStage/list');
+});
+Route::get('/departement/encadrentsStage/statistique',function(){
+    return view('Departement/EncadrentsStage/statistique');
+});
+
+>>>>>>> Damsiri2-dev
 Route::get('/departement/notifications',function(){
     return view('Departement/notifications');
 });

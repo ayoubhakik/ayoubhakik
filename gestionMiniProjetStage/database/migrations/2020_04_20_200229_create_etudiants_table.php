@@ -47,3 +47,4 @@ class CreateEtudiantsTable extends Migration
     }
 }
 ?>
+
