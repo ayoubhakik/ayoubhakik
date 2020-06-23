@@ -5,7 +5,7 @@
 <div class="content">
     <div class="container-fluid">
         <div class="row justify-content-center mb-5 page-hero">
-            <h1 class="display-2 sansserif" >Groupes {id_group}</h1>
+            <h1 class="display-2 sansserif" >Groupe {{ $id }}</h1>
         </div>
         <br>
         <hr>
@@ -14,13 +14,18 @@
         <br>
         <div class="row">
             <!-- for loop on the groops -->
-            @for ($i = 0; $i < 6; $i++)
+            @foreach ($stdsGrp as $std)
             <div class="col-lg-4 col-md-6 ">
-                <div class="card" style="width: 18rem;">
-                    <a href="http://127.0.0.1:8000/encadrant/listerGroupes" class="" style="width: 60%"><img src="..\img\new_logo.png" class="card-img-top" alt="Chef de group"></a>
+                    <div class="card" style="width: 18rem;">
+                    <img src="..\img\new_logo.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{$std->nom}} {{$std->prenom}} </h5>
+                        <p class="card-text"> {{ $std->id_filiere }} </p>
+                        <a href="#" class="btn btn-primary">Show profile</a>
+                    </div>
                 </div>
             </div>
-            @endfor
+            @endforeach
         </div>
         <br>
         <hr>

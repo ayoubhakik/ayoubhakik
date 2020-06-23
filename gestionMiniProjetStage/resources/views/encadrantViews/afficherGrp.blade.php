@@ -23,7 +23,7 @@
                     <div class="card-body">
                         <h5 class="card-title"> {{$grp->nom_groupe}} </h5>
                         <p class="card-text">Sujet : {{$grp->sujet}} </p>
-                        <a href="/encadrant/listerGroupes" class="btn btn-primary">See full informations</a>
+                        <a href="/encadrant/listerGroupes/{{$grp->nom_groupe}}" class="btn btn-primary">See full informations</a>
                     </div>
                 </div>
             </div>

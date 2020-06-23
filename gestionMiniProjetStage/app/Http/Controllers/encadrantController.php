@@ -102,13 +102,16 @@ class encadrantController extends Controller
     }
 
     //lister ses Groupes
-    public function listerGroupes(){
-        return view('encadrantViews/listerGroupes');
+    public function listerGroupes($id){
+        $stdsGrp = DB::table('etudiants')
+            ->where('id_groupe','=',$id)
+            ->get();
+        return view('encadrantViews/listerGroupes', ['id'=> $id, 'stdsGrp' => $stdsGrp]);
     }
 
     //Afficher un groupe
     public function afficherGrp(){
         $groupes = DB::table('groupes')->get();
-        return view('encadrantViews/afficherGrp')->with('groupes', $groupes);
+        return view('encadrantViews/afficherGrp', ['groupes' => $groupes]);
     }
 }
