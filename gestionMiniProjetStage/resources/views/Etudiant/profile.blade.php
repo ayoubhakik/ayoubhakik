@@ -15,20 +15,20 @@
     @section('content')
 <div class="container_fluid" id="profile">
   <div class="row">
-    
-        
+
+
        <div class="col-md-7 ">
 
 <div class="panel panel-default">
   <div class="panel-heading">  <h4 >Profile</h4></div>
    <div class="panel-body">
-       
+
     <div class="box box-info">
-        
+
             <div class="box-body">
                      <div class="col-sm-6">
-                     <div  align="center"> <img alt="User Pic" src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" id="profile-image1" class="img-circle img-responsive"> 
-                
+                     <div  align="center"> <img alt="User Pic" src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" id="profile-image1" class="img-circle img-responsive">
+
                 <input id="profile-image-upload" class="hidden" type="file">
 <div style="color:#999;" >Cliquer ici pour changer votre photo </div>
                 <!--Upload Image Js And Css-->
@@ -37,13 +37,13 @@
                 <!-- /input-group -->
             </div>
             <div class="col-sm-6" >
-            <h4 style="color:#00b1b1; margin-left: 40px" >Hasnae Briouya</h4></span>
-             
+            <h4 style="color:#00b1b1; margin-left: 40px" >Hasnae Briouya</h4>
+
             </div>
             <div class="clearfix"></div>
             <hr style="margin:5px 0 5px 0;">
-    
-              
+
+
 <div class="col-sm-5 col-xs-6 title " >First Name:</div><div class="col-sm-7 col-xs-6 "><p class="info">Hasnae</p></div>
      <div class="clearfix"></div>
 <div class="bot-border"></div>
@@ -74,7 +74,7 @@
 <div class="bot-border"></div>
 
 <div class="col-sm-5 col-xs-6 title " >Email:</div><div class="col-sm-7"><p class="info">briouya@gmail.com</p></div>
-      
+
 
  <div class="clearfix"></div>
 <div class="bot-border"></div>
@@ -86,19 +86,19 @@
           <!-- /.box -->
 
         </div>
-       
-            
-    </div> 
+
+
+    </div>
     </div>
    <a class="button" href="#popup1"><i class="fa fa-edit">  Modifier</i></a>
-</div> 
+</div>
 <div id="popup1" class="overlay">
   <div class="popup">
     <a class="close" href="#">&times;</a>
     <div class="content">
      <div class="col-sm-6">
-           <div  align="center"> <img alt="User Pic" src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" id="profile-image1" class="img-circle img-responsive"> 
-                
+           <div  align="center"> <img alt="User Pic" src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" id="profile-image1" class="img-circle img-responsive">
+
                 <input id="profile-image-upload" class="hidden" type="file">
 <div style="color:#999;" >Cliquer ici pour changer votre photo </div>
                 <!--Upload Image Js And Css-->
@@ -108,12 +108,12 @@
             </div>
             <div class="col-sm-6" >
             <h4 style="color:#00b1b1; margin-left: 40px" >Hasnae Briouya</h4></span>
-             
+
             </div>
             <div class="clearfix"></div>
             <hr style="margin:5px 0 5px 0;">
-    
-              
+
+
 <div class="col-sm-5 col-xs-6 title " >First Name:</div><div class="col-sm-7 col-xs-6 "><p class="info">Hasnae</p></div>
      <div class="clearfix"></div>
 <div class="bot-border"></div>
@@ -144,7 +144,7 @@
 <div class="bot-border"></div>
 
 <div class="col-sm-5 col-xs-6 title " >Email:</div><div class="col-sm-7"><p class="info">briouya@gmail.com</p></div>
-      
+
 
  <div class="clearfix"></div>
 <div class="bot-border"></div>
@@ -160,17 +160,17 @@
     $('#profile-image1').on('click', function() {
         $('#profile-image-upload').click();
     });
-});       
-              </script> 
-       
-       
-       
-       
-       
-       
-       
-       
-       
+});
+              </script>
+
+
+
+
+
+
+
+
+
    </div>
 </div>
 </body>

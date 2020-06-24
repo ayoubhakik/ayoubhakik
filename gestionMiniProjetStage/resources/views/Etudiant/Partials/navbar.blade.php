@@ -54,7 +54,7 @@
                         </a>
                     </li>
                     <li>
-                        <a class="nav-link" href="./deconnecter">
+                        <a class="nav-link" href="./login">
                             <i class="nc-icon nc-button-power"></i>
                             <p>Se deconnecter</p>
                         </a>

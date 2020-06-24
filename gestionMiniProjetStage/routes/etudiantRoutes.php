@@ -20,10 +20,12 @@ Route::get('/etudiant/inv',function(){
 Route::get('/etudiant/notifications',function(){
     return view('Etudiant/notification');
 });
-Route::get('/etudiant/deconnecter',function(){
+Route::get('/etudiant/login',function(){
     return view('Etudiant/login');
 });
 Route::get('/etudiant/message',function(){
     return view('Etudiant/message');
 });
-Route::get('/etudiant/listEtudiant',"etudiantController@getEtudiant");
+Route::get('/etudiant/mp',"etudiantController@getEtudiant");
+Route::get('/etudiant/stage',"etudiantController@getEtudiant");
+Route::post('/etudiant/login',"etudiantController@login");

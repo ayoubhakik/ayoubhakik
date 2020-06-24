@@ -10,18 +10,22 @@
   <body>
 <div class="cont">
   <div class="form sign-in">
+<form method="post">
+@csrf
     <h2>Welcome student,</h2>
     <label>
-      <span>CNE</span>
-      <input type="email" />
+      <span>Email</span>
+      <input type="email" name="email"/>
     </label>
     <label>
       <span>Password</span>
-      <input type="password" />
+      <input type="password" name="password" />
     </label>
     <p class="forgot-pass">Forgot password?</p>
-    <button type="button" class="submit">Sign In</button>
+    <button type="submit" class="submit">Sign In</button>
   </div>
+</form>
+
   <div class="sub-cont">
     <div class="img">
       <div class="img__text m--up">
@@ -37,7 +41,9 @@
         <span class="m--in">Sign In</span>
       </div>
     </div>
+
     <div class="form sign-up">
+    <form action="">
       <h2>Welcome teacher,</h2>
       <label>
         <span>Username</span>
@@ -48,7 +54,9 @@
         <input type="password" />
       </label>
       <button type="button" class="submit">Sign In</button>
+</form>
     </div>
+
   </div>
 </div>
 <script src="../js/Etudiant.js"></script>

@@ -137,7 +137,6 @@
         </div>
     </md-content>
 </div>
-@endsection
 </body>
 @endsection
 
