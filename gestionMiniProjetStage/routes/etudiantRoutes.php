@@ -29,3 +29,5 @@ Route::get('/etudiant/message',function(){
 Route::get('/etudiant/mp',"etudiantController@getEtudiant");
 Route::get('/etudiant/stage',"etudiantController@getEtudiant");
 Route::post('/etudiant/login',"etudiantController@login");
+Route::get('/etudiant/listEtudiant',"etudiantController@getEtudiant");
+Route::get('/etudiant/profile', "etudiantController@profile");

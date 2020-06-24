@@ -14,7 +14,7 @@ class CreateDepartementsTable extends Migration
     public function up()
     {
         Schema::create('departements', function (Blueprint $table) {
-            $table->bigIncrements('id_departement');
+            $table->bigIncrements('id');
             $table->string('nom_departement')->default('Informatique');
             $table->string('nom');
             $table->string('prenom');
@@ -30,7 +30,7 @@ class CreateDepartementsTable extends Migration
             $table->string('google')->unique();
             $table->string('linkedin')->unique();
 
-            //date of the last update 
+            //date of the last update
             $table->timestamp('last_update')->nullable();
             $table->timestamps();
         });

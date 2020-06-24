@@ -9,19 +9,173 @@ use Illuminate\Support\Facades\File;
 use App\Item;
 use DB;
 use Excel;
-use App\imports\ImportItem;
+use App\imports\ImportEtudiantsGtr4;
+use App\imports\ImportEtudiantsGi4;
+use App\imports\ImportEtudiantsGi3;
+use App\imports\ImportEnseignants;
+
+
 
 class DepartementsController extends Controller
 {
+    public function listEtud(){
+        $riewRow = DB::select('SELECT id_etudiant,nom,prenom,cin,cne,niveau,email,phone FROM etudiants');
+        
+        return view('Departement/Etudiants/list',['viewReport'=> $riewRow]);
+    }
 
+    public function fetch(Request $request)
+    {
+     if($request->get('query'))
+     {
+      $query = $request->get('query');
+      $data = DB::table('etudiants')
+        ->where('prenom', 'LIKE', "%{$query}%")
+        ->get();
+      $output = '<ul class="dropdown-menu" style="display:block; position:relative">';
+      foreach($data as $row)
+      {
+       $output .= '
+       <li><a href="#">'.$row->prenom.'</a></li>
+       ';
+      }
+      $output .= '</ul>';
+      echo $output;
+     }
+    }
+
+    public function importEtudiants(){
+        $data=DB::table('etudiants')->get();
+        return view('Departement/Etudiants/import',compact('data'));
+    }
+    public function EncadMpStat(){
+       
+        return view('Departement/EncadrentsMiniProjet/statistique');
+    }
+    
+    public function listEns(){
+        $riewRow = DB::select('SELECT id_encadrant,nom,prenom,email,phone FROM encadrants');
+        return view('Departement/Enseignants/list',['viewReport'=> $riewRow]);
+    }
+    
+    public function importEnseignants(){
+        $data=DB::table('encadrants')->get();
+        return view('Departement/Enseignants/import',compact('data'));
+    }
+    
+    public function importEnseignantExcel(Request $request){
+        if($request->file('file-5')==null){
+            return back()->with('failed','choose a file.');	
+
+        }
+        else{
+            $data=Excel::toCollection(new ImportEnseignants(), $request->file('file-5'));
+            if(count($data) > 0){
+                foreach($data->toArray() as $key=>$value){
+                    foreach($value as $row){
+                        if($row[0]!='nom'){
+                        $insert_data[]=array(
+                            'nom'=>$row[0],
+                            'prenom'=>$row[1],
+                            
+                        );
+                        }
+                    }
+                }
+            }
+
+        }
+        if(!empty($insert_data)){
+                DB::table('encadrants')->insert($insert_data);
+            }
+        
+        return back()->with('success','Excel data imported successfully.');	
+    }
     ////excel import
-    public function importExcel()
-	{
-		Excel::import(new ImportItem, request()->file('file-5'));
-        $item=DB::table('items')->where('title', 'title')->delete();
 
-		return back();
-	}
+    public function importEtudiantExcel(Request $request)
+	{
+        //$this->validate($request,['file-5','required|mimes:xls,xlsx']);
+        if($request->file('file-5')==null){
+            return back()->with('failed','choose a file.');	
+
+        }
+        else{
+        if(request('choice')==='gi3'){
+            $data=Excel::toCollection(new ImportEtudiantsGi3(), $request->file('file-5'));
+            if(count($data) > 0){
+                foreach($data->toArray() as $key=>$value){
+                    foreach($value as $row){
+                        if($row[0]!='nom'){
+                        $insert_data[]=array(
+                            'nom'=>$row[0],
+                            'prenom'=>$row[1],
+                            'cin'=>$row[2],
+                            'cne'=>$row[3],
+                            'phone'=>'',
+                            'niveau'=>'3eme',
+                            'id_filiere'=>1,
+                            'email'=>'',
+                        );
+                    }}
+                }
+            }
+
+        }  
+        if(request('choice')==='gi4'){
+            $data=Excel::toCollection(new ImportEtudiantsGi3(), $request->file('file-5'));
+            if(count($data) > 0){
+                foreach($data->toArray() as $key=>$value){
+                    foreach($value as $row){
+                        if($row[0]!='nom'){
+                        $insert_data[]=array(
+                            'nom'=>$row[0],
+                            'prenom'=>$row[1],
+                            'cin'=>$row[2],
+                            'cne'=>$row[3],
+                            'phone'=>'',
+                            'niveau'=>'4eme',
+                            'id_filiere'=>1,
+                            'email'=>'',
+                        );
+                    }}
+                }
+            }
+
+        } 
+        if(request('choice')==='gtr4'){
+            $data=Excel::toCollection(new ImportEtudiantsGi3(), $request->file('file-5'));
+            if(count($data) > 0){
+                foreach($data->toArray() as $key=>$value){
+                    foreach($value as $row){
+                        if($row[0]!='nom'){
+                        $insert_data[]=array(
+                            'nom'=>$row[0],
+                            'prenom'=>$row[1],
+                            'cin'=>$row[2],
+                            'cne'=>$row[3],
+                            'phone'=>'',
+                            'niveau'=>'4eme',
+                            'id_filiere'=>2,
+                            'email'=>'',
+                        );
+                    }}
+                }
+            }
+
+        } 
+            if(!empty($insert_data)){
+                DB::table('etudiants')->insert($insert_data);
+            }
+        
+        return back()->with('success','Excel data imported successfully.');	
+    }
+
+    }
+    
+   
+    
+    
 
     ///you can write your functions here
     public function home(){
