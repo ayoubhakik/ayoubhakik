@@ -30,6 +30,10 @@ class CreateEtudiantsTable extends Migration
               $table->foreign('filiere_id')->references('id_filiere')->on('filieres');
                $table->bigInteger('id_groupe')->unsigned();
                $table->foreign('id_groupe')->references('id_groupe')->on('groupes');
+               $table->bigInteger('id_user')->unsigned();
+               $table->foreign('id_user')->references('id')->on('users');
+
+
             $table->timestamps();
 
         });

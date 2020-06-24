@@ -27,3 +27,4 @@ Route::get('/etudiant/message',function(){
     return view('Etudiant/message');
 });
 Route::get('/etudiant/listEtudiant',"etudiantController@getEtudiant");
+Route::get('/etudiant/profile', "etudiantController@profile");

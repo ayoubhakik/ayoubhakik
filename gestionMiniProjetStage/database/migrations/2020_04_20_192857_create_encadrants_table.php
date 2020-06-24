@@ -23,7 +23,8 @@ class CreateEncadrantsTable extends Migration
             $table->string('lien_image')->default('default.jpg');
             $table->bigInteger('id_departement')->unsigned();
             $table->foreign('id_departement')->references('id_departement')->on('departements');
-            
+            $table->bigInteger('id_user')->unsigned();
+               $table->foreign('id_user')->references('id')->on('users');
             $table->timestamps();
         });
     }
