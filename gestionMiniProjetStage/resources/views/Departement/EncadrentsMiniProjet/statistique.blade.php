@@ -25,16 +25,16 @@
       let massPopChart = new Chart(myChart, {
         type:'bar', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
         data:{
-          labels:['Groupe 1', 'Groupe 2', 'Groupe 3', 'Groupe 4', 'Groupe 5', 'Groupe 1'],
+          labels:['Echaddi ', 'Bouarifi', 'Atlas', 'Jraifi', 'Ouarrachi', 'Ezzahar'],
           datasets:[{
             label:'Encadrants',
             data:[
               6,
-              7,
-             9,
-              8,
-              7,
-              5
+              6,
+             6,
+              6,
+              6,
+              6
             ],
             //backgroundColor:'green',
             backgroundColor:[
@@ -55,7 +55,7 @@
         options:{
           title:{
             display:true,
-            text:'STATISTIQUES MINI-PROJET',
+            text:'STATISTIQUES POUR LES ENCADRANTS DE MINI-PROJET',
             fontSize:25
           },
           legend:{

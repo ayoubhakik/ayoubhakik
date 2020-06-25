@@ -12,15 +12,12 @@ Route::get('/departement/enseignant/list','DepartementsController@listEns');
 Route::get('/departement/enseignant/list','DepartementsController@listEns');
 
 Route::get('/departement/enseignant/import','DepartementsController@importEnseignants');
-Route::get('/departement/encadrantmp/statistique','DepartementsController@EncadMpStat');
+Route::get('/departement/encadrantstage/list','DepartementsController@EncadMpStat');
+Route::get('/departement/encadrentsMiniProjet/list','DepartementsController@EncadStage');
 
-Route::get('/departement/encadrentsMiniProjet/list',function(){
-    return view('Departement/EncadrentsMiniProjet/statistique');
-});
+//Route::get('/departement/encadrentsMiniProjet/list','DepartementsController@listEncadrant');
+//Route::get('/departement/encadrantmp/statistique','DepartementsController@EncadMiniProjet');
 
-Route::get('/departement/encadrentsMiniProjet/statistique',function(){
-    return view('Departement/EncadrentsMiniProjet/statistique');
-});
 
 Route::get('/departement/etudiant/list', 'DepartementsController@listEtud');
 Route::post('/list/fetch', 'DepartementsController@fetch')->name('list.fetch');
@@ -30,7 +27,7 @@ Route::post('/list/fetch', 'DepartementsController@fetch')->name('list.fetch');
 
 
 
-
+Route::get('/departement/encadrentsMiniProjet/statistique','DepartementsController@staticMP');
 
 
 
@@ -42,9 +39,7 @@ Route::get('/departement/groupes/listChef',function(){
 Route::get('/departement/groupes/listGroupes',function(){
     return view('Departement/Groupes/listGroupes');
 });
-Route::get('/departement/encadrentsStage/list',function(){
-    return view('Departement/EncadrentsStage/list');
-});
+Route::get('/departement/encadrentsStage/list','DepartementsController@EncadMpStat');
 Route::get('/departement/encadrentsStage/statistique',function(){
     return view('Departement/EncadrentsStage/statistique');
 });

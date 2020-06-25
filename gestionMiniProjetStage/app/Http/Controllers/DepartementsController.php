@@ -23,6 +23,19 @@ class DepartementsController extends Controller
         
         return view('Departement/Etudiants/list',['viewReport'=> $riewRow]);
     }
+    
+    public function EncadMpStat(){
+        $riewRow = DB::select('SELECT id_encadrant,nom,prenom,email,phone,nbr_groupe FROM encadrants');
+        
+        return view('Departement/EncadrentsStage/list',['viewReport'=> $riewRow]);
+    }
+    
+    public function EncadStage(){
+        $riewRow = DB::select('SELECT id_encadrant,nom,prenom,email,phone,nbr_groupe FROM encadrants');
+        
+        return view('Departement/EncadrentsMiniProjet/list',['viewReport'=> $riewRow]);
+    }
+    
 
     public function fetch(Request $request)
     {
@@ -69,10 +82,7 @@ class DepartementsController extends Controller
         $data=DB::table('etudiants')->get();
         return view('Departement/Etudiants/import',compact('data'));
     }
-    public function EncadMpStat(){
-       
-        return view('Departement/EncadrentsMiniProjet/statistique');
-    }
+   
     
     public function listEns(){
         $riewRow = DB::select('SELECT id_encadrant,nom,prenom,email,phone FROM encadrants');
@@ -203,7 +213,11 @@ class DepartementsController extends Controller
         
     return view('Departement/home');
     }
-
+    
+    public function staticMP(){
+        
+        return view('Departement/EncadrentsMiniProjet/statistique');
+        }
     public function user(){
         $departement=Departement::find(1);
         return view('Departement.user',['departement'=>$departement]);
