@@ -1,5 +1,7 @@
 <?php
 
+use App\Groupe;
+
 Route::get('/departement/home','DepartementsController@home');
 
 Route::get('/departement/user','DepartementsController@user');
@@ -15,7 +17,7 @@ Route::get('/departement/enseignant/import','DepartementsController@importEnseig
 Route::get('/departement/encadrantmp/statistique','DepartementsController@EncadMpStat');
 
 Route::get('/departement/encadrentsMiniProjet/list',function(){
-    return view('Departement/EncadrentsMiniProjet/statistique');
+    return view('Departement/EncadrentsMiniProjet/list');
 });
 
 Route::get('/departement/encadrentsMiniProjet/statistique',function(){
@@ -29,19 +31,20 @@ Route::post('/list/fetch', 'DepartementsController@fetch')->name('list.fetch');
 
 
 
-
-
-
-
-
-
-
 Route::get('/departement/groupes/listChef',function(){
-    return view('Departement/Groupes/listChef');
+    return view('Departement/Groupes/listChef')->with('groupe',Groupe::with('etudians')->with('chef')->with('encadrent')->paginate(10));;
 });
 Route::get('/departement/groupes/listGroupes',function(){
-    return view('Departement/Groupes/listGroupes');
+    return view('Departement/Groupes/listGroupes')->with('groupe',Groupe::with('chef')->with('encadrent')->paginate(10));
 });
+
+
+
+
+
+
+
+
 Route::get('/departement/encadrentsStage/list',function(){
     return view('Departement/EncadrentsStage/list');
 });

@@ -1,5 +1,5 @@
 @extends ('departement/layout')
 
 @section('content')
-encadrent mp list
+Liste Encadrant 
 @endsection
