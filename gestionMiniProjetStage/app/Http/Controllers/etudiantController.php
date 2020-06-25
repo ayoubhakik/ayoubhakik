@@ -9,10 +9,10 @@ use DB;
 
 class etudiantController extends Controller
 {
-    public function home(){
-        if ($request->session()->has('key')) {
+    public function home(Request $request){
+        if ($request->session()->has('etudiant')) {
 
-        return view('Etudiant/home');
+        return redirect('/etudiant/home');
 
         }
         return view('Etudiant/login');
@@ -28,9 +28,10 @@ class etudiantController extends Controller
         $email = $request->input('email');
         $password = $request->input('password');
         $etudiant = DB::table('users')->where('email',$email)->where('password',$password)->first();
-        if($etudiant !=null){
-          $value = session('key',$etudiant->name);
-           return view('Etudiant/home');
+        $user =DB::table('etudiants')->where('id_user',$etudiant->id)->first();
+        if($user !=null){
+          $request->session()->put('etudiant',$user);
+            return view('Etudiant/home');
         }
         else{
             return view('Etudiant/login');
@@ -44,6 +45,10 @@ class etudiantController extends Controller
 
        return view('Etudiant/profile', compact(['id_et','id_f']));
 
+}
+public function deconnecter(Request $request){
+    $request->session()->forget('etudiant');
+    return Redirect::to("/etudiant/login");
 }
 
 }
