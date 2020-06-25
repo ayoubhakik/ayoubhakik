@@ -44,27 +44,6 @@ class DepartementsController extends Controller
      }
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     public function importEtudiants(){
         $data=DB::table('etudiants')->get();
         return view('Departement/Etudiants/import',compact('data'));

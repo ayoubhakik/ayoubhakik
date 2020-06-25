@@ -20,7 +20,8 @@ class ImportEtudiantsGi4 implements ToModel
             'prenom'     => $row[1],
             'cin'     => $row[2],
             'cne'     => $row[3],
-
+            'phone'     => '',
+            'email'     => '',
             'niveau'    => '4eme',
             'id_filiere' =>1,
 
