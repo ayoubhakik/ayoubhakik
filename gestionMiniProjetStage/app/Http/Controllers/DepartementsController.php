@@ -18,6 +18,7 @@ use App\imports\ImportEnseignants;
 
 class DepartementsController extends Controller
 {
+<<<<<<< HEAD
     public function listEtud(){
         $riewRow = DB::select('SELECT id_etudiant,nom,prenom,cin,cne,niveau,email,phone FROM etudiants');
         
@@ -77,11 +78,14 @@ class DepartementsController extends Controller
 
 
 
+=======
+>>>>>>> 3466ca41faf9ad0638128426f85e2dd9444ed514
 
     public function importEtudiants(){
         $data=DB::table('etudiants')->get();
         return view('Departement/Etudiants/import',compact('data'));
     }
+<<<<<<< HEAD
    
     
     public function listEns(){
@@ -89,6 +93,8 @@ class DepartementsController extends Controller
         return view('Departement/Enseignants/list',['viewReport'=> $riewRow]);
     }
     
+=======
+>>>>>>> 3466ca41faf9ad0638128426f85e2dd9444ed514
     public function importEnseignants(){
         $data=DB::table('encadrants')->get();
         return view('Departement/Enseignants/import',compact('data'));
@@ -213,11 +219,15 @@ class DepartementsController extends Controller
         
     return view('Departement/home');
     }
+<<<<<<< HEAD
     
     public function staticMP(){
         
         return view('Departement/EncadrentsMiniProjet/statistique');
         }
+=======
+
+>>>>>>> 3466ca41faf9ad0638128426f85e2dd9444ed514
     public function user(){
         $departement=Departement::find(1);
         return view('Departement.user',['departement'=>$departement]);

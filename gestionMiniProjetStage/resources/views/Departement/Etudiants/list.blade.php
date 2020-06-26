@@ -1,6 +1,7 @@
 @extends ('departement/layout')
 
 @section('content')
+<<<<<<< HEAD
 
 <head>
   <title>Ajax Autocomplete Textbox in Laravel using JQuery</title>
@@ -107,4 +108,7 @@ $(document).ready(function(){
       @endforeach
     </tbody>
 </table>
+=======
+etudiant list
+>>>>>>> 3466ca41faf9ad0638128426f85e2dd9444ed514
 @endsection

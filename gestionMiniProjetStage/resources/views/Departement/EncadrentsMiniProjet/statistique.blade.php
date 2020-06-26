@@ -1,6 +1,7 @@
 @extends ('departement/layout')
 
 @section('content')
+<<<<<<< HEAD
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -81,5 +82,9 @@
     </script>
   </body>
   </html>
+=======
+
+encadrent mp  statistique
+>>>>>>> 3466ca41faf9ad0638128426f85e2dd9444ed514
 
 @endsection
