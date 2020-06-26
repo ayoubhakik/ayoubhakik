@@ -1,0 +1,1780 @@
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600|Lato");
+
+.main-container {
+    width: 70vw;
+    background-color: #fafafc;
+    margin: auto;
+    border-radius: 15px;
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+    min-height: 90vh !important;
+    margin-bottom: 10px;
+}
+
+.home-blurb {
+    padding-top: 25px;
+    font-family: "Lato", sans-serif;
+    font-size: 20px;
+    line-height: 40px;
+    color: #10386d;
+    width: 85%;
+}
+
+.home-head {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 40px;
+    color: #10386d;
+}
+
+.home-words {
+    margin-top: 50px;
+}
+
+/* _______________________
+   CREATE ACCOUNT STYLES
+   ----------------------*/
+
+/* _______________________
+   LOGIN STYLES
+   ----------------------*/
+.login-form {
+    margin: 0px auto;
+    float: left;
+    padding-left: 70px;
+    padding-top: 80px;
+}
+
+#login-footer {
+    height: 6vh;
+}
+
+.login-link {
+    display: inline;
+    color: #35344e;
+    padding-left: 30px;
+}
+
+.login-link a:link {
+    color: #35344e;
+    text-shadow: 1px 1px white;
+}
+
+.login-nav {
+    font-size: 20px;
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 300;
+    color: #f5f7f9 !important;
+    padding-top: 5px;
+}
+
+.log-nav {
+    margin-top: 8px;
+}
+
+#login-container {
+    margin-top: 20px;
+}
+
+.logon {
+    height: 10vh !important;
+}
+
+.rewardspace-button {
+    border: 1px solid #f5f7f9;
+    border-radius: 8px;
+    padding: 12px;
+}
+
+.login-display {
+    list-style-type: none;
+}
+
+.forgot-pass {
+    margin-left: 75px;
+    padding-top: 80px;
+    color: black;
+    margin-top: 230px;
+}
+
+.sign-in {
+    background-color: #35344e;
+    color: white;
+    padding: 13px 40px;
+    margin-left: 150px;
+    margin-top: 40px;
+    font-size: 15px;
+    border-radius: 10%;
+}
+
+.username {
+    border-top: 0px white solid;
+    border-left: 0px white solid;
+    border-right: 0px white solid;
+    font-size: 40px;
+    padding-top: 20px;
+    background-color: lightgray;
+}
+
+.password {
+    border-top: 0px white solid;
+    border-left: 0px white solid;
+    border-right: 0px white solid;
+    padding-top: 60px;
+    font-size: 40px;
+    background-color: lightgray;
+}
+
+.rewardspace {
+    border-top: 0px white solid;
+    border-left: 0px white solid;
+    border-right: 0px white solid;
+    padding-top: 10px;
+    font-size: 40px;
+    background-color: lightgray;
+}
+
+.logo {
+    font-size: 20px;
+    padding-top: 10px;
+    padding-left: 50px;
+    max-width: 400px;
+}
+
+.logon-head {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 30px;
+    color: #10386d;
+}
+/* _______________________
+   DASHBOARD STYLES
+   ----------------------*/
+
+/* _______________________
+   PROFILE STYLES
+   ----------------------*/
+
+/* _______________________
+   ACTIVITY STYLES
+   ----------------------*/
+.both-boxes {
+    margin-left: 70px;
+}
+
+/* _______________________
+   SETTINGS STYLES
+   ----------------------*/
+
+/* -------TOGGLE SWITCH -------------*/
+/* Hide default HTML checkbox */
+.switch input {
+    display: none;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    left: 0;
+    right: 0;
+    width: 30px;
+    height: 17px;
+    background-color: #ccc;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 13px;
+    width: 13px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+/* .slider:after {
+			  position: absolute;
+			  content: "on";
+			  color: white;
+			  font-size: 8px;
+			}*/
+
+input:checked + .slider {
+    background-color: #10386d;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #10386d;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(13px);
+    -ms-transform: translateX(13px);
+    transform: translateX(13px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 17px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.toggle-description {
+    padding-left: 10px;
+}
+
+.inline {
+    display: inline-block;
+}
+
+/* -------- END TOGGLE SWITCH---------- */
+
+/* -------- ADMIN SETTINGS ----------- */
+
+.catbox {
+    height: 60px;
+    width: 90px;
+    border-radius: 10px;
+    border: 1px solid #10386d;
+    padding-top: 12px;
+    text-align: center;
+}
+
+.valbox {
+    height: 60px;
+    width: 90px;
+    border-radius: 10px;
+    border: 1px solid #10386d;
+    padding-top: 4px;
+    text-align: center;
+}
+
+.label-selected {
+    background-color: #10386d;
+    color: white;
+}
+
+.icon-question {
+    font-size: 1.2rem;
+}
+
+.createown {
+    margin-top: 17px;
+    margin-left: 15px;
+}
+
+.accordion {
+    margin: auto;
+}
+
+.pagetitle {
+    padding: 25px;
+}
+
+.subhead {
+    padding: 15px;
+}
+
+.submit-row {
+    margin-top: 40px;
+}
+
+.submit-row-less {
+    margin-top: 30px;
+}
+
+.catvalrow {
+    margin: 15px;
+}
+
+.form-shift {
+    margin-left: 40px;
+}
+
+.form-label {
+    margin-right: 5px;
+}
+.modal-form-row {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#table-column-holder {
+    flex: none;
+}
+
+.hiddencheck {
+    opacity: 0;
+}
+
+/* -------- END ADMIN SETTINGS ----------- */
+
+/* -------- USER SETTINGS ----------- */
+
+.page-head {
+    padding: 15px;
+}
+
+h4 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.form-btn {
+    margin: 10px;
+}
+
+.accordion-AdSet {
+    width: 60vw;
+}
+
+/* -------- END USER SETTINGS ----------- */
+
+/* MANAGE REWARDS */
+
+.main-container-MU {
+    width: 70vw;
+    background-color: #fafafc;
+    margin: auto;
+    border-radius: 5px;
+}
+
+.table {
+    line-height: normal;
+}
+
+.admin-topbox {
+    display: inline-block;
+    background-color: #fafafc;
+    padding: 15px;
+    border-radius: 4px;
+    margin: 20px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+}
+/* END MANAGE REWARDS */
+
+/* MANAGE USERS */
+
+.main-container {
+    width: 70vw;
+    background-color: #fafafc;
+    margin: auto;
+    border-radius: 15px;
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+    min-height: 90vh !important;
+    margin-bottom: 10px;
+}
+
+.inforow {
+    margin: 0px;
+}
+
+.infocol {
+    padding: 0px;
+}
+
+.remove-user {
+    position: relative;
+    float: right;
+    font-size: 1rem;
+    padding: 0;
+}
+
+.view-user {
+    position: relative;
+    float: right;
+    font-size: 1rem;
+    padding: 0;
+    padding-right: 3px;
+}
+
+.is-dragging {
+    background: #ea0;
+    z-index: 2; /* keep dragged item on top */
+}
+
+.packery-drop-placeholder {
+    outline: 3px dashed #444;
+    outline-offset: -6px;
+    /* transition position changing */
+    -webkit-transition: -webkit-transform 0.2s;
+    transition: transform 0.2s;
+}
+
+.mycard {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #fafafc;
+    border-radius: 2px;
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.06);
+    padding: 10px;
+}
+
+.users-pic {
+    border-radius: 100%;
+    min-width: 60px;
+}
+
+.whitelink {
+    color: white !important;
+}
+
+.userName {
+    font-weight: 800;
+    font-size: 14px;
+}
+
+.rewardName {
+    font-weight: 800;
+    font-size: 14px;
+    padding-bottom: 3px;
+}
+
+.userInfo {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.rewardInfo {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.pagination {
+    margin-top: 15px;
+    margin-right: 20px;
+}
+
+.mycard.active {
+    border-bottom: 2px solid #5fe3a1;
+}
+
+.mycard.inactive {
+    border-bottom: 2px solid #ff6565;
+}
+
+.mycard.pending {
+    border-bottom: 2px solid #a5a4bf;
+}
+
+.form-inline {
+    padding: 5px;
+}
+
+.labelspace {
+    padding-right: 5px;
+}
+
+.control-head {
+    height: 60px;
+}
+
+.newUserBtn {
+    margin-top: 4px;
+    margin-right: 15px;
+}
+
+.btn-padding {
+    margin: 5px;
+}
+
+/*.cost-flag {
+				width: 65px;
+				height: 100%;
+				background-color: #5FE3A1;
+				position: relative;
+				text-align: center;
+				font-size: 14px;
+				color: white;
+				padding: 3px;
+				float: right;
+				margin-right: -10px;
+				display: inline-block;
+			}*/
+
+.reward-img {
+    vertical-align: middle;
+}
+
+.rwrd-cost {
+    float: right;
+}
+
+.bottom-form {
+    margin-top: 25px;
+}
+
+/* END MANAGE USERS */
+
+/* _______________________
+   Admin Dash STYLES
+   ----------------------*/
+
+.icon-profile_icon {
+    background-color: #e8e7ff;
+    color: #8280ff;
+    font-size: 25px;
+}
+
+.elk-logo {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    margin-right: 20px;
+}
+
+#my-rewards {
+    background-color: white !important;
+    margin-left: 65px;
+    color: black;
+    margin-top: 30px;
+    padding: 20px;
+    width: 635px !important;
+    border-radius: 2%;
+}
+
+#newsfeed {
+    border-radius: 2%;
+    background-color: white;
+    margin-left: 55px;
+    margin-top: 30px;
+    padding: 20px;
+}
+
+.dash-greeting {
+    margin-left: 60px;
+    margin-top: 50px;
+    font-size: 30px;
+    color: #43425d;
+    font-family: "Josefin Sans", sans-serif;
+}
+
+.row-margin {
+    margin-bottom: 20px;
+}
+
+#user-earned {
+    color: #56d9fe;
+    margin-top: 20px;
+}
+
+#achievements-header {
+    margin-left: 18px;
+    color: #4d4f5c;
+    font-size: 18px;
+}
+
+#rewards-header {
+    color: #4d4f5c;
+    font-size: 18px;
+}
+
+#newsfeed-header {
+    background-color: white;
+    color: #4d4f5c;
+    font-size: 18px;
+}
+
+.show-more {
+    color: #3b86ff;
+    font-size: 12px;
+    border: none;
+}
+
+.dash-topbox {
+    background-color: #f9f9f9;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 20px;
+    padding: 5px;
+
+    box-shadow: 0px 2px 6px rgba(96, 96, 100, 0.06);
+}
+
+.firstbox {
+    margin-left: 60px;
+}
+
+.lastbox {
+    margin-right: 60px;
+}
+
+#starcircle-image {
+    float: left;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+#shoppingcart-circle {
+    float: left;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+#green-handcircle {
+    float: left;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+#user-given {
+    color: #4ad991;
+    margin-top: 20px;
+}
+
+#user-spent {
+    color: #a3a0fb;
+    margin-top: 20px;
+}
+
+.dash-boxes2 {
+    margin-top: 25px;
+    margin-left: 50px;
+}
+
+#achieve-box {
+    margin-left: 130px;
+    background-color: #f9f9f9;
+    padding-bottom: 65px;
+    border-radius: 2%;
+}
+
+.achieve-icons {
+    float: left;
+    margin: 5px;
+    background-color: white;
+    font-size: 32px;
+    margin-top: 10px;
+}
+
+.icon-streak_star_10 {
+    color: #56d9fe;
+}
+
+.pink {
+    color: #ff6997;
+}
+
+.green {
+    color: #5fe3a1;
+}
+
+.gray {
+    color: #bebdd3;
+}
+
+.purple {
+    color: #a3a0fb;
+}
+
+.tr-color {
+    background-color: #f5f6fa;
+    border-radius: 15%;
+}
+
+#incentive-tablerow {
+    margin-right: 90px;
+}
+
+.border-radius {
+    border-radius: 45%;
+}
+
+.admin-text {
+    padding-top: 10px;
+    padding-left: 10px;
+    color: darkgray;
+}
+
+.below-admintop {
+    margin-top: 50px;
+}
+
+.admin-number {
+    color: black;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+.totalEarned-bars {
+    font-size: 30px;
+}
+
+.top-earners {
+    margin-left: 60px;
+    background-color: white;
+}
+
+.earners-text {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+/* _______________________
+   End admin dash STYLES
+   ----------------------*/
+
+/* _______________________
+   ACTIVITY STYLES
+   ----------------------*/
+
+.name1 {
+    display: inline;
+    padding-left: 15px;
+    font-size: 15px;
+}
+
+.both-boxes {
+    margin-left: 70px;
+}
+
+.bday-names {
+    display: inline;
+    font-size: 15px;
+}
+
+.bday-line {
+    margin-bottom: 10px;
+}
+
+.display-inline {
+    display: inline;
+}
+
+.text {
+    font-size: 15px;
+    margin-left: 25px;
+    margin-right: 0px !important;
+    margin-top: 15px;
+}
+
+.top-left {
+    background-color: orange;
+    padding: 10px 25px;
+}
+
+.top-right {
+    padding: 10px 25px;
+}
+
+.no-padding {
+    padding-left: 0px !important;
+    margin-right: 0px !important;
+}
+
+.incent-num {
+    display: inline;
+    font-size: 20px;
+}
+
+.heart-btn {
+    display: inline;
+    font-size: 20px;
+    border: none;
+    color: red;
+}
+
+.like-btn {
+    display: inline;
+    font-size: 20px;
+    border: none;
+    color: blue;
+}
+
+.dropdown-bday {
+    width: 65% !important;
+}
+
+.dropdown-anniver {
+    width: 85% !important;
+}
+
+.comment {
+    display: inline;
+    border-radius: 0.5px;
+    padding: 5px;
+    margin-left: 10px;
+    width: 60%;
+}
+
+button:focus {
+    outline: 0;
+}
+
+.comment-section {
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.go-button {
+    display: inline;
+    background-color: #35344e;
+    color: white;
+    padding: 2px 10px 5px 10px;
+    font-size: 15px;
+    margin-left: 25px;
+}
+
+.icon-size {
+    display: inline;
+    font-size: 30px;
+}
+
+.activity-pic {
+    border-radius: 100%;
+}
+
+.bottom-group {
+    margin-top: 15px;
+}
+
+.activity-buttons {
+    background-color: white;
+    border-radius: 2px;
+    color: gray;
+    border: gray 1px solid;
+    font-size: 20px;
+}
+
+.entry {
+    background-color: white;
+    padding-left: 0px !important;
+    padding-right: 0px;
+}
+
+.category-name {
+    display: inline;
+    font-size: 15px;
+}
+
+.icon-size {
+    font-size: 20px;
+    padding-left: 0px !important;
+}
+
+.category-name2 {
+    font-size: 15px;
+    display: inline;
+}
+
+.filter-text {
+    display: inline-flex;
+    margin-left: 5px;
+    padding-left: 2px;
+    padding-right: 5px;
+}
+
+.dates-title {
+    color: #35344e;
+}
+
+.filter-area {
+    margin-top: 20px;
+    margin-right: 90px;
+}
+
+.filter-activity {
+    font-size: 45px;
+    color: #35344e;
+}
+
+.filter-activity:hover {
+    color: gray;
+}
+
+.activity-container {
+    margin-top: 30px;
+}
+
+.feed-activity {
+    margin-top: 30px;
+}
+
+.top-left {
+    -webkit-clip-path: polygon(90% 0, 99% 50%, 90% 100%, 0 100%, 0 0);
+    clip-path: polygon(90% 0, 99% 50%, 90% 100%, 0 100%, 0 0);
+}
+
+.remove-item {
+    position: relative;
+    float: right;
+    padding-top: 5px;
+    margin-right: 5px;
+    font-size: 2rem;
+}
+
+.comment-row {
+    padding: 15px;
+    background-color: #e9ecef;
+    font-size: 14px;
+}
+
+.comment-text {
+    padding-top: 5px;
+}
+
+.comment-text-main {
+    border-radius: 5px;
+    background-color: #fafafc;
+}
+
+.inline-forms {
+    display: inline;
+}
+
+.collapse {
+    visibility: hidden;
+}
+.collapse.show {
+    visibility: visible;
+    display: block;
+}
+.collapsing {
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    -webkit-transition-property: height, visibility;
+    transition-property: height, visibility;
+    -webkit-transition-duration: 0.35s;
+    transition-duration: 0.35s;
+    -webkit-transition-timing-function: ease;
+    transition-timing-function: ease;
+}
+.collapsing.width {
+    -webkit-transition-property: width, visibility;
+    transition-property: width, visibility;
+    width: 0;
+    height: auto;
+}
+
+.birthann-left {
+    margin: 10px;
+}
+
+.birthann-right {
+    margin: 10px;
+}
+/* _______________________
+   END ACTIVITY STYLES
+   ----------------------*/
+/* _______________________
+   Business dash STYLES
+   ----------------------*/
+.jess-logo {
+    margin-top: 5px;
+    margin-left: 90px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 100%;
+}
+
+.business-color {
+    background-color: #850001;
+}
+
+.profpic-business {
+    width: 80px;
+    margin-bottom: 5px;
+    margin-right: 10px;
+    margin-top: 0px;
+    padding-top: 0px;
+    clip-path: circle(30%);
+}
+
+.add-rewardbox {
+    background-color: #fdfdfd;
+    padding: 15px;
+    border-radius: 4px;
+    margin: 0px 20px 20px 60px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+    max-height: 70px;
+}
+
+.pending-orders {
+    margin-left: 100px;
+    background-color: white;
+}
+/* _______________________
+   end business dash STYLES
+   ----------------------*/
+
+/* _______________________
+    finish account STYLES
+   ----------------------*/
+.landing-left {
+    margin-left: 75px;
+    background-color: white;
+    padding: 10px 30px;
+}
+
+.create-heading {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    color: #35344e;
+}
+
+.submit-btn {
+    background-color: #35344e;
+    border: 1px solid #35344e;
+}
+
+/* _______________________
+   end finish account STYLES
+   ----------------------*/
+
+/* _______________________
+   business profile STYLES
+   ----------------------*/
+
+#map {
+    height: 200px;
+    width: 100%;
+}
+
+.address-box {
+    background-color: white;
+    padding: 20px;
+}
+
+.map-box {
+    background-color: white;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+.address-size {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.menu-link {
+    border: double 1px gray;
+    padding: 5px 20px;
+    color: #35344e;
+    font-size: 15px;
+}
+
+.business-description {
+    margin-bottom: 20px;
+}
+
+.business-phone {
+    margin-bottom: 20px;
+}
+
+.business-email {
+    color: #35344e;
+}
+
+.profilepic-business {
+    border-radius: 100%;
+    margin-bottom: 25px;
+}
+
+.business {
+    text-align: center;
+}
+
+.menu-area {
+    margin-bottom: 50px;
+}
+
+.profile-main-card {
+    background-color: white;
+    border-radius: 5px;
+    padding-top: 20px;
+}
+
+/* _______________________
+   end business profile STYLES
+   ----------------------*/
+
+/* _______________________
+   Business settings STYLES
+   ----------------------*/
+
+.business-settings {
+    margin-top: 50px;
+}
+
+/* _______________________
+   end business settings STYLES
+   ----------------------*/
+
+/* _______________________
+   CART STYLES
+   ----------------------*/
+
+#cart-icon {
+    float: left;
+    margin-left: 60px;
+    vertical-align: middle;
+    font-size: 50px;
+    color: #ff4d0e;
+}
+
+.clear-cart {
+    color: #ff4d0e;
+    border: 1px #ff4d0e solid;
+    border-radius: 10%;
+    padding: 5px 20px;
+    margin-right: 20px;
+    margin-left: 15px;
+}
+
+#cart-tr {
+    background-color: #f5f6fa;
+}
+
+#address {
+    padding-right: 20px;
+    padding-bottom: 30px;
+}
+
+.cart-heading {
+    float: left;
+    margin-top: 20px;
+    margin-left: 20px;
+    vertical-align: middle;
+    font-size: 30px;
+}
+
+#user-info {
+    float: right;
+    padding-right: 20px;
+    margin-top: 20px;
+}
+
+#top-cart {
+    margin-top: 50px;
+}
+
+#cart-hr {
+    color: gray;
+    width: 95%;
+}
+
+#total-checkout {
+    display: inline;
+    font-size: 30px;
+    margin-top: 8px;
+}
+
+.submit-cart {
+    /*margin-top: 140px;*/
+    background-color: #ff4d0e;
+    color: white;
+    border-radius: 10%;
+    padding: 5px 20px;
+    display: inline;
+}
+
+.submit-section {
+    float: right;
+    margin-top: 20px;
+}
+
+.cart-rightalign {
+    margin-top: 60px;
+    padding-right: 120px;
+}
+
+#checkout-icon {
+    font-size: 35px;
+    color: #ff4d0e;
+    margin-left: 20px;
+}
+
+#orderinfo-div {
+    margin-right: 30px;
+    margin-top: 20px;
+    float: right;
+}
+
+#cart-table {
+    margin-left: 60px;
+    margin-top: 50px;
+}
+
+.display-inline {
+    display: inline;
+}
+
+#orderDate {
+    display: inline;
+}
+
+#orderID {
+    display: inline;
+}
+
+.container-fluid {
+    margin: 0;
+    width: 100%;
+}
+
+/* _______________________
+   END CART STYLES
+   ----------------------*/
+/* _______________________
+    CONGRATS STYLES
+   ----------------------*/
+
+.your-purchase {
+    margin-left: 70px;
+    margin-top: 30px;
+}
+
+.check-words {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.return-store {
+    background-color: #35344e;
+    color: white;
+    border-radius: 2px;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.bottom-donebox {
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 40px;
+}
+
+.congrats-img {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.congrats-table {
+    margin-top: 20px !important;
+}
+
+/* _______________________
+   END CONGRATS STYLES
+   ----------------------*/
+
+/* _______________________
+    GIVE STYLES
+   ----------------------*/
+
+.give-container {
+    background-color: white;
+    margin: 0px 100px;
+}
+
+.give-header {
+    padding: 20px;
+    color: #35344e;
+    font-size: 40px;
+}
+
+.coworkerName {
+    width: 300px;
+    padding: 5px;
+    margin-left: 40px;
+    margin-top: 10px;
+    border: gray 1px solid;
+    height: 35px;
+    border-radius: 4px;
+}
+
+.chooseHeading {
+    margin-left: 40px;
+    margin-top: 20px;
+}
+
+.give-amount {
+    margin-left: 50px;
+}
+
+.bigger-font {
+    font-size: 25px;
+    margin-left: 10px;
+}
+
+.amount-section {
+    margin-top: 20px;
+}
+
+.chooseHeading2 {
+    margin-top: 20px;
+}
+
+.chooseHeading3 {
+    margin-top: 90px;
+    margin-left: 40px;
+    margin-bottom: 20px;
+}
+
+.category-form {
+    margin-left: 110px;
+    margin-top: 20px;
+}
+
+.category-label {
+    font-size: 13px;
+}
+
+.marg-top {
+    margin-top: 10px;
+}
+
+.chooseHeading4 {
+    margin-top: 90px;
+}
+
+.describe-heading {
+    margin-top: 90px;
+    margin-left: 40px;
+}
+
+.describe {
+    margin-left: 40px;
+    width: 90%;
+}
+
+.value-select {
+    width: 90%;
+}
+
+.person-pic {
+    border-radius: 100%;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+.person-name {
+    margin-left: 50px;
+    font-size: 18px;
+    margin-top: 5px;
+}
+
+.person-title {
+    margin-left: 50px;
+    font-size: 12px;
+}
+
+.bottom-givesection {
+    margin-left: 30px;
+    margin-top: 30px;
+}
+
+.give-star {
+    font-size: 25px;
+}
+
+.checking-bottom {
+    margin-top: 130px;
+}
+
+.bottom-number {
+    font-size: 25px;
+}
+
+.for-what {
+    font-size: 18px;
+}
+
+.give-reward {
+    margin-left: 180px;
+    margin-top: 180px;
+    padding: 10px 40px;
+    background-color: #35344e;
+    color: white;
+    border-radius: 5px;
+    font-size: 25px;
+}
+
+/* _______________________
+    End GIVE STYLES
+   ----------------------*/
+
+/* _______________________
+     HOME STYLES
+   ----------------------*/
+.home-blurb {
+    padding-top: 25px;
+    font-family: "Lato", sans-serif;
+    font-size: 20px;
+    line-height: 40px;
+    color: #10386d;
+    width: 85%;
+}
+
+.home-head {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 40px;
+    color: #10386d;
+}
+
+.home-words {
+    margin-top: 50px;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+/**
+		 * Footer Styles
+		 */
+
+.footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    text-align: center;
+}
+
+/* _______________________
+    End HOME STYLES
+   ----------------------*/
+
+/* _______________________
+     PROFILE STYLES
+   ----------------------*/
+
+.rewardsprof-header {
+    padding-left: 5px;
+    padding-bottom: 10px;
+}
+
+.profile-container {
+    margin-top: 20px;
+}
+
+.prof-rewards {
+    background-color: white;
+    margin-top: 20px;
+    margin-left: 10px;
+    padding: 15px;
+}
+
+#achievements-header {
+    padding-left: 10px;
+    padding-top: 20px;
+}
+
+.profile-main-card {
+    background-color: white;
+    border-radius: 5px;
+    padding-top: 20px;
+}
+
+.profilepic {
+    clip-path: circle(48%);
+}
+
+.icon-pencil {
+    font-size: 2rem;
+    color: #cbcbcb;
+}
+
+.profile-icons {
+    font-size: 40px;
+    margin-left: 15px;
+    padding: 5px;
+    background-color: #fdfdfd;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.profile-achievements {
+    background-color: white;
+    margin-left: 10px;
+    padding-bottom: 0px;
+}
+
+.profile-staricon {
+    font-size: 30px;
+    display: inline;
+}
+
+.number-totalprof {
+    font-size: 30px;
+    display: inline;
+    margin-left: 5px;
+}
+
+#user-about {
+    margin-top: 15px;
+}
+
+h1 {
+    text-align: center;
+}
+
+/* _______________________
+    End PROFILE STYLES
+   ----------------------*/
+
+/* _______________________
+     SPEND STYLES
+   ----------------------*/
+
+.img-spend {
+    object-fit: cover;
+    filter: brightness(linear-gradient(100%, 0%));
+}
+
+.img-spend:after {
+    position: absolute;
+    content: " ";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    z-index: 0;
+    background-color: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9));
+}
+
+#spending-money {
+    font-size: 12px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.overlay:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    margin-left: 15px;
+    margin-top: 20px;
+    width: 80%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9));
+    opacity: 0.6;
+}
+
+.shop-row {
+    margin-left: 30px;
+    margin-right: 20px;
+    margin-bottom: 30px;
+}
+
+#go-shopping {
+    color: #43425d;
+    font-size: 32px;
+    margin-top: 25px;
+}
+
+.spend-buttons {
+    margin-left: 18px;
+    background-color: #35344e;
+    padding: 10px 20px;
+    border: none !important;
+}
+
+.company-name {
+    text-align: center;
+    margin-top: 50px;
+    color: #43425d;
+}
+
+.uhoh-location {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.uhoh-item {
+    margin-bottom: 20px;
+}
+
+.uhoh-desc {
+    padding: 0px 5px;
+}
+
+.reward-name {
+    text-align: center;
+    color: #ff6565;
+    font-size: 30px;
+}
+
+.modal-star {
+    text-align: center;
+    color: #ff6565;
+}
+
+.reward-desc {
+    padding: 10px 20px;
+    text-align: left;
+}
+
+.buy-button {
+    background-color: #43425d;
+    color: white;
+    padding: 5px 15px;
+    border: #43425d 1px solid;
+    float: left;
+    font-size: 15px;
+    margin-left: 15px;
+    font-family: Arial;
+    margin-top: 40px;
+}
+
+.buy-button2 {
+    background-color: #43425d;
+    color: white;
+    padding: 10px 15px;
+    border: #43425d 1px solid;
+    float: left;
+    font-size: 15px;
+    margin-left: 15px;
+    font-family: Arial;
+    margin-top: 40px;
+}
+
+.modal-img {
+    padding: 0px !important;
+}
+
+.addcart-button {
+    color: #43425d !important;
+    padding: 9px 15px !important;
+    border: 1px solid #43425d !important;
+    float: left;
+    margin-left: 15px;
+    font-size: 15px;
+    font-family: Arial;
+    margin-top: 40px;
+}
+
+.modal-buttons {
+    text-align: center;
+}
+
+#spend-filter {
+    float: right;
+    margin-top: 20px;
+    color: #35344e;
+    font-size: 40px;
+    display: inline;
+}
+
+#spend-icons {
+    margin-left: 80px;
+}
+
+#modal-cart {
+    color: #a3a0fb;
+    font-size: 35px;
+    float: left;
+    display: inline;
+    margin-left: 30px;
+}
+
+#contShop {
+    color: #43425d;
+    background-color: white;
+    border: 1px #43425d solid;
+    padding: 10px 15px;
+    font-size: 15px;
+    font-family: Arial;
+    margin-top: 30px;
+    text-align: center;
+    margin-right: 40px;
+}
+
+#checkoutNow {
+    color: white;
+    background-color: #43425d;
+    padding: 5px 35px;
+    margin-left: 40px;
+    margin-top: 50px;
+    font-size: 15px;
+    text-align: center;
+    font-family: Arial;
+}
+
+#success {
+    color: #ff6565;
+    margin-top: 50px;
+    text-align: center;
+}
+
+#uhoh {
+    color: #ff6565;
+    margin-top: 0px;
+    text-align: center;
+    float: left;
+}
+
+.p-added {
+    color: #43425d;
+    margin-top: 10px;
+    padding: 20px;
+    margin-left: 95px;
+    text-align: center;
+}
+
+.p-two {
+    padding: 10px;
+    margin-left: 250px;
+}
+
+.spend-flag {
+    background-color: #ff4d0e;
+    position: relative;
+    height: 25px;
+    width: 60px;
+    align-items: flex-end;
+    top: 45px;
+    left: 0px;
+}
+
+.spend-number {
+    display: inline;
+    font-size: 16px;
+}
+
+.spendflag-icon {
+    font-size: 16px;
+    display: inline;
+}
+
+#carticon-spend {
+    float: right;
+    margin-top: 20px;
+    margin-right: 20px;
+    color: #35344e;
+    font-size: 40px;
+    display: inline;
+}
+
+.centered {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+#dinner-text {
+    font-size: 20px;
+    text-align: center;
+}
+
+#dinner-text2 {
+    text-align: center;
+}
+/* _______________________
+     SPEND STYLES
+   ----------------------*/

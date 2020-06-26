@@ -96,22 +96,26 @@
                         </tr>
                         </thead>
                       @foreach($etudiants as $user)
+                      @if( session()->get('etudiant') == $user->id_etudiant)
+                      @else
                         <tbody>
                         <tr grid-item>
                             <td class="sortable mdl-data-table__cell--non-numeric">
                                {{$user->nom}}  {{$user->prenom}}
                             </td>
-                            <td  class="sortable mdl-data-table__cell--non-numeric">{{$user->Email}}</td>
+                            <td  class="sortable mdl-data-table__cell--non-numeric">{{$user->email}}</td>
 							<td  class="sortable mdl-data-table__cell--non-numeric">
                             @if($user->disponible==0)
-							<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+							<a href="./sendInvit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
 								  Invite
-						    </button>
+						    </a>
 
                             @endif
 							</td>
                         </tr>
                         </tbody>
+
+                      @endif
                         @endforeach
                     </table>
                 </div>

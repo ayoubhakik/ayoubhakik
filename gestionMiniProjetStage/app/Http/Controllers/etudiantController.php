@@ -21,10 +21,9 @@ class etudiantController extends Controller
 
     }
     public function getEtudiant(){
-
-        $etudiants  = DB::table('etudiants')->get();
-
-        return redirect::to('/etudiant/listEtudiant', compact('etudiants'));
+        $etudiant1=DB::table('etudiants')->where('id_etudiant',session()->get('etudiant'))->first();
+        $etudiants  = DB::table('etudiants')->where('id_filiere',$etudiant1->id_filiere)->get();
+        return view('/etudiant/listEtudiant', compact('etudiants'));
     }
     public function login(Request $request){
         $email = $request->input('email');
@@ -44,7 +43,7 @@ class etudiantController extends Controller
         $id =$request->session()->get('etudiant');
        $id_et = Etudiant::where('id_etudiant',$id)->get();
 
-       
+
 
        foreach ($id_et as $t ) {
         $path = explode("/",$t->img_link);
@@ -52,15 +51,15 @@ class etudiantController extends Controller
        }
 
        return view('/etudiant/profile', compact(['id_et','id_f','path']));
-}   
+}
    else{
     return redirect::to('/etudiant/login');
    }
 
 }
 public function deconnecter(Request $request){
-    session()->forget('etudiant');
     session()->flush();
+    session()->forget('etudiant');
     return Redirect::to('/etudiant/login');
 }
     public function modifierProfile(Request $request){
@@ -103,5 +102,8 @@ public function deconnecter(Request $request){
 
             }
         }
+public function sendInvit(Request $request){
+
+}
 
 }
