@@ -18,11 +18,67 @@ use App\imports\ImportEnseignants;
 
 class DepartementsController extends Controller
 {
+    public function listEtud(){
+        $riewRow = DB::select('SELECT id_etudiant,nom,prenom,cin,cne,niveau,email,phone FROM etudiants');
+        
+        return view('Departement/Etudiants/list',['viewReport'=> $riewRow]);
+    }
+
+    public function fetch(Request $request)
+    {
+     if($request->get('query'))
+     {
+      $query = $request->get('query');
+      $data = DB::table('etudiants')
+        ->where('prenom', 'LIKE', "%{$query}%")
+        ->get();
+      $output = '<ul class="dropdown-menu" style="display:block; position:relative">';
+      foreach($data as $row)
+      {
+       $output .= '
+       <li><a href="#">'.$row->prenom.'</a></li>
+       ';
+      }
+      $output .= '</ul>';
+      echo $output;
+     }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     public function importEtudiants(){
         $data=DB::table('etudiants')->get();
         return view('Departement/Etudiants/import',compact('data'));
     }
+    public function EncadMpStat(){
+       
+        return view('Departement/EncadrentsMiniProjet/statistique');
+    }
+    
+    public function listEns(){
+        $riewRow = DB::select('SELECT id_encadrant,nom,prenom,email,phone FROM encadrants');
+        return view('Departement/Enseignants/list',['viewReport'=> $riewRow]);
+    }
+    
     public function importEnseignants(){
         $data=DB::table('encadrants')->get();
         return view('Departement/Enseignants/import',compact('data'));
