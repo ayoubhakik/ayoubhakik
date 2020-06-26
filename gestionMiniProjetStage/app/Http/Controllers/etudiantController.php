@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use DB;
 
-
+use File;
 class etudiantController extends Controller
 {
     public function home(Request $request){
@@ -81,18 +81,27 @@ public function deconnecter(Request $request){
    }
 }
  public function storeImage(Request $request){
-        if($request['img_link'] != null){
-            $path = $request->file('img_link')->store('public/images');
-            $encadrant->img_link = $path;
-        
+       $image = $request->img_link;
+        if($image !=null){
+            $extension = $image->getClientOriginalExtension();
+
+            if($extension === 'jpeg' || $extension === 'JPEG' || $extension === 'jpg' || $extension === 'svg' || $extension === 'png' || $extension === 'SVG' || $extension === 'PNG' ){
+                \Storage::disk('public')->put($image->getFilename().'.'.$extension,  File::get($image));
+                 $id =$request->session()->get('etudiant');
+                $user=Etudiant::find($id);
+                $user->img_link = $image->getFilename().'.'.$extension;
                 $user->save();
                 return redirect('/etudiant/profile');
 
             }
-            
             else{
+                return redirect('/etudiant/profile#popup1')->withErrors(['Invalide Format']);;
+
+            }
+            }else{
                     return redirect('/etudiant/profile#popup1')->withErrors(['Choose a File']);;
 
- }}
+            }
+        }
 
 }

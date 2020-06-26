@@ -32,10 +32,11 @@
                       @if($i->img_link==null)
                      <div  align="center"> <img alt="User Pic" src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" id="profile-image1" class="img-circle img-responsive">
 @else
-<div  align="center"> <img alt="User Pic" src="/storage/avatars/{{$path}}" id="profile-image1" class="img-circle img-responsive">
+<div  align="center"> <img alt="User Pic" src="{{ asset('uploads/') }}/{{ $i->img_link }}" id="profile-image1" class="img-circle img-responsive">
   @endif
                      </div>
               <br>
+
                 <!-- /input-group -->
             </div>
             <div class="col-sm-6" >
@@ -105,21 +106,24 @@
     <div class="content">
      <div class="col-sm-6">
            <div  align="center"> <img alt="User Pic" src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" id="profile-image1" class="img-circle img-responsive">
-<form action="modifierProfile" method="POST"  enctype="multipart/form-data"> 
+<form action="storeImage" method="POST"  enctype="multipart/form-data"> 
   @CSRF
    <input id="profile-image-upload" name="img_link" type="file" />
 <div style="color:#999;" >
-<a href="./storeImage" type="submit" class="btn btn-danger btn-fill">Save Image</a>
+<button  type="submit" class="btn btn-danger btn-fill">Save Image</button>
  @if($errors->any())
  <label style="color:red;">{{$errors->first()}}</label>
  @endif
  </div>
                 <!--Upload Image Js And Css-->
-
+</form>
                      </div>
               <br>
                 <!-- /input-group -->
             </div>
+  <form action="modifierProfile" method="POST"  enctype="multipart/form-data"> 
+  @CSRF
+  
             <div class="col-sm-6" >
             <h4 style="color:#00b1b1; margin-left: 40px" >{{$i->prenom}} {{$i->nom}}</h4>
 
