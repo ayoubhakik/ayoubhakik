@@ -58,6 +58,9 @@ Route::get('/departement/rapports/rapportsMiniProjet',function(){
 Route::get('/departement/Setting',function(){
     return view('Departement/Setting');
 });
+Route::get('/departement/datesoutenance',function(){
+    return view('Departement/datesoutenance');
+});
 //route pour le home
 Route::get('/departement/',function(){
     return view('Departement/home');
