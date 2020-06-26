@@ -29,11 +29,11 @@
 
             <div class="box-body">
                      <div class="col-sm-6">
+                      @if($i->img_link==null)
                      <div  align="center"> <img alt="User Pic" src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" id="profile-image1" class="img-circle img-responsive">
-
-                <input id="profile-image-upload" class="hidden" type="file">
-<div style="color:#999;" >Cliquer ici pour changer votre photo </div>
-                <!--Upload Image Js And Css-->
+@else
+<div  align="center"> <img alt="User Pic" src="/storage/avatars/{{$path}}" id="profile-image1" class="img-circle img-responsive">
+  @endif
                      </div>
               <br>
                 <!-- /input-group -->
@@ -70,14 +70,15 @@
   <div class="clearfix"></div>
 <div class="bot-border"></div>
 
-<div class="col-sm-5 col-xs-6 title " >Filière</div><div class="col-sm-7"><p class="info">@foreach($id_f as $f)
+<div class="col-sm-5 col-xs-6 title " >Filière</div><div class="col-sm-7"><p class="info">
+  @foreach($id_f as $f)
   {{$f->nom_filiere}}
   @endforeach</p></div>
 
  <div class="clearfix"></div>
 <div class="bot-border"></div>
 
-<div class="col-sm-5 col-xs-6 title " >Email:</div><div class="col-sm-7"><p class="info">{{$i->Email}}</p></div>
+<div class="col-sm-5 col-xs-6 title " >Email:</div><div class="col-sm-7"><p class="info">{{$i->email}}</p></div>
 
 
  <div class="clearfix"></div>
@@ -101,14 +102,20 @@
 <div id="popup1" class="overlay">
    @foreach($id_et as $i)
   <div class="popup">
-    <a class="close" href="#">&times;</a>
     <div class="content">
      <div class="col-sm-6">
            <div  align="center"> <img alt="User Pic" src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" id="profile-image1" class="img-circle img-responsive">
-
-                <input id="profile-image-upload" class="hidden" type="file">
-<div style="color:#999;" >Cliquer ici pour changer votre photo </div>
+<form action="modifierProfile" method="POST"  enctype="multipart/form-data"> 
+  @CSRF
+   <input id="profile-image-upload" name="img_link" type="file" />
+<div style="color:#999;" >
+<a href="./storeImage" type="submit" class="btn btn-danger btn-fill">Save Image</a>
+ @if($errors->any())
+ <label style="color:red;">{{$errors->first()}}</label>
+ @endif
+ </div>
                 <!--Upload Image Js And Css-->
+
                      </div>
               <br>
                 <!-- /input-group -->
@@ -121,68 +128,52 @@
             <hr style="margin:5px 0 5px 0;">
 
 
-<div class="col-sm-5 col-xs-6 title " >Prenom:</div><div class="col-sm-7 col-xs-6 "><p class="info">{{$i->prenom}} </p></div>
+<div class="col-sm-5 col-xs-6 title " >Prenom:</div><div class="col-sm-7 col-xs-6 "><input class="info" name="prenom" value="{{$i->prenom}}" /> </div>
      <div class="clearfix"></div>
 <div class="bot-border"></div>
 
 
 
-<div class="col-sm-5 col-xs-6 title " >Nom:</div><div class="col-sm-7"><p class="info"> {{$i->nom}} </p></div>
+<div class="col-sm-5 col-xs-6 title " >Nom:</div><div class="col-sm-7"><input class="info" name="nom" value=" {{$i->nom}}"/> </div>
   <div class="clearfix"></div>
 <div class="bot-border"></div>
 
-<div class="col-sm-5 col-xs-6 title " >CIN</div><div class="col-sm-7"><p class="info">{{$i->cin}} </p></div>
+<div class="col-sm-5 col-xs-6 title " >CIN</div><div class="col-sm-7"><input class="info"value="{{$i->cin}}" name="cin"/></div>
 
   <div class="clearfix"></div>
 <div class="bot-border"></div>
-<div class="col-sm-5 col-xs-6 title " >CNE</div><div class="col-sm-7"><p class="info">{{$i->cne}} </p></div>
-
-  <div class="clearfix"></div>
-<div class="bot-border"></div>
-
-<div class="col-sm-5 col-xs-6 title " >Promotion</div><div class="col-sm-7"><p class="info">{{$i->promotion}} </p></div>
+<div class="col-sm-5 col-xs-6 title " >CNE</div><div class="col-sm-7"><input  class="info" value="{{$i->cne}}" name="cne"/> </div>
 
   <div class="clearfix"></div>
 <div class="bot-border"></div>
 
-<div class="col-sm-5 col-xs-6 title " >Filière</div><div class="col-sm-7"><p class="info">@foreach($id_f as $f)
-  {{$f->nom_filiere}}
-  @endforeach
-</p></div>
+<div class="col-sm-5 col-xs-6 title " >Promotion</div><div class="col-sm-7"><input class="info"value="{{$i->promotion}}" name="promotion"/></div>
+
+  <div class="clearfix"></div>
+<div class="bot-border"></div>
+
+<div class="col-sm-5 col-xs-6 title " >Filière</div><div class="col-sm-7"><input class="info" value="@foreach($id_f as $f)
+ {{$f->nom_filiere}}
+  @endforeach" name="filiere"/>
+</div>
 
  <div class="clearfix"></div>
 <div class="bot-border"></div>
 
-<div class="col-sm-5 col-xs-6 title " >Email:</div><div class="col-sm-7"><p class="info">{{$i->Email}}</p></div>
+<div class="col-sm-5 col-xs-6 title " >Email:</div><div class="col-sm-7"><input class="info"value="{{$i->email}}" name="email"/></div>
 
 
  <div class="clearfix"></div>
 <div class="bot-border"></div>
-<div class="col-sm-5 col-xs-6 title " >Numéro Téléphone:</div><div class="col-sm-7"><p class="info">{{$i->phone}}</p></div>
-<a type="button" class="button"><i class="fa fa-edit"> Valider</i></a>
-
+<div class="col-sm-5 col-xs-6 title " >Numéro Téléphone:</div><div class="col-sm-7"><input class="info" value="{{$i->phone}}" name="phone" /></div>
+<button type="submit" class="button"><i class="fa fa-edit"> Valider</i></button>
+<button type="reset" class ='button'>Annuler</button>
+</form>
             <!-- /.box-->
   </div>
 </div>
 @endforeach
 @endsection
-
-    <script>
-              $(function() {
-    $('#profile-image1').on('click', function() {
-        $('#profile-image-upload').click();
-    });
-});
-              </script>
-
-
-
-
-
-
-
-
-
    </div>
 </div>
 </body>

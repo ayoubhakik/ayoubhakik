@@ -32,5 +32,7 @@ Route::get('/etudiant/profile', "etudiantController@profile");
 Route::get('/etudiant/deconnecter',"etudiantController@deconnecter");
 Route::get('/etudiant/home', "etudiantController@home");
 Route::post('/etudiant/user',"etudiantController@submit");
-
+Route::post('/etudiant/modifierProfile', 'etudiantController@modifierProfile');
+Route::get('/etudiant/modifierProfile', 'etudiantController@profile');
+Route::get('/etudiant/storeImage', 'etudiantController@storeImage');
 

@@ -7,3 +7,4 @@
      Route::post('/encadrant/modifierProfile', 'encadrantController@modifierProfile');
      Route::post('/encadrant/evaluer', 'encadrantController@evaluer');
      Route::post('/encadrant/sendMail', 'encadrantController@sendMail');
+     ?>
