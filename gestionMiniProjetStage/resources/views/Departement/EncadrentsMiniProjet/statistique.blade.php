@@ -25,7 +25,7 @@
       let massPopChart = new Chart(myChart, {
         type:'bar', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
         data:{
-          labels:['Echaddi ', 'Bouarifi', 'Atlas', 'Jraifi', 'Ouarrachi', 'Ezzahar'],
+          labels:['Ezzahar ','Ouarrachi', 'Bouarifi', 'Atlas', 'Jraifi',  'Echaddi'],
           datasets:[{
             label:'Encadrants',
             data:[
