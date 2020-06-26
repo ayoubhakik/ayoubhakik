@@ -13,9 +13,8 @@
                 <div class="card" style="width: 18rem;">
                     <img src="..\img\new_logo.png" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">{{$student->nom}} {{$student->prenom}} </h5>
-                        <p class="card-text">Year and sector. (ex. 4th year GI)</p>
-                        <a href="#" class="btn btn-primary">Show profile</a>
+                        <h5 class="card-title">{{$groupe->nom_groupe}}</h5>
+                        <a href="/encadrant/afficherGrp/{{$groupe->id}}" class="btn btn-primary">Show profile</a>
                     </div>
                 </div>
             </div>

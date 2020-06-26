@@ -28,8 +28,7 @@ class encadrantController extends Controller
         $idEncadrant = $request->session()->get('userID');
         $encadrant = Encadrant::where('id_encadrant', $idEncadrant)->first();
         $departements = Departement::all()->pluck('nom_departement','id_departement');
-        $path = explode("/",$encadrant->lien_image);
-        return view('encadrantViews/profile', ['encadrant' => $encadrant, 'departements' => $departements, 'path' => $path[2]]);
+        return view('encadrantViews/profile', ['encadrant' => $encadrant, 'departements' => $departements]);
     }
 
     //Lister Etudiants
@@ -53,7 +52,7 @@ class encadrantController extends Controller
 
 
     //Afficher un groupe
-    public function afficherGrp(Request $request){
+    public function afficherGrp(Request $request, $id){
 
         $groupe = Groupe::where('id_groupe', 1)->first();
         $membres = Etudiant::where('id_groupe', $groupe->id_groupe)->select('nom', 'prenom', 'img_link')->get();
