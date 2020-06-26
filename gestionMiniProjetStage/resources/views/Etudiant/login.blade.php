@@ -10,16 +10,16 @@
   <body>
 <div class="cont">
   <div class="form sign-in">
-<form method="post">
+<form method="POST">
 @csrf
     <h2>Welcome student,</h2>
     <label>
       <span>Email</span>
-      <input type="email" name="email"/>
+      <input type="email" name="email" required/>
     </label>
     <label>
       <span>Password</span>
-      <input type="password" name="password" />
+      <input type="password" name="password" required/>
     </label>
     <p class="forgot-pass">Forgot password?</p>
     <button type="submit" class="submit">Sign In</button>

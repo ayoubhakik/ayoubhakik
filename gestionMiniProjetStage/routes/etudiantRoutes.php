@@ -1,7 +1,5 @@
 <?php
-Route::get('/etudiant/home',function(){
-    return view('Etudiant/home');
-});
+
 Route::get('/etudiant/profile',function(){
     return view('Etudiant/profile');
 });
@@ -31,7 +29,8 @@ Route::get('/etudiant/stage',"etudiantController@getEtudiant");
 Route::post('/etudiant/login',"etudiantController@login");
 Route::get('/etudiant/listEtudiant',"etudiantController@getEtudiant");
 Route::get('/etudiant/profile', "etudiantController@profile");
-Route::get('/etudiant/login', "etudiantController@deconnecter");
+Route::get('/etudiant/deconnecter',"etudiantController@deconnecter");
 Route::get('/etudiant/home', "etudiantController@home");
+Route::post('/etudiant/user',"etudiantController@submit");
 
 

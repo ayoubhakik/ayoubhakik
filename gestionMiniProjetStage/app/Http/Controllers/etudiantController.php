@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Etudiant;
 use App\Filiere;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 use DB;
 
 
@@ -12,17 +13,18 @@ class etudiantController extends Controller
     public function home(Request $request){
         if ($request->session()->has('etudiant')) {
 
-        return redirect('/etudiant/home');
+         redirect::to("/etudiant/home");
+         return view("Etudiant/home");
 
         }
-        return view('Etudiant/login');
+        return redirect::to('/etudiant/login');
 
     }
     public function getEtudiant(){
 
         $etudiants  = DB::table('etudiants')->get();
 
-        return view('Etudiant/listEtudiant', compact('etudiants'));
+        return redirect::to('/etudiant/listEtudiant', compact('etudiants'));
     }
     public function login(Request $request){
         $email = $request->input('email');
@@ -30,25 +32,31 @@ class etudiantController extends Controller
         $etudiant = DB::table('users')->where('email',$email)->where('password',$password)->first();
         $user =DB::table('etudiants')->where('id_user',$etudiant->id)->first();
         if($user !=null){
-          $request->session()->put('etudiant',$user);
-            return view('Etudiant/home');
+            $request->session()->put('etudiant',$user);
+            return Redirect::to('/etudiant/home');
         }
         else{
-            return view('Etudiant/login');
+            return redirect::to('/etudiant/login');
         }
     }
     public function profile($id){
+         if ($request->session()->has('etudiant')) {
        $id_et = Etudiant::where('id_etudiant', $id)->get();
        foreach ($id_et as $t ) {
        	$id_f=Filiere::where('id_filiere',$t->filiere_id)->get();
        }
 
-       return view('Etudiant/profile', compact(['id_et','id_f']));
+       return redirect::to('/etudiant/profile', compact(['id_et','id_f']));
+   }
+   else{
+    return redirect::to('/etudiant/login');
+   }
 
 }
 public function deconnecter(Request $request){
-    $request->session()->forget('etudiant');
-    return Redirect::to("/etudiant/login");
+    session()->forget('etudiant');
+    session()->flush();
+    return Redirect::to('/etudiant/login');
 }
 
 }

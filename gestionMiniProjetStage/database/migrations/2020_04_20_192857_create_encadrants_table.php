@@ -4,6 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
+
 class CreateEncadrantsTable extends Migration
 {
     /**
@@ -25,7 +26,7 @@ class CreateEncadrantsTable extends Migration
             $table->bigInteger('id_departement')->unsigned();
             $table->foreign('id_departement')->references('id_departement')->on('departements');
             $table->bigInteger('id_user')->unsigned();
-               $table->foreign('id_user')->references('id')->on('users');
+            $table->foreign('id_user')->references('id')->on('users');
 
             $table->timestamps();
         });
