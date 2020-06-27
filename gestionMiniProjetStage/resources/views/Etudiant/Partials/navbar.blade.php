@@ -38,11 +38,17 @@
                         </a>
                     </li>
                     <li>
-                        <a class="nav-link" href="./message">
-                            <i class="nc-icon nc-email-85"></i>
-                            <p>Messages</p>
+                        <a class="nav-link" href="./groupe">
+                            <i class="nc-icon nc-paper-2"></i>
+                            <p>Espace groupe</p>
                         </a>
                 </li>
+                <li>
+                        <a class="nav-link" href="./Espacestage">
+                            <i class="nc-icon nc-bag"></i>
+                            <p>Espace groupe stage</p>
+                        </a>
+                    </li>
                     <li>
                         <a class="nav-link" href="./notifications">
                             <i class="nc-icon nc-bell-55"></i>

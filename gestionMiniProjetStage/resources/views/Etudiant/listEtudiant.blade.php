@@ -108,7 +108,10 @@
                             @if($user->disponible==0)
 							<a href="./sendInvit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
 								  Invite
-						    </a>
+                            </a>
+                            <a href="#popup" id="envoi" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" >
+								  Contacter
+                            </a>
 
                             @endif
 							</td>
@@ -119,6 +122,15 @@
                         @endforeach
                     </table>
                 </div>
+                <div class="popup" id="popup">
+  <div class="header">
+    <div class="title">Send a message</div>
+    <div class="icon"><i class="fa fa-send" title="Send"></i></div>
+  </div>
+  <div class="content">
+    <textarea placeholder="Your message"></textarea>
+  </div>
+</div>
                 <div layout-xs="column" layout="row" layout-align-xs="end end" layout-align="end center">
                     <grid-pagination max-size="5"
                                      boundary-links="true"
@@ -152,5 +164,22 @@
 <script src="https://angular-data-grid.github.io/dist/pagination.js"></script>
 <script src="https://angular-data-grid.github.io/dist/dataGrid.js"></script>
 <script src="../js/Etudiant.js"></script>
+<script type="text/javascript">
+(function () {
+  $("#envoi").on("click", function () {
+    $("#envoi").addClass("hide");
+    return $(".popup").addClass("show");
+  });
+
+  $(".icon i").on("click", function () {
+    $("button").removeClass("hide");
+    return $(".popup").removeClass("show");
+  });
+
+}).call(this);
+
+
+
+</script>
 </html>
 

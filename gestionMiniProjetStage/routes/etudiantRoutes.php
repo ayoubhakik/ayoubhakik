@@ -21,8 +21,11 @@ Route::get('/etudiant/notifications',function(){
 Route::get('/etudiant/login',function(){
     return view('Etudiant/login');
 });
-Route::get('/etudiant/message',function(){
-    return view('Etudiant/message');
+Route::get('/etudiant/groupe',function(){
+    return view('Etudiant/groupe');
+});
+Route::get('/etudiant/Espacestage',function(){
+    return view('Etudiant/groupeminiprojet');
 });
 Route::get('/etudiant/mp',"etudiantController@getEtudiant");
 Route::get('/etudiant/stage',"etudiantController@getEtudiant");
