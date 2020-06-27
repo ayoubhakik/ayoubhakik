@@ -49,12 +49,7 @@
                             <p>Espace groupe stage</p>
                         </a>
                     </li>
-                    <li>
-                        <a class="nav-link" href="./notifications">
-                            <i class="nc-icon nc-bell-55"></i>
-                            <p>Notifications</p>
-                        </a>
-                    </li>
+                 
                     <li>
                         <a class="nav-link" href="./deconnecter">
                             <i class="nc-icon nc-button-power"></i>

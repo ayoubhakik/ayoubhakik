@@ -67,6 +67,7 @@ public function deconnecter(Request $request){
         $id =$request->session()->get('etudiant');
         $etudiant = Etudiant::where('id_etudiant',$id)->first();
         $etudiant->nom = $request->input('nom');
+        
         $etudiant->prenom = $request->input('prenom');
         $etudiant->email = $request->input('email');
         $etudiant->phone = $request->input('phone');

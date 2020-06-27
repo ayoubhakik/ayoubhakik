@@ -15,7 +15,10 @@
 
 @extends('etudiant/layoutEtudiant')
 @section('content')
+
 <div layout="column" layout-fill style="margin-left:40px;">
+  <div ><label>Donner un nom au group</label>
+  <input type="text"/> <button type="submit" value="Save">Save</button></div>
     <md-content layout-padding layout="row" layout-align="center">
         <div flex-gt-md="30" flex-md="30" flex-xs="30">
 

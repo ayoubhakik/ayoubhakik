@@ -142,11 +142,11 @@
   <div class="clearfix"></div>
 <div class="bot-border"></div>
 
-<div class="col-sm-5 col-xs-6 title " >CIN</div><div class="col-sm-7"><input class="info"value="{{$i->cin}}" name="cin"/></div>
+<div class="col-sm-5 col-xs-6 title " >CIN</div><div class="col-sm-7"><input class="info"value="{{$i->cin}}" name="cin" readonly="readonly"/></div>
 
   <div class="clearfix"></div>
 <div class="bot-border"></div>
-<div class="col-sm-5 col-xs-6 title " >CNE</div><div class="col-sm-7"><input  class="info" value="{{$i->cne}}" name="cne"/> </div>
+<div class="col-sm-5 col-xs-6 title " >CNE</div><div class="col-sm-7"><input  class="info" value="{{$i->cne}}" name="cne" readonly="readonly"/> </div>
 
   <div class="clearfix"></div>
 <div class="bot-border"></div>
@@ -158,7 +158,7 @@
 
 <div class="col-sm-5 col-xs-6 title " >Filière</div><div class="col-sm-7"><input class="info" value="@foreach($id_f as $f)
  {{$f->nom_filiere}}
-  @endforeach" name="filiere"/>
+  @endforeach" name="filiere" readonly="readonly" />
 </div>
 
  <div class="clearfix"></div>
