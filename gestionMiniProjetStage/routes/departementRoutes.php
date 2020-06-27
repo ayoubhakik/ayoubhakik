@@ -8,7 +8,8 @@ Route::get('/departement/user','DepartementsController@user');
 
 
 
-Route::get('/departement/etudiant/import','DepartementsController@importEtudiants');
+Route::get('/departement/etudiant/import','DepartementsController@importEtudiants')->name('students');
+Route::get('/departement/etudiant/import/filter/{niveau}/{filiere}', "EtudiantsController@filter")->name('students_filter');
 Route::get('/departement/etudiant/list','DepartementsController@listEtud');
 Route::get('/departement/enseignant/list','DepartementsController@listEns');
 Route::get('/departement/enseignant/list','DepartementsController@listEns');
@@ -16,9 +17,12 @@ Route::get('/departement/enseignant/list','DepartementsController@listEns');
 Route::get('/departement/enseignant/import','DepartementsController@importEnseignants');
 Route::get('/departement/encadrantmp/statistique','DepartementsController@EncadMpStat');
 
-Route::get('/departement/encadrentsMiniProjet/list',function(){
-    return view('Departement/EncadrentsMiniProjet/list');
-});
+Route::get('/departement/encadrentsMiniProjet/list', "EncadrantsController@index")->name('list_encadrant');
+Route::get('/departement/encadrentsMiniProjet/add', "EncadrantsController@add")->name('add_encadrant');
+Route::get('/departement/encadrentsMiniProjet/edit/{id}', "EncadrantsController@edit")->name('edit_encadrant');
+Route::post('/departement/encadrentsMiniProjet/added', "EncadrantsController@addEncadrant")->name('addEncadrant');
+Route::post('/departement/encadrentsMiniProjet/save', "EncadrantsController@saveEncadrant")->name('saveEncadrant');
+Route::get('/departement/encadrentsMiniProjet/delete/{id}', "EncadrantsController@delete")->name('deleteEncadrant');
 
 Route::get('/departement/encadrentsMiniProjet/statistique',function(){
     return view('Departement/EncadrentsMiniProjet/statistique');
@@ -63,15 +67,15 @@ Route::get('/departement/rapports/rapportsMiniProjet',function(){
     return view('Departement/Rapports/rapportsMiniProjet');
 });
 
-Route::get('/departement/Setting',function(){
-    return view('Departement/Setting');
-});
+Route::get('/departement/Setting', "SettingsController@index");
+Route::post('/departement/Setting/save', "SettingsController@addConfig")->name('addconfig');
+Route::get('/departement/Setting/delete/{id}', "SettingsController@deleteConfig")->name('deleteConfig');
 //route pour le home
 Route::get('/departement/',function(){
     return view('Departement/home');
 });
 
-/////RESTFUL METHODS 
+/////RESTFUL METHODS
 
 //user edit
 Route::put('/departement/user/{id}/editInfos','DepartementsController@editUser');

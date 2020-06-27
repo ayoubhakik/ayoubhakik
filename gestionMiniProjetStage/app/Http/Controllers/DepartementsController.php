@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Departement;
+use App\Etudiant;
+use App\Filiere;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
@@ -20,7 +22,7 @@ class DepartementsController extends Controller
 {
     public function listEtud(){
         $riewRow = DB::select('SELECT id_etudiant,nom,prenom,cin,cne,niveau,email,phone FROM etudiants');
-        
+
         return view('Departement/Etudiants/list',['viewReport'=> $riewRow]);
     }
 
@@ -66,27 +68,28 @@ class DepartementsController extends Controller
 
 
     public function importEtudiants(){
-        $data=DB::table('etudiants')->get();
-        return view('Departement/Etudiants/import',compact('data'));
+        $data = Etudiant::all();
+        $filieres = Filiere::all();
+        return view('Departement/Etudiants/import',compact('data'))->with('filieres', $filieres);
     }
     public function EncadMpStat(){
-       
+
         return view('Departement/EncadrentsMiniProjet/statistique');
     }
-    
+
     public function listEns(){
         $riewRow = DB::select('SELECT id_encadrant,nom,prenom,email,phone FROM encadrants');
         return view('Departement/Enseignants/list',['viewReport'=> $riewRow]);
     }
-    
+
     public function importEnseignants(){
         $data=DB::table('encadrants')->get();
         return view('Departement/Enseignants/import',compact('data'));
     }
-    
+
     public function importEnseignantExcel(Request $request){
         if($request->file('file-5')==null){
-            return back()->with('failed','choose a file.');	
+            return back()->with('failed','choose a file.');
 
         }
         else{
@@ -98,7 +101,7 @@ class DepartementsController extends Controller
                         $insert_data[]=array(
                             'nom'=>$row[0],
                             'prenom'=>$row[1],
-                            
+
                         );
                         }
                     }
@@ -109,8 +112,8 @@ class DepartementsController extends Controller
         if(!empty($insert_data)){
                 DB::table('encadrants')->insert($insert_data);
             }
-        
-        return back()->with('success','Excel data imported successfully.');	
+
+        return back()->with('success','Excel data imported successfully.');
     }
     ////excel import
 
@@ -118,7 +121,7 @@ class DepartementsController extends Controller
 	{
         //$this->validate($request,['file-5','required|mimes:xls,xlsx']);
         if($request->file('file-5')==null){
-            return back()->with('failed','choose a file.');	
+            return back()->with('failed','choose a file.');
 
         }
         else{
@@ -142,7 +145,7 @@ class DepartementsController extends Controller
                 }
             }
 
-        }  
+        }
         if(request('choice')==='gi4'){
             $data=Excel::toCollection(new ImportEtudiantsGi3(), $request->file('file-5'));
             if(count($data) > 0){
@@ -163,7 +166,7 @@ class DepartementsController extends Controller
                 }
             }
 
-        } 
+        }
         if(request('choice')==='gtr4'){
             $data=Excel::toCollection(new ImportEtudiantsGi3(), $request->file('file-5'));
             if(count($data) > 0){
@@ -184,30 +187,30 @@ class DepartementsController extends Controller
                 }
             }
 
-        } 
+        }
             if(!empty($insert_data)){
                 DB::table('etudiants')->insert($insert_data);
             }
-        
-        return back()->with('success','Excel data imported successfully.');	
+
+        return back()->with('success','Excel data imported successfully.');
     }
 
     }
-    
-   
-    
-    
+
+
+
+
 
     ///you can write your functions here
     public function home(){
-        
+
     return view('Departement/home');
     }
 
     public function user(){
         $departement=Departement::find(1);
         return view('Departement.user',['departement'=>$departement]);
-    }  
+    }
 
 
 
@@ -228,7 +231,7 @@ class DepartementsController extends Controller
         $departement->twitter=request('twitter');
         $departement->google=request('google');
         $departement->linkedin=request('linkedin');
-       
+
         $departement->save();
         return redirect('/departement/user');
     }
@@ -260,9 +263,9 @@ class DepartementsController extends Controller
                     return redirect('/departement/user')->withErrors(['Choose a File']);;
 
             }
-        
 
-        
+
+
 
 
     }
