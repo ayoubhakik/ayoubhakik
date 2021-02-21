@@ -16,20 +16,21 @@ class CreateEtudiantsTable extends Migration
         Schema::create('etudiants', function (Blueprint $table) {
             $table->bigIncrements('id_etudiant');
             $table->string('nom');
-            $table->string('prenom');
-            $table->string('img_link')->unique();
-            $table->string('cin')->unique();
-            $table->string('cne')->unique();
-            $table->integer('promotion');
-            $table->string('etat');
-            $table->boolean('activated');
-            $table->integer('phone');
-            $table->string('Email')->unique();
-            $table->boolean('disponible');
-            $table->bigInteger('filiere_id')->unsigned();
-            $table->foreign('filiere_id')->references('id_filiere')->on('filieres');
-            $table->bigInteger('id_groupe')->unsigned();
-            $table->foreign('id_groupe')->references('id_groupe')->on('groupes');
+             $table->string('prenom');
+             $table->string('img_link')->unique()->nullable();
+             $table->string('cin')->unique();
+             $table->string('cne')->unique();
+             $table->integer('promotion')->nullable();
+            $table->string('niveau')->nullable();
+             $table->string('etat')->nullable();
+             $table->boolean('activated')->nullable();
+             $table->string('phone')->nullable();
+             $table->string('email')->nullable();
+             $table->boolean('disponible')->nullable();
+              $table->bigInteger('id_filiere')->unsigned()->nullable();
+              $table->foreign('id_filiere')->references('id_filiere')->on('filieres');
+               $table->bigInteger('id_groupe')->unsigned()->nullable();
+               $table->foreign('id_groupe')->references('id_groupe')->on('groupes');
             $table->timestamps();
 
         });
@@ -46,3 +47,4 @@ class CreateEtudiantsTable extends Migration
     }
 }
 ?>
+

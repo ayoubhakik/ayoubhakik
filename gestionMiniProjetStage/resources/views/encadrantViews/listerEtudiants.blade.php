@@ -8,43 +8,18 @@
             </div>
         </div>
         <div class="row">
-            <table class="table table-hover">
-                <thead >
-                    <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Nom</th>
-                        <th scope="col">Prenom</th>
-                        <th scope="col">Filiere</th>
-                        <th scope="col">CIN</th>
-                        <th scope="col">CNE</th>
-                        <th scope="col">Promotion</th>
-                        <th scope="col">Telephone</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">ID du groupe</th>
-                        
-
-                    </tr>
-                </thead>
-
-
-                <!-- dummy data fot the view -->
-                <tbody style="color : #192965;">
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>   
-                        <td>@mdo</td>   
-                        <td>@mdo</td>   
-                        <td>@mdo</td>   
-                        <td>@mdo</td>   
-                        <td>@mdo</td>   
-                        <td>@mdo</td>   
-                        <td>@mdo</td>   
-
-                    </tr>
-                </tbody>
-            </table>
+        @foreach ($students as $student)
+            <div class="col-md-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="..\img\new_logo.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{$student->nom}} {{$student->prenom}} </h5>
+                        <p class="card-text">Year and sector. (ex. 4th year GI)</p>
+                        <a href="#" class="btn btn-primary">Show profile</a>
+                    </div>
+                </div>
+            </div>
+        @endforeach
         </div>
     </div>
 </div>

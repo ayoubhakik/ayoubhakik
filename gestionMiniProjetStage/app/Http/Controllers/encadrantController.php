@@ -6,12 +6,13 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use App\Encadrant;
 use App\Groupe;
+use DB;
 use App\Departement;
 use App\Etudiant;
 use App\Soutenance;
 
 class encadrantController extends Controller
-{        
+{
 
     //Index
     public function accueil(Request $request){
@@ -27,25 +28,32 @@ class encadrantController extends Controller
         $idEncadrant = $request->session()->get('userID');
         $encadrant = Encadrant::where('id_encadrant', $idEncadrant)->first();
         $departements = Departement::all()->pluck('nom_departement','id_departement');
-        $path = explode("/",$encadrant->lien_image);
-        return view('encadrantViews/profile', ['encadrant' => $encadrant, 'departements' => $departements, 'path' => $path[2]]);
+        return view('encadrantViews/profile', ['encadrant' => $encadrant, 'departements' => $departements]);
     }
 
     //Lister Etudiants
-    public function listerEtudiants(){
-        return view('encadrantViews/listerEtudiants');
+    public function listerEtudiants(Request $request){
+        $idEncadrant = $request->session()->get('userID');
+        //get students of the user
+        $students = Etudiant::where('id_encadrant', $idEncadrant);
+        return view('encadrantViews/listerEtudiants')->with('students', $students);
     }
 
-    
 
-    //lister ses Groupes
-    public function listerGroupes(){
-        return view('encadrantViews/listerGroupes');
+
+    //lister groupes
+    //Lister Etudiants
+    public function listergroupes(Request $request){
+        $idEncadrant = $request->session()->get('userID');
+        $groupes = Groupe::where('id_encadrant', $idEncadrant);
+        return view('encadrantViews/listerGroupes')->with('groupes', $groupes);
     }
+
+
 
     //Afficher un groupe
-    public function afficherGrp(Request $request){
-        
+    public function afficherGrp(Request $request, $id){
+
         $groupe = Groupe::where('id_groupe', 1)->first();
         $membres = Etudiant::where('id_groupe', $groupe->id_groupe)->select('nom', 'prenom', 'img_link')->get();
         $soutenance = Soutenance::where('id_soutenance', $groupe->id_soutenance)->first();
@@ -62,6 +70,7 @@ class encadrantController extends Controller
 
     //Modifier profile encadrant
     public function modifierProfile(Request $request){
+        $idEncadrant = $request->session()->get('userID');
         $encadrant = Encadrant::where('id_encadrant', $request['id_encadrant'])->first();
         $encadrant->nom = $request['nom'];
         $encadrant->prenom = $request['prenom'];
@@ -73,7 +82,7 @@ class encadrantController extends Controller
         $encadrant->phone = $request['phone'];
         $encadrant->id_departement = $request['id_departement'];
         $encadrant->save();
-        
+
         return redirect()->action('encadrantController@profile');
     }
     //l'encadrant évalue le groupe
@@ -82,7 +91,7 @@ class encadrantController extends Controller
         $groupe->note = $request['note'];
         $groupe->appreciation = $request['appreciation'];
         $groupe->save();
-    
+
         return redirect()->action('encadrantController@afficherGrp', ['id_groupe' => $request['id_groupe']]);
     }
 
@@ -95,5 +104,5 @@ class encadrantController extends Controller
         });
         return redirect('/encadrant/afficherGrp');
     }
-    
+
 }

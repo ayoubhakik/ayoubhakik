@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateGroupesTable extends Migration
+class CreateGroupeTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateGroupesTable extends Migration
      */
     public function up()
     {
-        Schema::create('groupes', function (Blueprint $table) {
+        Schema::create('groupe', function (Blueprint $table) {
             $table->bigIncrements('id_groupe');
             $table->string('nom_groupe');
             $table->string('sujet');
@@ -23,6 +23,9 @@ class CreateGroupesTable extends Migration
             $table->bigInteger('id_encadrant')->unsigned();
             $table->foreign('id_encadrant')->references('id_encadrant')->on('encadrants');
             $table->bigInteger('id_soutenance')->unsigned();
+             $table->bigInteger('id_encadrant')->unsigned();
+            $table->foreign('id_encadrant')->references('id_encadrant')->on('encadrants');
+             $table->bigInteger('id_soutenance')->unsigned();
             $table->foreign('id_soutenance')->references('id_soutenance')->on('soutenances');
             $table->timestamps();
         });

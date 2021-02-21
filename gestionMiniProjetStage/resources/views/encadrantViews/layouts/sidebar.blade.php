@@ -38,7 +38,7 @@
                     </a>
                 </li>
                 <li class="" >
-                    <a class="nav-link myButt four" href="http://127.0.0.1:8000/encadrant/listerGroupes" id="trd">
+                    <a class="nav-link myButt four" href="http://127.0.0.1:8000/encadrant/afficherGrp" id="trd">
                         <i class="nc-icon nc-bullet-list-67 icon"></i>
                         <p >Liste de vos groupes</p>
                     </a>

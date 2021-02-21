@@ -1,128 +1,28 @@
 @extends('encadrantViews/layouts/layout')
 @section('content')
-
-
 <div class="content">
     <div class="container-fluid">
-        <div class="row justify-content-center mb-5 page-hero">
-            <h1 class="display-2 sansserif" >Liste des Groupes</h1>
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-sx-12 page-hero" style="text-align: center">
+                <h1 class="display-2">Students list</h1>
+            </div>
         </div>
         <div class="row">
-        <div class="alert alert-success alert-dismissible fade show" role="alert" style="width: 100%; text-align: center">
-            <p class="text-muted" style="font-family:Century gothic">Cick on the ID to access the group, or on its members to show them</p>
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
-        </div>
-
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th scope="col">Id</th>
-                        <th scope="col">Responsible</th>
-                        <th scope="col">Group members</th>
-                        <th scope="col">Subject</th>
-                        <th scope="col">Sector</th>
-                        <th scope="col">Due date</th>
-                        <th scope="col">More</th>
-                    </tr>
-                </thead>
-
-
-                <!-- dummydata for the view-->
-                <tbody style="color : #192965;">
-                    <tr>
-                        <th scope="row"><a href="#">1</a></th>
-                        <td>Ayoub HAKIK</td>
-                        <td>
-                            <!-- Button trigger modal -->
-                            <a type="button" style="color:dodgerblue" data-toggle="modal" data-target="#list">
-                                Show Members
-                            </a>
-                        </td>
-                        <td>Something</td>
-                        <td>GI</td>
-                        <td>14/10/2016</td>
-                        <td>
-                            <a type="button" style="color:dodgerblue" data-toggle="modal" data-target="#more">
-                                Clik
-                            </a>
-                        </td>
-                    </tr>
-
-                </tbody>
-            </table>
+        @foreach ($groupes as $groupe)
+            <div class="col-md-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="..\img\new_logo.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{$groupe->nom_groupe}}</h5>
+                        <a href="/encadrant/afficherGrp/{{$groupe->id}}" class="btn btn-primary">Show profile</a>
+                    </div>
+                </div>
+            </div>
+        @endforeach
         </div>
     </div>
 </div>
 
-
-<!-- Modal list-->
-<div class="modal fade" id="list" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog " role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalCenterTitle" style="color: #192965">Group members</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-          <ul>
-              <li>Asmae BRIOUYA</li>
-              <li>Hasnae BRIOUYA</li>
-              <li>Mouad SIFANE</li>
-              <li>Rachid EL ADNANI</li>
-            </ul>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-
-<!-- Modal More-->
-<div class="modal fade" id="more" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog " role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalCenterTitle">More Options</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-            <form>
-                <div class="form-group row">
-                    <label for="grade" class="col-sm-2 col-form-label">Grade</label>
-                    <div class="col-sm-10">
-                    <input type="text" class="form-control" id="grade" placeholder=".." style="width: 14%">
-                    <label style="position: absolute;left: 73px;top: 0px;font-size: larger;">/20</label>
-                    </div>
-
-                </div>
-                <div class="form-group row">
-                    <label for="note" class="col-sm-2 col-form-label">Note</label>
-                    <div class="col-sm-10">
-                    <input type="text" class="form-control" id="note" placeholder="leave a note">
-                    </div>
-                </div>
-                <hr>
-                <div class="form-group row" style="text-align: center">
-                    <label class="col"><a href="#" style="color : #0097d7;">Download repport</a></label>
-                </div>
-                <hr>
-                <div class="form-group row">
-                    <div class="col-sm-10">
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                    </div>
-                </div>
-        </form>
-      </div>
-
-    </div>
-  </div>
-</div>
 
 
 @endsection
